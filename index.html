@@ -1,0 +1,78 @@
+<html ng-app='cyApp'>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://code.angularjs.org/1.2.8/angular.min.js"></script>
+<script src="js/cyDragDrop.js?123456"></script>
+<script src="js/core.js?1234"></script>
+<script>
+var cyApp = angular.module("cyApp",['cyDragDrop']);
+function MainController($scope)
+{
+  $scope.init = function()
+  {
+      $scope.images = ['image/a.jpeg','image/b.jpeg'];
+  }
+
+  $scope.pickupPicture = function()
+  {
+     _reserve_callback = function(d)
+     {
+       Debug.Log('callback');
+
+        $scope.images = d.split(',').slice(1);
+
+        for( i in $scope.images)
+        {
+           $scope.images[i] = 'data:image/jpeg;base64,'+$scope.images[i];
+        }
+        $scope.$apply();
+     }
+     open('cy://photo');
+  }
+}
+</script>
+<style>
+.box_start
+{
+  display         :-webkit-box;
+  -webkit-box-pack: start;
+}
+.drag_img
+{
+  width   : 50px;
+  height  : 50px;
+  position: absolute;
+}
+</style>
+<body ng-controller='MainController' ng-init="init()">
+<div cy-dd='images' ng-if='images.length==1'>
+  <div>
+    <img ng-src='{{images[0]}}'/>
+  </div>
+</div>
+<div cy-dd='images' ng-if='images.length==2' class='box_start'>
+  <div drag='true'>
+    <img ng-src='{{images[0]}}' style='width:150px' />
+  </div>
+  <div drag='true'>
+    <img ng-src='{{images[1]}}' style='width:150px' />
+  </div>
+</div>
+<div cy-dd='images' ng-if='images.length==3'>
+  <div class='box_start'>
+    <div drag='true' style='width:100px'>
+      <img ng-src='{{images[0]}}' style='width:100%'/>
+    </div draf='true'>
+    <div drag='true' style='width:100px'>
+      <img ng-src='{{images[1]}}' style='width:100%'/>
+    </div>
+  </div>
+  <div drag='true' style='width:100%'>
+    <img ng-src='{{images[2]}}' style='width:100%'/>
+  </div>
+</div>
+<button ng-click='pickupPicture()'>写真選択</button>
+</body>
+</html>
