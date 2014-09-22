@@ -7,13 +7,19 @@
 //
 
 #import "CYPageViewController.h"
+#import "CYPageViewTransitionContext.h"
+#import "CYPageViewPanGestureInteractiveTransition.h"
+#import "CYPageViewAnimator.h"
 
 @interface CYPageViewController () <UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) UIViewController *currentViewController;
+@property (nonatomic, copy, readwrite) NSArray *viewControllers;
+@property (nonatomic, assign) UIViewController *currentViewController;
+@property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, assign) NSArray *gestureRecognizers;
-@property (nonatomic, assign) BOOL animating;
 @property (nonatomic, assign) BOOL tapEnabled;
+@property (nonatomic, assign) BOOL reverse;
+@property (nonatomic, strong) CYPageViewPanGestureInteractiveTransition *interactiveTransition;
 
 @end
 
@@ -21,21 +27,45 @@
 
 - (instancetype)init {
     if (self = [super initWithNibName:nil bundle:nil]) {
-        // TODO
-        self.view.backgroundColor = [UIColor redColor];
     }
     return self;
+}
+
+- (void)loadView {
+    UIView *rootView = [[UIView alloc] init];
+    rootView.backgroundColor = [UIColor blackColor];
+    rootView.opaque = YES;
+
+    self.containerView = [[UIView alloc] init];
+    self.containerView.backgroundColor = [UIColor blackColor];
+    self.containerView.opaque = YES;
+    [self.containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
+
+    [rootView addSubview:self.containerView];
+    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.containerView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:rootView attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
+    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.containerView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:rootView attribute:NSLayoutAttributeHeight multiplier:1 constant:0]];
+    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.containerView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:rootView attribute:NSLayoutAttributeLeft multiplier:1 constant:0]];
+    [rootView addConstraint:[NSLayoutConstraint constraintWithItem:self.containerView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:rootView attribute:NSLayoutAttributeTop multiplier:1 constant:0]];
+
+    self.view = rootView;
+
+    __weak typeof(self) wself = self;
+    self.interactiveTransition = [[CYPageViewPanGestureInteractiveTransition alloc] initWithGestureRecognizerInView:self.containerView
+                                                                                                    recognizedBlock:^(UIPanGestureRecognizer *recognizer) {
+                                                                                                        wself.reverse = [recognizer velocityInView:recognizer.view].x > 0;
+                                                                                                        [wself navigate];
+                                                                                                    }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     [self addGestures];
+    [self transitionToChildViewController:self.viewControllers.firstObject];
 }
 
 - (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated completion:(void (^)(BOOL finished))completion {
-    self.currentViewController = viewControllers.firstObject;
-    // TODO
+    self.viewControllers = [viewControllers copy];
 }
 
 # pragma mark - UIGestureRecognizerDelegate
@@ -49,10 +79,6 @@
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    if (self.animating) {
-        return NO;
-    }
-
 	if ((self.tapEnabled && [gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]]) ||
         [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]]) {
     	CGPoint tapPoint = [gestureRecognizer locationInView:self.view];
@@ -64,10 +90,9 @@
 
 #pragma Private Methods
 
-- (void)setCurrentViewController:(UIViewController *)currentViewController {
-    [self.currentViewController.view removeFromSuperview];
-    _currentViewController = currentViewController;
-    [self.view addSubview:self.currentViewController.view];
+-(void)setCurrentViewController:(UIViewController *)currentViewController {
+    NSParameterAssert(currentViewController);
+    [self transitionToChildViewController:currentViewController];
 }
 
 - (void)addGestures {
@@ -76,35 +101,37 @@
     	UISwipeGestureRecognizer *left = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeNext:)];
     	left.direction = UISwipeGestureRecognizerDirectionLeft;
     	left.delegate = self;
-    	[self.view addGestureRecognizer:left];
+        [left requireGestureRecognizerToFail:self.interactiveTransition.recognizer];
+    	[self.containerView addGestureRecognizer:left];
 
     	UISwipeGestureRecognizer *right = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipePrevious:)];
     	right.direction = UISwipeGestureRecognizerDirectionRight;
     	right.delegate = self;
-    	[self.view addGestureRecognizer:right];
+        [right requireGestureRecognizerToFail:self.interactiveTransition.recognizer];
+    	[self.containerView addGestureRecognizer:right];
 
     	UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     	tap.delegate = self;
-    	[self.view addGestureRecognizer:tap];
+    	[self.containerView addGestureRecognizer:tap];
 
-    	UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pan:)];
-    	pan.delegate = self;
-    	[self.view addGestureRecognizer:pan];
-
-        self.gestureRecognizers = @[left, right, tap, pan];
+        self.gestureRecognizers = @[left, right, tap, self.interactiveTransition.recognizer];
     });
 }
 
-- (void)swipeNext:(UIGestureRecognizer *)gestureRecognizer {
-    if (!self.animating) {
+- (void)navigate {
+    if (self.reverse) {
+        [self gotoPreviousPage];
+    } else {
         [self gotoNextPage];
     }
 }
 
+- (void)swipeNext:(UIGestureRecognizer *)gestureRecognizer {
+    [self gotoNextPage];
+}
+
 - (void)swipePrevious:(UIGestureRecognizer *)gestureRecognizer {
-    if (!self.animating) {
-        [self gotoPreviousPage];
-    }
+    [self gotoPreviousPage];
 }
 
 static const CGFloat kTapMargin = 60;
@@ -112,10 +139,6 @@ static const CGFloat kTapMargin = 60;
 - (void)tap:(UIGestureRecognizer *)gestureRecognizer {
     // TODO: make tapEanbled as public option so tap to turn page could be disabled?
     if (!self.tapEnabled) {
-        return;
-    }
-
-    if (self.animating) {
         return;
     }
 
@@ -127,24 +150,83 @@ static const CGFloat kTapMargin = 60;
     }
 }
 
-- (void)pan:(UIGestureRecognizer *)gestureRecognizer {
-    // TODO
-}
-
 - (void)gotoPreviousPage {
-    UIViewController *viewController = [self.dataSource pageViewController:self viewControllerBeforeViewController:self.currentViewController];
-    if (viewController) {
-        self.currentViewController = viewController;
-    }
-    // TODO
+    self.reverse = YES;
+    UIViewController *toViewController = [self.dataSource pageViewController:self viewControllerBeforeViewController:self.currentViewController];
+    [self transitionToChildViewController:toViewController];
 }
 
 - (void)gotoNextPage {
-    UIViewController *viewController = [self.dataSource pageViewController:self viewControllerAfterViewController:self.currentViewController];
-    if (viewController) {
-        self.currentViewController = viewController;
+    self.reverse = NO;
+    UIViewController *toViewController = [self.dataSource pageViewController:self viewControllerAfterViewController:self.currentViewController];
+    [self transitionToChildViewController:toViewController];
+}
+
+- (void)transitionToChildViewController:(UIViewController *)toViewController {
+    if (!toViewController) {
+        return;
     }
-    // TODO
+
+    UIViewController *fromViewController = self.currentViewController;
+    if (toViewController == fromViewController || ![self isViewLoaded]) {
+        return;
+    }
+
+    [fromViewController willMoveToParentViewController:nil];
+    [self addChildViewController:toViewController];
+
+    if (!fromViewController) {
+        [self.containerView addSubview:toViewController.view];
+        [toViewController didMoveToParentViewController:self];
+        [self finishTransitionToChildViewController:toViewController];
+        return;
+    }
+
+    CYPageViewAnimator *animator = [[CYPageViewAnimator alloc] init];
+    animator.reverse = self.reverse;
+
+    CYPageViewTransitionContext *transitionContext = [[CYPageViewTransitionContext alloc] initWithFromViewController:fromViewController
+                                                                                                    toViewController:toViewController
+                                                                                                          reverse:self.reverse];
+    transitionContext.animated = YES;
+
+    id<UIViewControllerInteractiveTransitioning> interactionController = [self interactionControllerForAnimator:animator];
+    transitionContext.interactive = (interactionController != nil);
+
+    transitionContext.completionBlock = ^(BOOL didComplete) {
+        if (didComplete) {
+            [fromViewController.view removeFromSuperview];
+            [fromViewController removeFromParentViewController];
+            [toViewController didMoveToParentViewController:self];
+            [self finishTransitionToChildViewController:toViewController];
+        } else {
+            [toViewController.view removeFromSuperview];
+        }
+
+        if ([animator respondsToSelector:@selector(animationEnded:)]) {
+            [animator animationEnded:didComplete];
+        }
+    };
+
+    if (transitionContext.interactive) {
+        [interactionController startInteractiveTransition:transitionContext];
+    } else {
+        [animator animateTransition:transitionContext];
+        [self finishTransitionToChildViewController:toViewController];
+    }
+}
+
+- (void)finishTransitionToChildViewController:(UIViewController *)toViewController {
+    _currentViewController = toViewController;
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)interactionControllerForAnimator:(id<UIViewControllerAnimatedTransitioning>)animationController {
+    if (self.interactiveTransition.recognizer.state == UIGestureRecognizerStateBegan) {
+        self.interactiveTransition.animator = animationController;
+        return self.interactiveTransition;
+    } else {
+        return nil;
+    }
 }
 
 @end

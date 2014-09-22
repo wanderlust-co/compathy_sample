@@ -16,9 +16,8 @@
 
 @property (nonatomic, assign) id <CYPageViewControllerDelegate> delegate;
 @property (nonatomic, assign) id <CYPageViewControllerDataSource> dataSource;
-@property(nonatomic, readonly) NSArray *gestureRecognizers;
-
-@property (nonatomic, readonly) NSArray *viewControllers;
+@property (nonatomic, readonly) NSArray *gestureRecognizers;
+@property (nonatomic, copy, readonly) NSArray *viewControllers;
 
 - (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated completion:(void (^)(BOOL finished))completion;
 

@@ -10,6 +10,7 @@
 // http://www.appcoda.com/uipageviewcontroller-storyboard-tutorial/
 // https://github.com/mpospese/MPFlipViewController
 // http://www.scottlogic.com/blog/2013/09/20/creating-a-custom-flip-view-controller-transition.html
+// https://markpospesel.wordpress.com/2012/05/23/anatomy-of-a-page-flip-animation/
 
 #import "ViewController.h"
 #import "CYPageViewController.h"
@@ -34,7 +35,7 @@ static const NSUInteger kPageCount = 5;
     self.pageViewController.delegate = self;
 
     [self.pageViewController setViewControllers:@[[self contentViewControlerAtIndex:0]] animated:NO completion:nil];
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.pageViewController.view.frame = CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height - 80);
 
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];

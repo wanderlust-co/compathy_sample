@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0510"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -17,20 +17,6 @@
                BlueprintIdentifier = "1AF41AA519CAABF500726D69"
                BuildableName = "PageViewDemo.app"
                BlueprintName = "PageViewDemo"
-               ReferencedContainer = "container:PageViewDemo.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1AF41ABE19CAABF500726D69"
-               BuildableName = "PageViewDemoTests.xctest"
-               BlueprintName = "PageViewDemoTests"
                ReferencedContainer = "container:PageViewDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
