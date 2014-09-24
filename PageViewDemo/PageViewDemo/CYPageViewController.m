@@ -201,12 +201,12 @@ static const CGFloat kTapMargin = 60;
 
     transitionContext.completionBlock = ^(BOOL didComplete) {
         if (didComplete) {
-            [fromViewController.view removeFromSuperview];
+            //[fromViewController.view removeFromSuperview];
             [fromViewController removeFromParentViewController];
             [toViewController didMoveToParentViewController:self];
             [self finishTransitionToChildViewController:toViewController];
         } else {
-            [toViewController.view removeFromSuperview];
+            //[toViewController.view removeFromSuperview];
         }
 
         if ([animator respondsToSelector:@selector(animationEnded:)]) {

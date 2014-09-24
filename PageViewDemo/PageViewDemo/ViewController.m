@@ -51,6 +51,7 @@ static const NSUInteger kPageCount = 5;
     contentViewController.imageFile = [NSString stringWithFormat:@"image%lu.jpg", index + 1];
     contentViewController.titleText = [NSString stringWithFormat:@"Page Title %lu", index + 1];
     contentViewController.pageIndex = index;
+    contentViewController.view.tag = index + 1;
     return contentViewController;
 }
 

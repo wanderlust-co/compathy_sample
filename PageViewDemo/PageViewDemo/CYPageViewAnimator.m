@@ -25,11 +25,12 @@ static const CGFloat kAnimationDuration = 1.0f;
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIViewController* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    //NSLog(@"Transition from %ld to %ld", fromViewController.view.tag, toViewController.view.tag);
 
     if (self.reverse) {
         [[transitionContext containerView] addSubview:toViewController.view];
     } else {
-        [[transitionContext containerView]insertSubview:toViewController.view belowSubview:fromViewController.view];
+        [[transitionContext containerView] insertSubview:toViewController.view belowSubview:fromViewController.view];
     }
 
     CGRect initialFrame = [transitionContext initialFrameForViewController:fromViewController];
@@ -66,7 +67,18 @@ static const CGFloat kAnimationDuration = 1.0f;
                               }
                               completion:^(BOOL finished) {
                                   toViewController.view.layer.transform = CATransform3DIdentity;
-                                  [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+                                  BOOL cancelled = [transitionContext transitionWasCancelled];
+                                  if (cancelled) {
+                                      fromViewController.view.layer.transform = CATransform3DIdentity;
+                                      [toViewController.view removeFromSuperview];
+
+                                      if (self.reverse) {
+                                      } else {
+                                      }
+                                  } else {
+                                      [fromViewController.view removeFromSuperview];
+                                  }
+                                  [transitionContext completeTransition:!cancelled];
                               }
      ];
 }
