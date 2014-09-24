@@ -61,7 +61,13 @@
     [super viewDidLoad];
 
     [self addGestures];
-    [self transitionToChildViewController:self.viewControllers.firstObject];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if (self.containerView.subviews.count == 0) {
+        [self transitionToChildViewController:self.viewControllers.firstObject];
+    }
 }
 
 - (void)setViewControllers:(NSArray *)viewControllers animated:(BOOL)animated completion:(void (^)(BOOL finished))completion {

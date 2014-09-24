@@ -23,4 +23,8 @@
     self.titleLabel.text = self.titleText;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
 @end
