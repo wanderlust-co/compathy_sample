@@ -27,6 +27,7 @@
 
 @optional
 
+/*
 - (void)pageViewController:(CYPageViewController *)pageViewController willTransitionToViewControllers:(NSArray *)pendingViewControllers NS_AVAILABLE_IOS(6_0);
 
 - (void)pageViewController:(CYPageViewController *)pageViewController didFinishAnimating:(BOOL)finished previousViewControllers:(NSArray *)previousViewControllers transitionCompleted:(BOOL)completed;
@@ -35,6 +36,7 @@
 
 - (NSUInteger)pageViewControllerSupportedInterfaceOrientations:(CYPageViewController *)pageViewController;
 - (UIInterfaceOrientation)pageViewControllerPreferredInterfaceOrientationForPresentation:(CYPageViewController *)pageViewController;
+ */
 
 @end
 
