@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 jp.co.wanderlust. All rights reserved.
 //
 
-#import "AWPercentDrivenInteractiveTransition.h"
+#import <AWPercentDrivenInteractiveTransition.h>
 
 @interface CYPageViewPanGestureInteractiveTransition : AWPercentDrivenInteractiveTransition
 

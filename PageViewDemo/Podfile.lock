@@ -1,0 +1,10 @@
+PODS:
+  - AWPercentDrivenInteractiveTransition (0.1.0)
+
+DEPENDENCIES:
+  - AWPercentDrivenInteractiveTransition
+
+SPEC CHECKSUMS:
+  AWPercentDrivenInteractiveTransition: a2cea96b9b63d2b7a66f14ef925cdc2e4cfc3ee4
+
+COCOAPODS: 0.33.1
