@@ -41,7 +41,7 @@ static const CGFloat kShadowViewMaxAlpha = 0.5f;
     }
 
     CATransform3D transform = CATransform3DIdentity;
-    transform.m34 = -1 / (4 * CGRectGetWidth(initialFrame));
+    transform.m34 = -1 / (6.8 * CGRectGetWidth(initialFrame));
     [transitionContext containerView].layer.sublayerTransform = transform;
 
     if (self.reverse) {
