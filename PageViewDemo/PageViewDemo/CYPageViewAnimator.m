@@ -14,7 +14,7 @@
 
 @implementation CYPageViewAnimator
 
-static const CGFloat kAnimationDuration  = 1.0f;
+static const CGFloat kAnimationDuration  = 0.8f;
 static const CGFloat kShadowViewMaxAlpha = 0.5f;
 
 #pragma mark - UIViewControllerAnimatedTransitioning
