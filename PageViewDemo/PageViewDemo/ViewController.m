@@ -35,7 +35,7 @@ static const NSUInteger kPageCount = 5;
     self.pageViewController.delegate = self;
 
     [self.pageViewController setViewControllers:@[[self contentViewControlerAtIndex:0]] animated:NO completion:nil];
-    self.pageViewController.view.frame = CGRectMake(0, 40, self.view.frame.size.width, self.view.frame.size.height - 80);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
