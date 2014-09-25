@@ -33,8 +33,8 @@ static const CGFloat kShadowViewMaxAlpha = 0.5f;
     //NSLog(@"Transition from %ld to %ld", fromViewController.view.tag, toViewController.view.tag);
 
     if (self.reverse) {
-        [[transitionContext containerView] addSubview:toViewController.view];
         [[transitionContext containerView] addSubview:shadowView];
+        [[transitionContext containerView] addSubview:toViewController.view];
     } else {
         [[transitionContext containerView] insertSubview:toViewController.view belowSubview:fromViewController.view];
         [[transitionContext containerView] insertSubview:shadowView belowSubview:fromViewController.view];
