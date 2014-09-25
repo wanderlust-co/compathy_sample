@@ -14,7 +14,8 @@
 
 @implementation CYPageViewAnimator
 
-static const CGFloat kAnimationDuration = 1.0f;
+static const CGFloat kAnimationDuration  = 1.0f;
+static const CGFloat kShadowViewMaxAlpha = 0.5f;
 
 #pragma mark - UIViewControllerAnimatedTransitioning
 
@@ -25,26 +26,33 @@ static const CGFloat kAnimationDuration = 1.0f;
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext {
     UIViewController* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    CGRect initialFrame = [transitionContext initialFrameForViewController:fromViewController];
+
+    UIView *shadowView = [[UIView alloc] initWithFrame:initialFrame];
+    shadowView.backgroundColor = [UIColor blackColor];
     //NSLog(@"Transition from %ld to %ld", fromViewController.view.tag, toViewController.view.tag);
 
     if (self.reverse) {
         [[transitionContext containerView] addSubview:toViewController.view];
+        [[transitionContext containerView] addSubview:shadowView];
     } else {
         [[transitionContext containerView] insertSubview:toViewController.view belowSubview:fromViewController.view];
+        [[transitionContext containerView] insertSubview:shadowView belowSubview:fromViewController.view];
     }
 
-    CGRect initialFrame = [transitionContext initialFrameForViewController:fromViewController];
     CATransform3D transform = CATransform3DIdentity;
     transform.m34 = -1 / (4 * CGRectGetWidth(initialFrame));
     [transitionContext containerView].layer.sublayerTransform = transform;
 
     if (self.reverse) {
+        shadowView.alpha = 0;
         CATransform3D transform = CATransform3DIdentity;
         transform = CATransform3DRotate(transform, -1 * M_PI_2, 0, 1, 0);
         toViewController.view.layer.transform = transform;
         toViewController.view.layer.anchorPoint = CGPointMake(0, 0);
         toViewController.view.layer.position = CGPointMake(0, 0);
     } else {
+        shadowView.alpha = kShadowViewMaxAlpha;
         fromViewController.view.layer.anchorPoint = CGPointMake(0, 0);
         fromViewController.view.layer.position = CGPointMake(0, 0);
     }
@@ -57,8 +65,10 @@ static const CGFloat kAnimationDuration = 1.0f;
                                                           relativeDuration:kAnimationDuration
                                                                 animations:^{
                                                                     if (self.reverse) {
+                                                                        shadowView.alpha = kShadowViewMaxAlpha;
                                                                         toViewController.view.layer.transform = CATransform3DIdentity;
                                                                     } else {
+                                                                        shadowView.alpha = 0;
                                                                         CATransform3D transform = CATransform3DIdentity;
                                                                         transform = CATransform3DRotate(transform, -1 * M_PI_2, 0, 1, 0);
                                                                         fromViewController.view.layer.transform = transform;
@@ -66,15 +76,13 @@ static const CGFloat kAnimationDuration = 1.0f;
                                                                 }];
                               }
                               completion:^(BOOL finished) {
+                                  shadowView.alpha = 0;
+                                  [shadowView removeFromSuperview];
                                   toViewController.view.layer.transform = CATransform3DIdentity;
                                   BOOL cancelled = [transitionContext transitionWasCancelled];
                                   if (cancelled) {
                                       fromViewController.view.layer.transform = CATransform3DIdentity;
                                       [toViewController.view removeFromSuperview];
-
-                                      if (self.reverse) {
-                                      } else {
-                                      }
                                   } else {
                                       [fromViewController.view removeFromSuperview];
                                   }
