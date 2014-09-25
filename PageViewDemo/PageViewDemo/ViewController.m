@@ -19,6 +19,7 @@
 @interface ViewController () <CYPageViewControllerDelegate, CYPageViewControllerDataSource>
 
 @property (nonatomic) CYPageViewController *pageViewController;
+@property (weak, nonatomic) IBOutlet UIView *pagesContainerView;
 
 @end
 
@@ -35,10 +36,10 @@ static const NSUInteger kPageCount = 5;
     self.pageViewController.delegate = self;
 
     [self.pageViewController setViewControllers:@[[self contentViewControlerAtIndex:0]] animated:NO completion:nil];
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 88);
 
     [self addChildViewController:self.pageViewController];
-    [self.view addSubview:self.pageViewController.view];
+    [self.pagesContainerView addSubview:self.pageViewController.view];
     [self.pageViewController didMoveToParentViewController:self];
 }
 

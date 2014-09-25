@@ -18,24 +18,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JPq-TP-Nqg">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JPq-TP-Nqg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="0pH-Qw-YVg"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Top Toolbar Item" id="c0d-6d-xgQ"/>
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1A-cw-y1r">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="huX-VS-GLN"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Bottom Toolbar Item" id="itp-EZ-vsU"/>
                                 </items>
                             </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7w-O0-fge" userLabel="Pages Container View">
+                                <rect key="frame" x="0.0" y="44" width="600" height="512"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="b1A-cw-y1r" secondAttribute="bottom" id="JDy-vI-Ig1"/>
+                            <constraint firstItem="n7w-O0-fge" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="LyM-DE-TgH"/>
+                            <constraint firstItem="JPq-TP-Nqg" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-20" id="Psa-v4-C7i"/>
+                            <constraint firstItem="b1A-cw-y1r" firstAttribute="top" secondItem="n7w-O0-fge" secondAttribute="bottom" id="SoJ-38-Uf8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="n7w-O0-fge" secondAttribute="trailing" constant="-16" id="fDh-4e-dDv"/>
+                            <constraint firstItem="n7w-O0-fge" firstAttribute="top" secondItem="JPq-TP-Nqg" secondAttribute="bottom" id="fh8-7e-dZS"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pagesContainerView" destination="n7w-O0-fge" id="d9S-Ok-WBC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
