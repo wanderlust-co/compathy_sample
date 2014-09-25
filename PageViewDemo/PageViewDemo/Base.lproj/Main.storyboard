@@ -87,10 +87,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UHw-tV-E9k" firstAttribute="top" secondItem="2WQ-9l-v5k" secondAttribute="topMargin" constant="40" id="9Ww-e7-IK0"/>
+                            <constraint firstItem="UHw-tV-E9k" firstAttribute="top" secondItem="2WQ-9l-v5k" secondAttribute="topMargin" constant="-18" id="9Ww-e7-IK0"/>
                             <constraint firstItem="tYk-mI-e3k" firstAttribute="leading" secondItem="2WQ-9l-v5k" secondAttribute="leadingMargin" constant="20" id="FSJ-EX-Slg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UHw-tV-E9k" secondAttribute="trailing" constant="-15" id="I0b-zu-mjK"/>
-                            <constraint firstItem="c7K-aA-yjy" firstAttribute="top" secondItem="UHw-tV-E9k" secondAttribute="bottom" constant="40" id="Lbr-ZZ-d2c"/>
+                            <constraint firstItem="c7K-aA-yjy" firstAttribute="top" secondItem="UHw-tV-E9k" secondAttribute="bottom" id="Lbr-ZZ-d2c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tYk-mI-e3k" secondAttribute="trailing" constant="20" id="YIg-08-v28"/>
                             <constraint firstAttribute="bottomMargin" secondItem="tYk-mI-e3k" secondAttribute="bottom" constant="50" id="lwf-Lz-Rhr"/>
                             <constraint firstItem="UHw-tV-E9k" firstAttribute="leading" secondItem="2WQ-9l-v5k" secondAttribute="leadingMargin" constant="-15" id="tZs-ts-Y2d"/>
