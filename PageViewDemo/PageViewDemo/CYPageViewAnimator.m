@@ -51,10 +51,12 @@ static const CGFloat kShadowViewMaxAlpha = 0.5f;
         toViewController.view.layer.transform = transform;
         toViewController.view.layer.anchorPoint = CGPointMake(0, 0);
         toViewController.view.layer.position = CGPointMake(0, 0);
+        toViewController.view.layer.allowsEdgeAntialiasing = YES;
     } else {
         shadowView.alpha = kShadowViewMaxAlpha;
         fromViewController.view.layer.anchorPoint = CGPointMake(0, 0);
         fromViewController.view.layer.position = CGPointMake(0, 0);
+        fromViewController.view.layer.allowsEdgeAntialiasing = YES;
     }
 
     [UIView animateKeyframesWithDuration:[self transitionDuration:transitionContext]
