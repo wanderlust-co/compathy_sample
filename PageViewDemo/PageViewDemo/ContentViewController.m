@@ -27,4 +27,11 @@
     [super viewDidAppear:animated];
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    if (self.view.superview) {
+        self.view.frame = self.view.superview.bounds;
+    }
+}
+
 @end

@@ -39,6 +39,7 @@
     self.containerView = [[UIView alloc] init];
     self.containerView.backgroundColor = [UIColor clearColor];
     self.containerView.opaque = YES;
+    self.containerView.tag = 10001;
     [self.containerView setTranslatesAutoresizingMaskIntoConstraints:NO];
 
     [rootView addSubview:self.containerView];
@@ -201,12 +202,9 @@ static const CGFloat kTapMargin = 60;
 
     transitionContext.completionBlock = ^(BOOL didComplete) {
         if (didComplete) {
-            //[fromViewController.view removeFromSuperview];
             [fromViewController removeFromParentViewController];
             [toViewController didMoveToParentViewController:self];
             [self finishTransitionToChildViewController:toViewController];
-        } else {
-            //[toViewController.view removeFromSuperview];
         }
 
         if ([animator respondsToSelector:@selector(animationEnded:)]) {

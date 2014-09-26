@@ -27,6 +27,8 @@
 }
 
 static const NSUInteger kPageCount = 5;
+static const CGFloat kHeaderHeight = 44;
+static const CGFloat kFooterHeight = 44;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,7 +38,7 @@ static const NSUInteger kPageCount = 5;
     self.pageViewController.delegate = self;
 
     [self.pageViewController setViewControllers:@[[self contentViewControlerAtIndex:0]] animated:NO completion:nil];
-    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 88);
+    self.pageViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - kHeaderHeight - kFooterHeight);
 
     [self addChildViewController:self.pageViewController];
     [self.pagesContainerView addSubview:self.pageViewController.view];

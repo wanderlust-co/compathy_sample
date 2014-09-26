@@ -27,22 +27,22 @@ static const CGFloat kShadowViewMaxAlpha = 0.5f;
     UIViewController* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     UIViewController* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     CGRect initialFrame = [transitionContext initialFrameForViewController:fromViewController];
+    UIView *containerView = [transitionContext containerView];
 
     UIView *shadowView = [[UIView alloc] initWithFrame:initialFrame];
     shadowView.backgroundColor = [UIColor blackColor];
-    //NSLog(@"Transition from %ld to %ld", fromViewController.view.tag, toViewController.view.tag);
 
     if (self.reverse) {
-        [[transitionContext containerView] addSubview:shadowView];
-        [[transitionContext containerView] addSubview:toViewController.view];
+        [containerView addSubview:shadowView];
+        [containerView addSubview:toViewController.view];
     } else {
-        [[transitionContext containerView] insertSubview:toViewController.view belowSubview:fromViewController.view];
-        [[transitionContext containerView] insertSubview:shadowView belowSubview:fromViewController.view];
+        [containerView insertSubview:toViewController.view belowSubview:fromViewController.view];
+        [containerView insertSubview:shadowView belowSubview:fromViewController.view];
     }
 
     CATransform3D transform = CATransform3DIdentity;
     transform.m34 = -1 / (6.8 * CGRectGetWidth(initialFrame));
-    [transitionContext containerView].layer.sublayerTransform = transform;
+    containerView.layer.sublayerTransform = transform;
 
     if (self.reverse) {
         shadowView.alpha = 0;
