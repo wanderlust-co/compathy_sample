@@ -205,6 +205,8 @@ static const CGFloat kTapMargin = 60;
             [fromViewController removeFromParentViewController];
             [toViewController didMoveToParentViewController:self];
             [self finishTransitionToChildViewController:toViewController];
+        } else {
+            [toViewController removeFromParentViewController];
         }
 
         if ([animator respondsToSelector:@selector(animationEnded:)]) {
