@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010095325) do
+ActiveRecord::Schema.define(version: 20161011063747) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id",    null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20161010095325) do
     t.integer  "tripnote_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", force: true do |t|

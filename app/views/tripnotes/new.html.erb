@@ -1,20 +1,28 @@
 <div class="contents row">
   <div class="container">
-    <%= form_for @tripnote, :html => { multiple: true } do |f| %>
+    <%= form_for @tripnote, :html => { multipart: true } do |f| %>
       <h3>
         Create a new logbook
       </h3>
       <div class="field">
-        <%= f.label :Title %><br>
+        <%= f.label "Logbook Title" %><br>
         <%= f.text_field :title %>
       </div>
       <div class="field">
-        <%= f.label :Description %><br>
+        <%= f.label "Logbook Description" %><br>
         <%= f.text_area :description %>
       </div>
-      <ul>
+      <%= f.fields_for :user_reviews do |r| %>
+        <%= r.label "Review Description" %><br>
+        <%= r.text_area :description %>
+        <%= r.fields_for :user_photos do |p|%>
+          <%= p.file_field :image %>
+        <% end %>
+      <% end %>
+<!--       <ul>[]
         <li><%= file_field_tag "images[]", type: :file , multiple: true %></li>
-      </ul>
+      </ul> -->
+      <%= f.submit 'Post' %>
     <% end %>
   </div>
 </div>
