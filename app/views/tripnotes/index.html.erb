@@ -1,1 +1,21 @@
-hoge
+<h1>Logbooks!</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tripnotes.each do |tripnote| %>
+      <tr>
+        <td><%= tripnote.title %></td>
+        <td><%= tripnote.description %></td>
+        <td><%= link_to 'See detail', tripnote %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

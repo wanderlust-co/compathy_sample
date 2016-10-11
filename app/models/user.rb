@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   end
 
   has_many :authentications, :dependent => :destroy
+  has_many :tripnotes
   accepts_nested_attributes_for :authentications
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }

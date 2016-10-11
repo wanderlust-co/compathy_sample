@@ -34,4 +34,16 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.paperclip_defaults = {
+    storage: :s3,
+    url: ":s3.amazonaws.com",
+    path: "/:class/:attachment/:id_partition/:style/:filename",
+    s3_host_name: "s3.amazonaws.com",
+    s3_protocol: :https,
+    s3_credentials: {
+      bucket:            'compathy-clone',
+      access_key_id:     ENV['ACCESS_KEY_ID'],
+      secret_access_key: ENV['SECRET_ACCESS_KEY']
+    }
+  }
 end

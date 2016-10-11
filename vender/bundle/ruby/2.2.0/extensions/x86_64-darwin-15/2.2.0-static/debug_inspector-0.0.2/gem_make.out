@@ -1,0 +1,11 @@
+/Users/masanobu/.rbenv/versions/2.2.4/bin/ruby -r ./siteconf20161010-45547-1l1w0ro.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+make "DESTDIR=" install
+/usr/local/bin/ginstall -c -m 0755 debug_inspector.bundle ./.gem.20161010-45547-bmby95

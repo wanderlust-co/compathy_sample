@@ -38,8 +38,16 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'sorcery'
+
+#pry
 gem 'pry'
 gem 'pry-doc'
 gem 'pry-rails'
 gem 'pry-byebug'
 gem 'pry-stack_explorer'
+
+#upload picture
+gem 'paperclip'
+gem "aws-sdk", "~> 1.6"
+
+gem "rails-erd"

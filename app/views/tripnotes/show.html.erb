@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tripnote.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tripnote.description %>
+</p>
+
+<% @tripnote.user_reviews do |review| %>
+  <p><%= review.description %></p>
+  <p><%= image_tag(review.user_photo.authenticated_image_url(:thumb)) if review_user_photo.present? %></p>
+<% end%>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @tripnote.user.first_name + " " + @tripnote.user.last_name%>
+</p>
+
+<%= link_to 'Back', tripnotes_path %>

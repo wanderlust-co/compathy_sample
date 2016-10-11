@@ -1,0 +1,4 @@
+<%= form_for(@user_photo, multipart: true) do |f| %>
+  <%= f.file_field :image %>
+  <%= f.submit 'Post'%>
+<% end %>

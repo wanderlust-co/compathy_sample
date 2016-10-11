@@ -7,22 +7,20 @@
       <%= csrf_meta_tags %>
   </head>
   <body>
-
-  <div id="nav">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
-  </div>
-  <div>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
-  </div>
-  <%= link_to 'Login with Facebook', auth_at_provider_path(:provider => :facebook) %>
-  <%= yield %>
-
+    <div class="header-bar" style = "background-color: gray; height: 30px;">
+      <div class="header-left" style="float: left">
+        <a><%= link_to 'Top', :root %></a>
+        <a><%= link_to 'Create a new logbook', new_tripnote_path %></a>
+        <a><%= link_to 'User Management', users_path %></a>
+      </div>
+      <div class="header-right" style="float: right" >
+        <% if current_user %>
+          <a style="color: white">Status : Logged in</a>
+        <% else %>
+          <a style="color: white">Status : Logged out</a>
+        <% end %>
+      </div>
+    </div>
+    <%= yield %>
   </body>
 </html>

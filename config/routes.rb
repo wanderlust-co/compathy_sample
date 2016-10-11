@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'oauths/callback'
 
-  root :to => 'users#index'
+  root :to => 'tripnotes#index'
   resources :user_sessions
   resources :users
 
@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
+  resources :tripnotes
+  resources :user_reviews
+  resources :user_photos
   # root 'tripnotes#index'
   # resources :tripnotes, :except => :index
 
