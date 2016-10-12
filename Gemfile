@@ -51,3 +51,7 @@ gem 'paperclip'
 gem "aws-sdk", "~> 1.6"
 
 gem "rails-erd"
+
+# for ENV in Rails
+gem "figaro"
+
