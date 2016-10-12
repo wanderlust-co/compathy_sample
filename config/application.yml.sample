@@ -17,4 +17,6 @@ development:
   <<: *default_settings
   FB_APP_ID: "xxxxxxxxxxxx"     # TODO
   FB_APP_SECRET: "xxxxxxxxxxxx" # TODO
+  AWS_ACCESS_KEY_ID=AKIAJVQDIYSPL6LEQCWA
+  AWS_SECRET_ACCESS_KEY=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
 

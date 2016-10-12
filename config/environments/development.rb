@@ -42,8 +42,8 @@ Rails.application.configure do
     s3_protocol: :https,
     s3_credentials: {
       bucket:            'compathy-clone',
-      access_key_id:     ENV['ACCESS_KEY_ID'],
-      secret_access_key: ENV['SECRET_ACCESS_KEY']
+      access_key_id:     ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
 end
