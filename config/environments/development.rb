@@ -38,7 +38,7 @@ Rails.application.configure do
     storage: :s3,
     url: ":s3.amazonaws.com",
     path: "/:class/:attachment/:id_partition/:style/:filename",
-    s3_host_name: "s3.amazonaws.com",
+    s3_host_name: ENV['S3_HOST_NAME'],
     s3_protocol: :https,
     s3_credentials: {
       bucket:            ENV['S3_BUCKET_NAME'],

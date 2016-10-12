@@ -15,9 +15,10 @@ common: &default_settings
 
 development:
   <<: *default_settings
-  FB_APP_ID: "xxxxxxxxxxxx"     # TODO
-  FB_APP_SECRET: "xxxxxxxxxxxx" # TODO
-  S3_BUCKET_NAME: "xxxxxxxxxxxxx" # TODO
-  AWS_ACCESS_KEY_ID: "xxxxxxxxxxxxx"  # TODO
-  AWS_SECRET_ACCESS_KEY: "xxxxxxxxxxxxx"  # TODO
+  FB_APP_ID: "xxxxxxxxxxxx"              # TODO
+  FB_APP_SECRET: "xxxxxxxxxxxx"          # TODO
+  S3_BUCKET_NAME: "xxxxxxxxxxxx"         # TODO
+  S3_HOST_NAME: "s3.amazonaws.com"
+  AWS_ACCESS_KEY_ID: "xxxxxxxxxxxx"      # TODO
+  AWS_SECRET_ACCESS_KEY: "xxxxxxxxxxxx"  # TODO
 
