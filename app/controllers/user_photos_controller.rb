@@ -15,7 +15,6 @@ class UserPhotosController < ApplicationController
 
   def with_episode
     user_photo = UserPhoto.new( image: params[:image], user: current_user )
-    binding.pry
     ActiveRecord::Base.transaction do
       if user_photo.save
         if @episode = UserReview.create_with_photo(@logbook.user, @logbook, user_photo)
@@ -36,7 +35,6 @@ class UserPhotosController < ApplicationController
   end
 
   def set_logbook
-    binding.pry
     @logbook = Tripnote.find(params[:logbookId]) rescue not_found
   end
 end

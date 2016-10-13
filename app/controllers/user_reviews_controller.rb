@@ -29,6 +29,6 @@ class UserReviewsController < ApplicationController
 
   private
   def user_review_params
-    params.require(:user_review).permit(:description, :image)
+    params.require(:user_review).permit(:body, :image)
   end
 end

@@ -11,7 +11,7 @@
 </p>
 
 <% @tripnote.user_reviews do |review| %>
-  <p><%= review.description %></p>
+  <p><%= review.body %></p>
   <p><%= image_tag(review.user_photo.authenticated_image_url(:thumb)) if review_user_photo.present? %></p>
 <% end%>
 

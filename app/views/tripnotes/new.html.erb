@@ -14,7 +14,7 @@
       </div>
       <%= f.fields_for :user_reviews do |r| %>
         <%= r.label "Review Description" %><br>
-        <%= r.text_area :description %>
+        <%= r.text_area :body %>
         <%= r.fields_for :user_photos do |p|%>
           <%= p.file_field :image %>
         <% end %>

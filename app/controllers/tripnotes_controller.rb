@@ -46,7 +46,7 @@ class TripnotesController < ApplicationController
       :title,
       :description,
       user_reviews_attributes: [
-        :description,
+        :body,
         user_photos_attributes: [
           :image]
       ]
