@@ -38,6 +38,10 @@ gem 'spring',        group: :development
 
 source "https://rails-assets.org" do
   gem "rails-assets-angular", "~> 1.4.7"
+  gem "rails-assets-jquery-file-upload", "9.11.2"
+  gem "rails-assets-blueimp-load-image", "1.14.0"
+  gem "rails-assets-jquery", "~> 2.1"
+  gem "rails-assets-jquery-ui"
 end
 
 gem 'sorcery'

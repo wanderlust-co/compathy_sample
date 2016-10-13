@@ -1,6 +1,15 @@
 
 <div ng-controller="LogbookEditController">
 title: <%= @tripnote.title %>
-<h1>{{hoge}}</h1>
+
+  <div data-file-upload="fileuploadOptions">
+    <input id="fileUploadBtn" type="file" name="image" multiple ng-disabled="disabled" accept="image/jpeg, image/gif, image/png, image/bmp">
+
+    <ul ng-cloak>
+      <li ng-repeat="file in queue">
+        <h3>{{file.name}}</h3>
+      </li>
+    </ul>
+  </div>
 </div>
 

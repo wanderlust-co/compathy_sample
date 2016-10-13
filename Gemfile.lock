@@ -116,6 +116,17 @@ GEM
       railties (= 4.1.9)
       sprockets-rails (~> 2.0)
     rails-assets-angular (1.4.14)
+    rails-assets-blueimp-canvas-to-blob (3.4.0)
+    rails-assets-blueimp-load-image (1.14.0)
+    rails-assets-blueimp-tmpl (3.5.0)
+    rails-assets-jquery (2.2.4)
+    rails-assets-jquery-file-upload (9.11.2)
+      rails-assets-blueimp-canvas-to-blob (>= 2.1.1)
+      rails-assets-blueimp-load-image (>= 1.13.0)
+      rails-assets-blueimp-tmpl (>= 2.5.4)
+      rails-assets-jquery (>= 1.6)
+    rails-assets-jquery-ui (1.12.1)
+      rails-assets-jquery (>= 1.6)
     rails-erd (1.5.0)
       activerecord (>= 3.2)
       activesupport (>= 3.2)
@@ -136,7 +147,7 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
-    sdoc (0.4.1)
+    sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     slop (3.6.0)
@@ -179,6 +190,10 @@ DEPENDENCIES
   pry-stack_explorer
   rails (= 4.1.9)
   rails-assets-angular (~> 1.4.7)!
+  rails-assets-blueimp-load-image (= 1.14.0)!
+  rails-assets-jquery (~> 2.1)!
+  rails-assets-jquery-file-upload (= 9.11.2)!
+  rails-assets-jquery-ui!
   rails-erd
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

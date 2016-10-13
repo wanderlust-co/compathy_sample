@@ -10,6 +10,17 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
+//= require jquery-ui
+//= require jquery-ui/ui/widget
+
 //= require angular
-//
+
+//= require blueimp-load-image
+//= require jquery-file-upload/jquery.fileupload
+//= require jquery-file-upload/jquery.fileupload-process
+//= require jquery-file-upload/jquery.fileupload-angular
+//= require jquery-file-upload/jquery.fileupload-image
+//= require jquery-file-upload/jquery.fileupload-validate
+
 //= require_tree .

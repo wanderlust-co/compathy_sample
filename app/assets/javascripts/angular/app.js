@@ -1,4 +1,6 @@
 'use strict';
 
-angular.module('compathyClone', []);
+angular.module('compathyClone', [
+    'blueimp.fileupload'
+    ]);
 
