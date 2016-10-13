@@ -8,15 +8,16 @@
 
   function LogbookEditController($scope, $window, $http, $location, $timeout) {
     var MAX_UPLOAD = 3;
+    var logbookId = $window.location.href.match(/tripnotes\/([0-9]+)\/edit/)[1];
 
     $scope.hoge = 'hoge-';
     $scope.logbook = {
-      id: 1
+      id: logbookId
     };
 
     $scope.fileuploadOptions = {
-      url: '/api/user_photos/with_episode',
-      autoUpload: false, //true,
+      url: '/user_photos/with_episode',
+      autoUpload: true,
       singleFileUploads: true,
       limitConcurrentUploads: 3,
       dropZone: null, // NOTE: disable drag & drop because of duplicate uploading bug.

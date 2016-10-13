@@ -17,7 +17,11 @@ Rails.application.routes.draw do
 
   resources :tripnotes
   resources :user_reviews
-  resources :user_photos
+  resources :user_photos do
+    collection do
+      post "with_episode"
+    end
+  end
   # root 'tripnotes#index'
   # resources :tripnotes, :except => :index
 
