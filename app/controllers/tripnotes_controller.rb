@@ -33,6 +33,9 @@ class TripnotesController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   private
   def set_tripnote
     @tripnote = Tripnote.find(params[:id])
