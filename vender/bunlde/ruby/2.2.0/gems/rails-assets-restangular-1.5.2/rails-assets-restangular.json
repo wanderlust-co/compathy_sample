@@ -1,0 +1,44 @@
+{
+  "name": "rails-assets-restangular",
+  "downloads": null,
+  "version": "1.5.2",
+  "version_downloads": null,
+  "platform": "ruby",
+  "authors": "rails-assets.tenex.tech",
+  "info": "Restful Resources service for AngularJS apps",
+  
+  "metadata": {
+
+  },
+  "sha": null,
+  "project_uri": "https://github.com/mgonto/restangular",
+  "gem_uri": null,
+  "homepage_uri": "https://github.com/mgonto/restangular",
+  "wiki_uri": null,
+  "documentation_uri": null,
+  "mailing_list_uri": null,
+  "source_code_uri": "https://github.com/mgonto/restangular",
+  "bug_tracker_uri": null,
+  "dependencies": {
+    "development": [
+    
+    
+    {
+      "name": "rails-assets-lodash",
+      "requirements": ">= 1.3.0"
+    },
+    
+    
+    
+    {
+      "name": "rails-assets-angular",
+      "requirements": "~> 1.0"
+    },
+    
+    
+    ],
+    "runtime": [
+
+    ]
+  }
+}

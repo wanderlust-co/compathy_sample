@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+/*@import "jquery-file-upload/css/jquery.fileupload";
+@import "jquery-file-upload/css/jquery.fileupload-ui";
+@import "jquery-ui";*/

@@ -1,0 +1,46 @@
+{
+  "name": "rails-assets-angular-intro.js",
+  "downloads": null,
+  "version": "2.0.3",
+  "version_downloads": null,
+  "platform": "ruby",
+  "authors": "rails-assets.org",
+  "info": "Angular directive to wrap intro.js",
+  
+  "licenses": "MIT",
+  
+  "metadata": {
+
+  },
+  "sha": null,
+  "project_uri": "https://github.com/mendhak/angular-intro.js",
+  "gem_uri": null,
+  "homepage_uri": "https://github.com/mendhak/angular-intro.js",
+  "wiki_uri": null,
+  "documentation_uri": null,
+  "mailing_list_uri": null,
+  "source_code_uri": "https://github.com/mendhak/angular-intro.js",
+  "bug_tracker_uri": null,
+  "dependencies": {
+    "development": [
+    
+    
+    {
+      "name": "rails-assets-angular",
+      "requirements": "~> 1.4.0"
+    },
+    
+    
+    
+    {
+      "name": "rails-assets-usablica--intro.js",
+      "requirements": "2.0"
+    },
+    
+    
+    ],
+    "runtime": [
+
+    ]
+  }
+}

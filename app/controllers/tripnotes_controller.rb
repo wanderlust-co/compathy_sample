@@ -12,22 +12,13 @@ class TripnotesController < ApplicationController
     @tripnote.user_reviews.first.user_photos.build
   end
 
+  def edit
+  end
+
   def create
     tripnote = Tripnote.new(tripnote_params)
     tripnote.save
     redirect_to new_tripnote_path
-    # if @tripnote = Tripnote.create(tripnote_params)
-    #   user_review = UserReview.new
-    #   user_review.tripnote_id = @tripnote.id
-    #   user_photo = UserPhoto.new
-    #   user_photo.user_review_id = user_review.id
-    #   if params[:images]
-    #     params[:images].each { |image|
-    #       @tripnote.user_reviews.user_photos.create(image: image)
-    #         redirect_to :root
-    #     }
-    #   end
-    # end
   end
 
   def show
@@ -38,15 +29,17 @@ class TripnotesController < ApplicationController
     @tripnote = Tripnote.find(params[:id])
   end
 
+  def prepare_tripnotes( page_numbers = [], exclude_rough: false, order_by_date: false )
+    @reviews = @tripnote.user_reviews.includes(:user_photos)
+    @reviews = @reviews.exc_rough if exclude_rough
+
+    # FIXME: when you need performance tuning, add tripnote_page_number column to UserReview table.
+    if page_numbers.present?
+      @reviews = @reviews.select {|rev| page_numbers.include? rev.tripnote_total_order}
+    end
+  end
+
   def tripnote_params
-    params.require(:tripnote).permit(
-      :title,
-      :description,
-      user_reviews_attributes: [
-        :description,
-        user_photos_attributes: [
-          :image]
-      ]
-    ).merge(user_id: current_user.id)
+    params.require(:tripnote).permit(:title,:description).merge(user_id: current_user.id)
   end
 end

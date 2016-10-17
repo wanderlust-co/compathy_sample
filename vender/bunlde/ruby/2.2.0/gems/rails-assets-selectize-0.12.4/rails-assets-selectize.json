@@ -1,0 +1,53 @@
+{
+  "name": "rails-assets-selectize",
+  "downloads": null,
+  "version": "0.12.4",
+  "version_downloads": null,
+  "platform": "ruby",
+  "authors": "rails-assets.org",
+  "info": "Selectize is a jQuery-based custom <select> UI control. Useful for tagging, contact lists, country selectors, etc.",
+  
+  "licenses": "Apache License, Version 2.0",
+  
+  "metadata": {
+
+  },
+  "sha": null,
+  "project_uri": "https://github.com/selectize/selectize.js",
+  "gem_uri": null,
+  "homepage_uri": "https://github.com/selectize/selectize.js",
+  "wiki_uri": null,
+  "documentation_uri": null,
+  "mailing_list_uri": null,
+  "source_code_uri": "https://github.com/selectize/selectize.js",
+  "bug_tracker_uri": null,
+  "dependencies": {
+    "development": [
+    
+    
+    {
+      "name": "rails-assets-jquery",
+      "requirements": ">= 1.7.0"
+    },
+    
+    
+    
+    {
+      "name": "rails-assets-sifter",
+      "requirements": "~> 0.5.0"
+    },
+    
+    
+    
+    {
+      "name": "rails-assets-microplugin",
+      "requirements": "~> 0.0.0"
+    },
+    
+    
+    ],
+    "runtime": [
+
+    ]
+  }
+}

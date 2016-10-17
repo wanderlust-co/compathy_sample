@@ -1,0 +1,39 @@
+{
+  "name": "rails-assets-bootstrap-sass",
+  "downloads": null,
+  "version": "3.3.4",
+  "version_downloads": null,
+  "platform": "ruby",
+  "authors": "rails-assets.org",
+  "info": "bootstrap-sass is a Sass-powered version of Bootstrap, ready to drop right into your Sass powered applications.",
+  
+  "licenses": "MIT",
+  
+  "metadata": {
+
+  },
+  "sha": null,
+  "project_uri": "https://github.com/twbs/bootstrap-sass",
+  "gem_uri": null,
+  "homepage_uri": "https://github.com/twbs/bootstrap-sass",
+  "wiki_uri": null,
+  "documentation_uri": null,
+  "mailing_list_uri": null,
+  "source_code_uri": "https://github.com/twbs/bootstrap-sass",
+  "bug_tracker_uri": null,
+  "dependencies": {
+    "development": [
+    
+    
+    {
+      "name": "rails-assets-jquery",
+      "requirements": ">= 1.9.0"
+    },
+    
+    
+    ],
+    "runtime": [
+
+    ]
+  }
+}

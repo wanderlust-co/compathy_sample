@@ -1,0 +1,44 @@
+{
+  "name": "rails-assets-angular-qrcode",
+  "downloads": null,
+  "version": "6.2.1",
+  "version_downloads": null,
+  "platform": "ruby",
+  "authors": "rails-assets.org",
+  "info": "",
+  
+  "metadata": {
+
+  },
+  "sha": null,
+  "project_uri": "https://github.com/monospaced/angular-qrcode",
+  "gem_uri": null,
+  "homepage_uri": "https://github.com/monospaced/angular-qrcode",
+  "wiki_uri": null,
+  "documentation_uri": null,
+  "mailing_list_uri": null,
+  "source_code_uri": "https://github.com/monospaced/angular-qrcode",
+  "bug_tracker_uri": null,
+  "dependencies": {
+    "development": [
+    
+    
+    {
+      "name": "rails-assets-angular",
+      "requirements": ">= 1.0.6"
+    },
+    
+    
+    
+    {
+      "name": "rails-assets-monospaced--bower-qrcode-generator",
+      "requirements": "0.1.0"
+    },
+    
+    
+    ],
+    "runtime": [
+
+    ]
+  }
+}

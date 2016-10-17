@@ -4,6 +4,7 @@
       <h3>
         Create a new logbook
       </h3>
+      <div>
       <div class="field">
         <%= f.label "Logbook Title" %><br>
         <%= f.text_field :title %>
@@ -14,7 +15,7 @@
       </div>
       <%= f.fields_for :user_reviews do |r| %>
         <%= r.label "Review Description" %><br>
-        <%= r.text_area :description %>
+        <%= r.text_area :body %>
         <%= r.fields_for :user_photos do |p|%>
           <%= p.file_field :image %>
         <% end %>

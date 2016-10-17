@@ -1,0 +1,39 @@
+{
+  "name": "rails-assets-angular-animate",
+  "downloads": null,
+  "version": "1.4.13",
+  "version_downloads": null,
+  "platform": "ruby",
+  "authors": "rails-assets.org",
+  "info": "",
+  
+  "licenses": "MIT",
+  
+  "metadata": {
+
+  },
+  "sha": null,
+  "project_uri": "https://github.com/angular/bower-angular-animate",
+  "gem_uri": null,
+  "homepage_uri": "https://github.com/angular/bower-angular-animate",
+  "wiki_uri": null,
+  "documentation_uri": null,
+  "mailing_list_uri": null,
+  "source_code_uri": "https://github.com/angular/bower-angular-animate",
+  "bug_tracker_uri": null,
+  "dependencies": {
+    "development": [
+    
+    
+    {
+      "name": "rails-assets-angular",
+      "requirements": "1.4.13"
+    },
+    
+    
+    ],
+    "runtime": [
+
+    ]
+  }
+}

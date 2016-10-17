@@ -1,3 +1,15 @@
 // Place all the styles related to the tripnotes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cover-photo {
+  margin-top: 50px;
+}
+
+.saved-reviews {
+  .saved-review {
+    list-style: none;
+    border: 1px, solid, black;
+    margin-top: 50px;
+  }
+}

@@ -1,0 +1,22 @@
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'rails-assets-angular-sweetalert-angular1.3-tmp/version'
+
+Gem::Specification.new do |spec|
+  spec.name          = "rails-assets-angular-sweetalert-angular1.3-tmp"
+  spec.version       = RailsAssetsAngularSweetalertAngular13Tmp::VERSION
+  spec.authors       = ["rails-assets.org"]
+  spec.description   = "AngularJS wrapper for SweetAlert"
+  spec.summary       = "AngularJS wrapper for SweetAlert"
+  spec.homepage      = "https://github.com/masaki925/ngSweetAlert"
+  spec.license       = "MIT"
+
+  spec.files         = `find ./* -type f | cut -b 3-`.split($/)
+  spec.require_paths = ["lib"]
+
+  spec.add_dependency "rails-assets-angular", ">= 1.3.0"
+  spec.add_dependency "rails-assets-sweetalert", ">= 0.3.0"
+  spec.add_development_dependency "bundler", "~> 1.3"
+  spec.add_development_dependency "rake"
+end

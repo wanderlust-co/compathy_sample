@@ -1,0 +1,28 @@
+
+<div ng-controller="LogbookEditController">
+  <h1 style="text-align: center; margin-top: 30px;"><%= @tripnote.title %></h1>
+  <div data-file-upload="fileuploadOptions">
+    <input id="fileUploadBtn" type="file" name="image" multiple ng-disabled="disabled" accept="image/jpeg, image/gif, image/png, image/bmp">
+    <ul ng-cloak>
+      <li ng-repeat="file in queue">
+        <td data-on="!!file.thumbnailUrl">
+          <div class="preview">
+          <h3>{{file.name}}</h3>
+            <a data-ng-href="{{file.url}}" title="{{file.name}}" download="{{file.name}}" data-gallery><img data-ng-src="{{file.thumbnailUrl}}" alt=""></a>
+          </div>
+          <div class="preview" data-file-upload-preview="file"></div>
+        </td>
+      </li>
+    </ul>
+    <div class="cover-photo">
+      <h4>This is your cover photo</h4>
+      <%= image_tag @tripnote.user_photo.image.url(:thumb) %>
+    </div>
+    <ul class="saved-reviews">
+      <li class="saved-review" ng-repeat="review in tripnote.reviews">
+        <h3>Comment : {{review.body}} </h3>
+        <img ng-src="{{review.photos[0].image_url}}">
+      </li>
+    </ul>
+  </div>
+</div>

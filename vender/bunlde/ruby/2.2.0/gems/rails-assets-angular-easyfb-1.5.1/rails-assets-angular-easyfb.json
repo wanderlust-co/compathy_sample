@@ -1,0 +1,30 @@
+{
+  "name": "rails-assets-angular-easyfb",
+  "downloads": null,
+  "version": "1.5.1",
+  "version_downloads": null,
+  "platform": "ruby",
+  "authors": "rails-assets.org",
+  "info": "Super easy AngularJS + Facebook JavaScript SDK.",
+  
+  "metadata": {
+
+  },
+  "sha": null,
+  "project_uri": "https://github.com/pc035860/angular-easyfb",
+  "gem_uri": null,
+  "homepage_uri": "https://github.com/pc035860/angular-easyfb",
+  "wiki_uri": null,
+  "documentation_uri": null,
+  "mailing_list_uri": null,
+  "source_code_uri": "https://github.com/pc035860/angular-easyfb",
+  "bug_tracker_uri": null,
+  "dependencies": {
+    "development": [
+    
+    ],
+    "runtime": [
+
+    ]
+  }
+}

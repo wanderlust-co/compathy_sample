@@ -1,0 +1,46 @@
+{
+  "name": "rails-assets-angular-translate-storage-cookie",
+  "downloads": null,
+  "version": "2.12.1",
+  "version_downloads": null,
+  "platform": "ruby",
+  "authors": "rails-assets.org",
+  "info": "A plugin for Angular Translate",
+  
+  "licenses": "MIT",
+  
+  "metadata": {
+
+  },
+  "sha": null,
+  "project_uri": "https://github.com/PascalPrecht/bower-angular-translate-storage-cookie",
+  "gem_uri": null,
+  "homepage_uri": "https://github.com/PascalPrecht/bower-angular-translate-storage-cookie",
+  "wiki_uri": null,
+  "documentation_uri": null,
+  "mailing_list_uri": null,
+  "source_code_uri": "https://github.com/PascalPrecht/bower-angular-translate-storage-cookie",
+  "bug_tracker_uri": null,
+  "dependencies": {
+    "development": [
+    
+    
+    {
+      "name": "rails-assets-angular-translate",
+      "requirements": "~> 2.12.1"
+    },
+    
+    
+    
+    {
+      "name": "rails-assets-angular-cookies",
+      "requirements": ">= 1.2.26", "< 1.6"
+    },
+    
+    
+    ],
+    "runtime": [
+
+    ]
+  }
+}

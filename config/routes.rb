@@ -15,9 +15,18 @@ Rails.application.routes.draw do
   get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
   get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
+  namespace :api, {format: 'json'} do
+    resources :tripnotes
+  end
+
   resources :tripnotes
+
   resources :user_reviews
-  resources :user_photos
+  resources :user_photos do
+    collection do
+      post "with_episode"
+    end
+  end
   # root 'tripnotes#index'
   # resources :tripnotes, :except => :index
 

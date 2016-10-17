@@ -6,18 +6,12 @@ gem 'rails', '4.1.9'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.3.18'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.1'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -54,4 +48,20 @@ gem "rails-erd"
 
 # for ENV in Rails
 gem "figaro"
+
+gem'exifr'
+
+gem "angular-rails-templates"
+
+# annotate
+gem "annotate"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-angular", "~> 1.4.7"
+  gem "rails-assets-angular-resource"
+  gem "rails-assets-jquery-file-upload", "9.11.2"
+  gem "rails-assets-blueimp-load-image", "1.14.0"
+  gem "rails-assets-jquery", "~> 2.1"
+  gem "rails-assets-jquery-ui"
+end
 

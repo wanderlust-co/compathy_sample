@@ -1,0 +1,51 @@
+{
+  "name": "rails-assets-angular-google-maps",
+  "downloads": null,
+  "version": "2.2.1",
+  "version_downloads": null,
+  "platform": "ruby",
+  "authors": "rails-assets.org",
+  "info": "",
+  
+  "metadata": {
+
+  },
+  "sha": null,
+  "project_uri": "https://github.com/angular-ui/angular-google-maps",
+  "gem_uri": null,
+  "homepage_uri": "https://github.com/angular-ui/angular-google-maps",
+  "wiki_uri": null,
+  "documentation_uri": null,
+  "mailing_list_uri": null,
+  "source_code_uri": "https://github.com/angular-ui/angular-google-maps",
+  "bug_tracker_uri": null,
+  "dependencies": {
+    "development": [
+    
+    
+    {
+      "name": "rails-assets-angular",
+      "requirements": ">= 1.2", "< 1.5"
+    },
+    
+    
+    
+    {
+      "name": "rails-assets-angular-simple-logger",
+      "requirements": "~> 0.0.1"
+    },
+    
+    
+    
+    {
+      "name": "rails-assets-lodash",
+      "requirements": ">= 3.8.0"
+    },
+    
+    
+    ],
+    "runtime": [
+
+    ]
+  }
+}
