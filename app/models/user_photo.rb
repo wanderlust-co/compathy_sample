@@ -41,6 +41,18 @@ class UserPhoto < ActiveRecord::Base
     image.s3_object(style).url_for(:read, :secure => true)
   end
 
+  # def thumbnail_url
+  #   file_uploaded? ? self.image.url(:thumb) : nil
+  # end
+
+  # def medium_url
+  #   file_uploaded? ? self.image.url(:medium) : WAITING_UPLOAD_URL
+  # end
+
+  # def large_url
+  #   file_uploaded? ? self.image.url(:large) : WAITING_UPLOAD_URL
+  # end
+
   def update_photo_info
     return unless image.queued_for_write[:original]
 

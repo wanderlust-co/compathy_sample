@@ -1,8 +1,19 @@
 
 <div ng-controller="LogbookEditController">
-  <h1 style="text-align: center; margin-top: 30px;"><%= @tripnote.title %></h1>
-  <div data-file-upload="fileuploadOptions">
+  <div class="title-form">
+    <input ng-model="tripnote.cover.title" type="text" class="form-control" id="" placeholder="<%= @tripnote.title %>">
+  </div>
+
+  <div class="description-form">
+    <textarea  ng-model="tripnote.cover.description" type="" class="form-control" id="" placeholder="<%= @tripnote.description %>"></textarea>
+  </div>
+
+  <div data-file-upload="fileuploadOptions" class="upload-button">
+    <p>Upload New Photos!!</p>
     <input id="fileUploadBtn" type="file" name="image" multiple ng-disabled="disabled" accept="image/jpeg, image/gif, image/png, image/bmp">
+  </div>
+
+  <div class="reviews-wrapper">
     <ul ng-cloak>
       <li ng-repeat="file in queue">
         <td data-on="!!file.thumbnailUrl">
@@ -14,15 +25,25 @@
         </td>
       </li>
     </ul>
+
     <div class="cover-photo">
       <h4>This is your cover photo</h4>
-      <%= image_tag @tripnote.user_photo.image.url(:thumb) %>
+      <img ng-src="{{tripnote.cover.photo.image_url}}">
     </div>
+
     <ul class="saved-reviews">
       <li class="saved-review" ng-repeat="review in tripnote.reviews">
-        <h3>Comment : {{review.body}} </h3>
+        <p>{{review.id}}</p>
+        <textarea placeholder="review.body" ng-model="review.body"></textarea>
         <img ng-src="{{review.photos[0].image_url}}">
+        <button ng-click="rmReview(review)" class="delete-review">Delete :(</button>
+        <div class="buttonToSetCover">
+          <button ng-click="setCover(review.photos[0])">Set this picture as a cover photo</button>
+        </div>
       </li>
     </ul>
-  </div>
+  </div><!-- reviews-wrapper -->
+
+  <button class ="preview-button" ng-disabled="logbook.episodes.length == 0 || isUploading || isSaving" ng-click="saveAndShowPreview()" ng-switch on="!!isSaving">Save and Preview
+  </button>
 </div>

@@ -7,13 +7,13 @@
       <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="header-bar" style = "background-color: gray; height: 30px;">
-      <div class="header-left" style="float: left">
+    <div class="header-bar">
+      <div class="header-left">
         <a><%= link_to 'Top', :root %></a>
         <a><%= link_to 'Create a new logbook', new_tripnote_path %></a>
         <a><%= link_to 'User Management', users_path %></a>
       </div>
-      <div class="header-right" style="float: right" >
+      <div class="header-right">
         <% if current_user %>
           <a style="color: white">Status : Logged in</a>
         <% else %>
@@ -21,6 +21,8 @@
         <% end %>
       </div>
     </div>
-    <%= yield %>
+    <div class="content-wrapper">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -2,6 +2,39 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.content-wrapper {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.title-form {
+  width: 200px;
+  margin: 30px auto;
+  input{
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
+.description-form {
+  width: 400px;
+  margin: 0 auto;
+  textarea{
+      margin: 0 auto;
+    font-size: 15px;
+    width: 400px;
+  }
+}
+
+.upload-button {
+  float: right;
+}
+
+.reviews-wrapper{
+  margin-top: 150px;
+  width: 100%;
+}
+
 .cover-photo {
   margin-top: 50px;
 }
@@ -12,4 +45,25 @@
     border: 1px, solid, black;
     margin-top: 50px;
   }
+}
+
+.header-bar {
+  background-color: gray;
+  height: 50px;
+  .header-left {
+    float: left;
+    margin: 20px;
+    a {
+      color: white;
+    }
+  }
+  .header-right {
+    float: right;
+    margin: 20px;
+  }
+}
+
+.preview-button {
+  width: 150px;
+  margin: 0 auto;
 }

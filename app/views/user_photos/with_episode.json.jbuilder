@@ -1,3 +1,3 @@
 json.review do
-  json.partial! "user_reviews/user_review", review: @episode
+  json.partial! "user_reviews/user_review", review: @review
 end

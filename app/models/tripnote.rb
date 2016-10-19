@@ -14,6 +14,15 @@
 
 class Tripnote < ActiveRecord::Base
   belongs_to :user
-  has_many :user_reviews
+  has_many :user_reviews, dependent: :destroy
   belongs_to :user_photo
+
+  def cover_photo
+    if user_photo_id
+      if user_photo = UserPhoto.find(user_photo_id)
+        return user_photo
+      end
+    end
+    nil
+  end
 end

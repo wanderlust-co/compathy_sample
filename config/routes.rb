@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   namespace :api, {format: 'json'} do
     resources :tripnotes
+    put    "tripnotes/:id/cover_photo" => "tripnotes#set_cover_photo"
+    post   "tripnotes/:id/cover_photo" => "tripnotes#add_cover_photo"
   end
 
   resources :tripnotes

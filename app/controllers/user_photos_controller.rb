@@ -11,10 +11,10 @@ class UserPhotosController < ApplicationController
 
     ActiveRecord::Base.transaction do
       if user_photo.save
-        if @episode = UserReview.create_with_photo(@logbook.user, @logbook, user_photo)
-          user_photo.update(user: @logbook.user, tripnote: @logbook, user_review: @episode)
-          unless @logbook.user_photo_id
-            @logbook.update(user_photo_id: user_photo.id)
+        if @review = UserReview.create_with_photo(@tripnote.user, @tripnote, user_photo)
+          user_photo.update(user: @tripnote.user, tripnote: @tripnote, user_review: @review)
+          unless @tripnote.user_photo_id
+            @tripnote.update(user_photo_id: user_photo.id)
           end
         end
       end
@@ -30,6 +30,6 @@ class UserPhotosController < ApplicationController
   end
 
   def set_logbook
-    @logbook = Tripnote.find(params[:logbookId]) rescue not_found
+    @tripnote = Tripnote.find(params[:logbookId]) rescue not_found
   end
 end

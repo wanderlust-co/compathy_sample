@@ -20,7 +20,8 @@ angular.module('tripnoteServices', ['ngResource'])
     update: {
       method: 'PUT',
       transformRequest: function(obj) {
-        return angular.toJson({logbook: obj})
+        console.log(obj);
+        return angular.toJson({tripnote: obj})
       },
       transformResponse: parseCyReseponse
     },
