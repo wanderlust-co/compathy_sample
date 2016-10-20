@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017020929) do
+ActiveRecord::Schema.define(version: 20161020082229) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id",    null: false
@@ -22,6 +22,63 @@ ActiveRecord::Schema.define(version: 20161017020929) do
   end
 
   add_index "authentications", ["provider", "uid"], name: "index_authentications_on_provider_and_uid", using: :btree
+
+  create_table "cities", force: true do |t|
+    t.string   "name",                       null: false
+    t.string   "cc",            limit: 2,    null: false
+    t.integer  "state_id"
+    t.string   "description"
+    t.string   "url_name",      limit: 2000, null: false
+    t.float    "lat",           limit: 24
+    t.float    "lng",           limit: 24
+    t.string   "thumbnail_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "continents", force: true do |t|
+    t.string   "name",                     null: false
+    t.string   "url_name",                 null: false
+    t.string   "continent_code", limit: 2, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "countries", force: true do |t|
+    t.string   "cc",                 limit: 2,   null: false
+    t.string   "continent_code",     limit: 2,   null: false
+    t.string   "area_in_sq_km"
+    t.integer  "population"
+    t.string   "currency_code"
+    t.string   "languages"
+    t.integer  "country_geoname_id"
+    t.string   "west"
+    t.string   "north"
+    t.string   "east"
+    t.string   "south"
+    t.float    "lat",                limit: 24
+    t.float    "lng",                limit: 24
+    t.string   "url_name",           limit: 191, null: false
+    t.string   "image_url"
+    t.string   "name",                           null: false
+    t.string   "thumbnail_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "states", force: true do |t|
+    t.string   "cc",                        limit: 2,                null: false
+    t.string   "name",                                               null: false
+    t.string   "description"
+    t.string   "url_name",                  limit: 2000,             null: false
+    t.float    "lat",                       limit: 24
+    t.float    "lng",                       limit: 24
+    t.string   "thumbnail_url"
+    t.integer  "published_tripnotes_count",              default: 0, null: false
+    t.string   "gg_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tripnotes", force: true do |t|
     t.string   "title"

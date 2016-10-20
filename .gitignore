@@ -17,7 +17,7 @@
 /vendor/bundle
 
 *~
-.swp
+*.swp
 .swo
 .swn
 .DS_Store

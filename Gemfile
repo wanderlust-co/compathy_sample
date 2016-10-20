@@ -65,3 +65,4 @@ source 'https://rails-assets.org' do
   gem "rails-assets-jquery-ui"
 end
 
+gem 'foursquare2'
