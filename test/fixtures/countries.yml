@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cc: MyString
+  continent_code: MyString
+  area_in_sq_km: MyString
+  population: 1
+  currency_code: MyString
+  languages: MyString
+  country_geoname_id: 1
+  west: MyString
+  north: MyString
+  east: MyString
+  south: MyString
+  lat: 1.5
+  lng: 1.5
+  url_name: MyString
+  image_url: MyString
+  name: MyString
+  thumbnail_url: MyString
+  published_tripnotes_count: 1
+
+two:
+  cc: MyString
+  continent_code: MyString
+  area_in_sq_km: MyString
+  population: 1
+  currency_code: MyString
+  languages: MyString
+  country_geoname_id: 1
+  west: MyString
+  north: MyString
+  east: MyString
+  south: MyString
+  lat: 1.5
+  lng: 1.5
+  url_name: MyString
+  image_url: MyString
+  name: MyString
+  thumbnail_url: MyString
+  published_tripnotes_count: 1

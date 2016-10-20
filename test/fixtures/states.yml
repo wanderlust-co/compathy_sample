@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cc: MyString
+  name: MyString
+  description: MyString
+  url_name: MyString
+  lat: 1.5
+  lng: 1.5
+  thumbnail_url: MyString
+  published_tripnotes_count: 
+
+two:
+  cc: MyString
+  name: MyString
+  description: MyString
+  url_name: MyString
+  lat: 1.5
+  lng: 1.5
+  thumbnail_url: MyString
+  published_tripnotes_count: 
