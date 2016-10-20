@@ -14,6 +14,8 @@
 #
 
 class UserReview < ActiveRecord::Base
+  include CyFsqHelper; extend CyFsqHelper
+
   belongs_to :user
   belongs_to :tripnote
   has_many :user_photos
@@ -25,6 +27,24 @@ class UserReview < ActiveRecord::Base
       tripnote_date: photo.image_date,
       user: user
       )
+
+    if photo.image_lat && photo.image_lng
+      begin
+        fsq_results = fsq_client.search_venues( ll: [photo.image_lat, photo.image_lng].join(",") )
+      rescue => ex
+        # NOTE: known issue with (lat,lng) = (0.0,0.0): Foursquare2::APIError Exception: param_error: Must provide parameter ll or userll or near (400)
+        logger.error ex.message
+        fsq_results = nil
+      end
+      if fsq_results and fsq_results.venues.length > 0
+        # NOTE: we use first one of Fsq result (trusting Fsq order by populality)
+        fsq_spot = fsq_results.venues[0]
+        if spot = Spot.find_or_create_by_fsq_spot_id( fsq_spot.id )
+          review.spot_id = spot.id
+        end
+      end
+    end
+
     if review.save
       return review
     else
