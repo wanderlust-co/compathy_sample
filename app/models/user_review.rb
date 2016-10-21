@@ -31,7 +31,7 @@ class UserReview < ActiveRecord::Base
     if photo.image_lat && photo.image_lng
       begin
         fsq_results = fsq_client.search_venues(ll: [photo.image_lat, photo.image_lng].join(","))
-      rescue => extend
+      rescue => ex
         logger.error ex.message
         fsq_results = nil
       end
@@ -42,7 +42,6 @@ class UserReview < ActiveRecord::Base
         end
       end
     end
-
     if review.save
       return review
     else
