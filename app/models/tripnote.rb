@@ -29,4 +29,8 @@ class Tripnote < ActiveRecord::Base
   def link_url
     "/tripnotes/" + id.to_s
   end
+
+  def open_full!
+    update(openness: CY_OPENNESS[:full])
+  end
 end

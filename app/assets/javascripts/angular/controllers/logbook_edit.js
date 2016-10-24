@@ -4,9 +4,9 @@
   angular.module('compathyClone')
   .controller('LogbookEditController', LogbookEditController);
 
-  LogbookEditController.$inject = ['$scope', '$window', '$http', '$location', '$timeout', 'Tripnote'];
+  LogbookEditController.$inject = ['$scope', '$window', '$http', '$location', '$timeout', '$log', 'Tripnote'];
 
-  function LogbookEditController($scope, $window, $http, $location, $timeout, Tripnote) {
+  function LogbookEditController($scope, $window, $http, $location, $timeout, $log, Tripnote) {
     var MAX_UPLOAD = 3;
     var logbookId = $window.location.href.match(/tripnotes\/([0-9]+)\/edit/)[1];
     $scope.logbook = {
@@ -131,6 +131,13 @@
 
       });
     }
+
+    $scope.publish = function() {
+      $http.put('/api/tripnotes/' + logbookId + '/openness', { openness: 10 }).then(function(data) {
+        $log.info(data);
+      });
+    };
+
 
   // ---------------------------------------------------------------------------------
   // main
