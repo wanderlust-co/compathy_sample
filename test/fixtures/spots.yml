@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  tel: MyString
+  lat: 1.5
+  lng: 1.5
+  url: MyString
+  cc: MyString
+  provider_url: MyString
+  provider: 1
+  provider_spot_id: MyString
+  station: MyString
+  take_time: MyString
+  cost: MyString
+  url_name: MyString
+  ads_url_name: MyString
+  user_id: 1
+  deleted_at: 2016-10-21 15:11:32
+  rating: 1.5
+  provider_rating_string: MyString
+  state_id: 1
+  city_id: 1
+
+two:
+  name: MyString
+  address: MyString
+  tel: MyString
+  lat: 1.5
+  lng: 1.5
+  url: MyString
+  cc: MyString
+  provider_url: MyString
+  provider: 1
+  provider_spot_id: MyString
+  station: MyString
+  take_time: MyString
+  cost: MyString
+  url_name: MyString
+  ads_url_name: MyString
+  user_id: 1
+  deleted_at: 2016-10-21 15:11:32
+  rating: 1.5
+  provider_rating_string: MyString
+  state_id: 1
+  city_id: 1

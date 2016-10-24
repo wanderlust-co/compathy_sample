@@ -35,7 +35,8 @@
       <li class="saved-review" ng-repeat="review in tripnote.reviews">
         <p>{{review.id}}</p>
         <textarea placeholder="review.body" ng-model="review.body"></textarea>
-        <img ng-src="{{review.photos[0].image_url}}">
+        <img ng-src="{{review.photos[0].thumbnailUrl}}">
+        <p>{{review.spot.name}}</p>
         <button ng-click="rmReview(review)" class="delete-review">Delete :(</button>
         <div class="buttonToSetCover">
           <button ng-click="setCover(review.photos[0])">Set this picture as a cover photo</button>

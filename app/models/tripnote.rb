@@ -25,4 +25,8 @@ class Tripnote < ActiveRecord::Base
     end
     nil
   end
+
+  def link_url
+    "/tripnotes/" + id.to_s
+  end
 end

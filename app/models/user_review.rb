@@ -18,7 +18,9 @@ class UserReview < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :tripnote
+  belongs_to :spot
   has_many :user_photos
+  belongs_to :spot_route
 
   def self.create_with_photo(user, tripnote, photo, body: nil)
     review = self.new(
@@ -47,6 +49,27 @@ class UserReview < ActiveRecord::Base
     else
       loger.error "#{self.class.to_s}##{__method__.to_s}: #{review.errors.inspect}}"
       raise "ERROR: " + review.errors
+    end
+  end
+
+  def link_url
+    "/tripnotes/#{self.tripnote.id}#episode-#{self.id}"
+  end
+
+  def image_url( size = :thumb )
+    if self.main_photo
+      # TODO: possible change to select flagged photo
+      self.main_photo.image.url( size )
+    else
+      WAITING_UPLOAD_URL
+    end
+  end
+  alias :thumbnail_url :image_url
+
+  def main_photo
+    if self.user_photos.size > 0
+      # TODO: possible change to select flagged photo
+      self.user_photos.first
     end
   end
 end

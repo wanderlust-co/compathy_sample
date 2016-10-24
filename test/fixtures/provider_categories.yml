@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  provider: MyString
+  string: MyString
+  provider_category_id: 1
+  cat1_code: 1
+  cat2_code: 1
+  cat3_code: 1
+
+two:
+  name: MyString
+  provider: MyString
+  string: MyString
+  provider_category_id: 1
+  cat1_code: 1
+  cat2_code: 1
+  cat3_code: 1
