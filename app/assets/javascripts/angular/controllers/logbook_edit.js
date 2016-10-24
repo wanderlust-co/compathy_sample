@@ -135,6 +135,7 @@
     $scope.publish = function() {
       $http.put('/api/tripnotes/' + logbookId + '/openness', { openness: 10 }).then(function(data) {
         $log.info(data);
+        $window.location.href = '/tripnotes/' + logbookId;
       });
     };
 

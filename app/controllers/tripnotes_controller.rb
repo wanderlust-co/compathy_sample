@@ -13,6 +13,7 @@ class TripnotesController < ApplicationController
   end
 
   def edit
+    @tripnote.draftize!
   end
 
   def create

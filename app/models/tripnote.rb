@@ -33,4 +33,8 @@ class Tripnote < ActiveRecord::Base
   def open_full!
     update(openness: CY_OPENNESS[:full])
   end
+  
+  def draftize!
+    update(openness: CY_OPENNESS[:draft])
+  end
 end
