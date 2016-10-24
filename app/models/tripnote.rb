@@ -17,6 +17,9 @@ class Tripnote < ActiveRecord::Base
   has_many :user_reviews, dependent: :destroy
   belongs_to :user_photo
 
+  has_many :comments, -> { where(cm_type: CY_CM_TYPE_TRIPNOTE) },
+           foreign_key: "cm_id", dependent: :destroy
+
   def cover_photo
     if user_photo_id
       if user_photo = UserPhoto.find(user_photo_id)

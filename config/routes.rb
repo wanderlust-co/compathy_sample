@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     put    "tripnotes/:id/cover_photo" => "tripnotes#set_cover_photo"
     post   "tripnotes/:id/cover_photo" => "tripnotes#add_cover_photo"
     put    "tripnotes/:id/openness" => "tripnotes#set_openness"
+
+    post   "comments" => "comments#create"
   end
 
   resources :tripnotes
