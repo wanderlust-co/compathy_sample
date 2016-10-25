@@ -16,6 +16,7 @@ class Tripnote < ActiveRecord::Base
   belongs_to :user
   has_many :user_reviews, dependent: :destroy
   belongs_to :user_photo
+  has_many :comments, -> {where(cm_type: CY_CM_TYPE_TRIPNOTE)}, foreign_key: "cm_id", dependent: :destroy
 
   def cover_photo
     if user_photo_id
@@ -28,5 +29,13 @@ class Tripnote < ActiveRecord::Base
 
   def link_url
     "/tripnotes/" + id.to_s
+  end
+
+  def open_full!
+    update(openness: CY_OPENNESS[:full])
+  end
+
+  def draftize!
+    update(openness: CY_OPENNESS[:draft])
   end
 end

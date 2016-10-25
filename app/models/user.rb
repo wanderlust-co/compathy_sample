@@ -37,4 +37,16 @@ class User < ActiveRecord::Base
   def attr_accessible
     params.require(:user).permit(:email, :password, :password_confirmation, :authentications_attributes)
   end
+
+  def fb_user_id
+    if auth = self.authentications.find_by( provider: "facebook" )
+      auth.uid
+    end
+  end
+
+  def thumbnail_url( square_size: 80 )
+    return self.image_url if self.image_url.present?
+
+    "https://graph.facebook.com/#{self.fb_user_id}/picture?width=#{square_size}&height=#{square_size}"
+  end
 end

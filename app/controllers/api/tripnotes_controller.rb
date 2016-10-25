@@ -1,7 +1,7 @@
 module Api
   class TripnotesController < ApplicationController
-    before_action :set_tripnote, only: %w(edit update add_cover_photo set_cover_photo)
-    before_action :require_login, only: %w(edit update add_cover_photo set_cover_photo)
+    before_action :set_tripnote, only: %w(edit update add_cover_photo set_cover_photo set_openness)
+    before_action :require_login, only: %w(edit update add_cover_photo set_cover_photo set_openness)
 
     def edit
       prepare_tripnotes
@@ -88,6 +88,16 @@ module Api
         responseMessage: "search failed: #{ex.message}",
         responseBody: nil
       }, status: :unprocessable_entity
+    end
+
+    def set_openness
+      if params[:openness] == CY_OPENNESS[:full]
+        if @tripnote.open_full!
+          head :ok
+          return
+        end
+      end
+      head :ng
     end
 
     private

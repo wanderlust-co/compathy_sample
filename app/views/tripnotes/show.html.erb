@@ -1,23 +1,44 @@
-<p id="notice"><%= notice %></p>
+<div ng-controller="TripnotesShowCtrl">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @tripnote.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @tripnote.title %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @tripnote.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @tripnote.description %>
+  </p>
 
-<% @tripnote.user_reviews do |review| %>
-  <p><%= review.description %></p>
-  <p><%= image_tag(review.user_photo.authenticated_image_url(:thumb)) if review_user_photo.present? %></p>
-<% end%>
+  <% @tripnote.user_reviews do |review| %>
+    <p><%= review.description %></p>
+    <p><%= image_tag(review.user_photo.authenticated_image_url(:thumb)) if review_user_photo.present? %></p>
+  <% end%>
 
-<p>
-  <strong>Created by:</strong>
-  <%= @tripnote.user.name %>
-</p>
+  <p>
+    <strong>Created by:</strong>
+    <%= @tripnote.user.name %>
+  </p>
 
-<%= link_to 'Back', tripnotes_path %>
+  <hr>
+  <h2>Comment</h2>
+
+  <div>
+    <% @tripnote.comments.each do |cm| %>
+      <p><%= cm.body %></p>
+      <%= image_tag cm.user.thumbnail_url%>
+    <% end %>
+  </div>
+
+  <form role="form" ng-submit="addComment()">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="<%= t("tripnote.add_comment") %>" ng-show="!isSaving" ng-disabled="!!isSaving" ng-model="logbookNewComment">
+    </div>
+  </form>
+
+  <hr>
+
+  <%= link_to 'Back', tripnotes_path %>
+  <%= link_to 'Edit', edit_tripnote_path(@tripnote) %>
+</div>
