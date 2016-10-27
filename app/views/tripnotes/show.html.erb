@@ -1,10 +1,14 @@
-<div ng-controller="TripnotesShowCtrl">
+<div ng-controller="TripnotesShowController">
   <p id="notice"><%= notice %></p>
 
-  <p>
+  <div class="cover-photo">
+    <%= image_tag @tripnote.user_photo.image.url(:thumb) %>
+  </div>
+
+  <h2>
     <strong>Title:</strong>
     <%= @tripnote.title %>
-  </p>
+  </h2>
 
   <p>
     <strong>Description:</strong>
@@ -22,12 +26,46 @@
   </p>
 
   <hr>
-  <h2>Comment</h2>
+
+  <div class="reviews-wrapper">
+    <% @tripnote.user_reviews.each do |rv| %>
+      <div class="review-box" ng-controller="ReviewController">
+        <h3>Review ID：<%= rv.id %></h3>
+        <p><%= rv.spot.name if rv.spot %></p>
+        <p><%= image_tag rv.thumbnail_url %></p>
+        <h4>ReviewBody:<%= rv.body %></h4>
+        <hr>
+        <h4>Add your comment</h4>
+        <% if current_user %>
+          <%= image_tag current_user.thumbnail_url %>
+          <form role="form" ng-submit="addReviewComment()">
+            <div class="form-group" ng-init="reviewId = <%= rv.id %>">
+              <input type="text" class="form-control" placeholder="<%= t("tripnote.add_comment") %>" ng-show="!isSaving" ng-disabled="!!isSaving" ng-model="reviewNewComment">
+            </div>
+          </form>
+        <% end %>
+        <hr>
+        <h4>User's comments</h4>
+        <% if rv.comments.present? %>
+          <% rv.comments.each do |rvCm| %>
+            <%= image_tag rvCm.user.thumbnail_url%>
+            <p><%= rvCm.body %></p>
+          <% end %>
+        <% else %>
+          <p>Nothing yet.</p>
+        <% end %>
+        <hr>
+      </div><!-- .review-box -->
+    <% end %>
+  </div>
+
+  <hr>
+  <h2>Comments</h2>
 
   <div>
     <% @tripnote.comments.each do |cm| %>
-      <p><%= cm.body %></p>
       <%= image_tag cm.user.thumbnail_url%>
+      <p><%= cm.body %></p>
     <% end %>
   </div>
 

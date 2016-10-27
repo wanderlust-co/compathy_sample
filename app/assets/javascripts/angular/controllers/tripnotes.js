@@ -2,11 +2,11 @@
   'use strict';
 
   angular.module('compathyClone')
-  .controller('TripnotesShowCtrl', TripnotesShowCtrl);
+  .controller('TripnotesShowController', TripnotesShowControll);
 
-  TripnotesShowCtrl.$inject = ['$scope', '$window', '$http', '$location', '$timeout', '$log', 'Tripnote'];
+  TripnotesShowControll.$inject = ['$scope', '$window', '$http', '$location', '$timeout', '$log', 'Tripnote'];
 
-  function TripnotesShowCtrl($scope, $window, $http, $location, $timeout, $log, Tripnote) {
+  function TripnotesShowControll($scope, $window, $http, $location, $timeout, $log, Tripnote) {
     $scope.addComment = function() {
       $scope.isSaving = true;
       $http.post('/api/comments', {
@@ -17,6 +17,21 @@
         $scope.isSaving = false;
 
         $scope.logbookNewComment = '';
+        $window.location.href = '/tripnotes/' + $scope.logbookId;
+      }).error(function(msg) {
+        $scope.isSaving = false;
+      });
+    };
+
+    $scope.addReviewComment = function() {
+      $scope.isSaving = true;
+      $http.post('/api/comments', {
+        cmType: 'review',
+        reviewId: $scope.reviewId,
+        body: $scope.reviewNewComment,
+      }).success(function(data) {
+        $scope.isSaving = false;
+        $scope.reviewNewComment = '';
         $window.location.href = '/tripnotes/' + $scope.logbookId;
       }).error(function(msg) {
         $scope.isSaving = false;

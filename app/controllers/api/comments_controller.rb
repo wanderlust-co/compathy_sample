@@ -5,7 +5,13 @@ module Api
       type = params[:cmType] || CY_CM_TYPE_REVIEW
       case type
       when CY_CM_TYPE_REVIEW
-
+        # binding.pry
+        rv = UserReview.find_by(id: params[:reviewId])
+        unless rv
+          render_error(message: "user_review not found: #{params[:reviewId]}")
+          return
+        end
+        @comment = Comment.new( cm_type: type, cm_id: params[:reviewId], body: params[:body] )
       when CY_CM_TYPE_TRIPNOTE
         @comment = Comment.new( cm_type: type, cm_id: params[:logbookId], body: params[:body])
       end
