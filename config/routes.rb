@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     post   "tripnotes/:id/cover_photo" => "tripnotes#add_cover_photo"
     put    "tripnotes/:id/openness" => "tripnotes#set_openness"
     post   "comments" => "comments#create"
+    post   "favorites" => "favorites#create"
+    delete "favorites/:id" => "favorites#destroy"
   end
 
   resources :tripnotes

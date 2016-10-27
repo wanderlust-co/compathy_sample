@@ -23,6 +23,9 @@ class TripnotesController < ApplicationController
   end
 
   def show
+    if current_user
+      @favorite = current_user.favorites.where( tripnote_id: @tripnote.id ).first
+    end
   end
 
   private

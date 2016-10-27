@@ -27,6 +27,26 @@
 
   <hr>
 
+  <li class="collectionStatusFav"><span class="jsFavCount"><%= @tripnote.favorites.count %></span><small><%= t("tripnote.favorite") %></small></li>
+
+  <div class="favButton">
+    <% if current_user %>
+      <% if Favorite.where(user_id: current_user.id, tripnote_id: @tripnote.id).present? %>
+        <form ng-submit="unfavTripnote(<%= @favorite.try(:id) %>)">
+          <button>Remove from favorites</button>
+        </form>
+      <% else %>
+        <form ng-submit="favTripnote()">
+          <button>Add to favorites</button>
+        </form>
+      <% end %>
+    <% else%>
+      <p>Please login first to favorite this.</p>
+    <% end %>
+  </div>
+
+  <hr>
+
   <div class="reviews-wrapper">
     <% @tripnote.user_reviews.each do |rv| %>
       <div class="review-box" ng-controller="ReviewController">

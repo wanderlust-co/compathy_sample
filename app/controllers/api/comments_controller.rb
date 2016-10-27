@@ -5,7 +5,6 @@ module Api
       type = params[:cmType] || CY_CM_TYPE_REVIEW
       case type
       when CY_CM_TYPE_REVIEW
-        # binding.pry
         rv = UserReview.find_by(id: params[:reviewId])
         unless rv
           render_error(message: "user_review not found: #{params[:reviewId]}")
@@ -15,7 +14,9 @@ module Api
       when CY_CM_TYPE_TRIPNOTE
         @comment = Comment.new( cm_type: type, cm_id: params[:logbookId], body: params[:body])
       end
+
       @comment.user_id = current_user.id
+
       if @comment.save
         head :created
       else

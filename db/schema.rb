@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161025095606) do
+ActiveRecord::Schema.define(version: 20161027064249) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id",    null: false
@@ -146,6 +146,14 @@ ActiveRecord::Schema.define(version: 20161025095606) do
 
   add_index "country_translations", ["cc", "locale"], name: "index_country_translations_on_cc_and_locale", length: {"cc"=>nil, "locale"=>10}, using: :btree
 
+  create_table "favorites", force: true do |t|
+    t.integer  "user_id",     null: false
+    t.integer  "tripnote_id", null: false
+    t.string   "fb_story_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "liked_states", force: true do |t|
     t.integer  "state_id"
     t.integer  "linked_id"
@@ -261,7 +269,8 @@ ActiveRecord::Schema.define(version: 20161025095606) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_photo_id"
-    t.integer  "openness",       default: 0, null: false
+    t.integer  "openness",        default: 0, null: false
+    t.integer  "favorites_count", default: 0
   end
 
   create_table "user_photos", force: true do |t|
