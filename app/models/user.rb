@@ -28,6 +28,8 @@ class User < ActiveRecord::Base
   has_many :user_reviews
   has_many :favorites, dependent: :destroy
   accepts_nested_attributes_for :authentications
+  has_many :likes,     dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }

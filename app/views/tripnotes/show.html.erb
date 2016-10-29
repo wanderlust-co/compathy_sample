@@ -54,6 +54,33 @@
         <p><%= rv.spot.name if rv.spot %></p>
         <p><%= image_tag rv.thumbnail_url %></p>
         <h4>ReviewBody:<%= rv.body %></h4>
+        <%= rv.likes_count.to_s + "People want to go here!" if rv.likes %>
+        <% rv.likes.each do |like| %>
+        <div class="liked-users"><%= image_tag like.user.thumbnail_url %></div>
+        <% end%>
+        <br>
+        <% like = @likes.find {|like| like.like_id == rv.id} %>
+          <% if rv.spot_id %>
+            <button ng-show = "!likeId" ng-click="addLike()"
+              ng-init="spotId = <%= rv.spot_id %>"
+              ng-init="spotName = <%= rv.spot.name %>"
+              ng-init="currentUserUsername = <%= current_user.username %>"
+              ng-init="currentUserName = <%= current_user.name %>"
+              ng-init="countryUrlName = <%= rv.spot.country.url_name %>"
+              ng-init="countryName = <%= rv.spot.country.trans_name(I18n.locale) %>"
+            >Wish to go!!</button>
+            <button ng-show = "!!likeId" ng-click="removeLike()"
+              <% if like %>
+              ng-init="likeId = <%= like.id %>"
+              <% end %>
+              ng-init="spotId = <%= rv.spot_id %>"
+              ng-init="spotName = <%= rv.spot.name %>"
+              ng-init="currentUserUsername = <%= current_user.username %>"
+              ng-init="currentUserName = <%= current_user.name %>"
+              ng-init="countryUrlName = <%= rv.spot.country.url_name %>"
+              ng-init="countryName = <%= rv.spot.country.trans_name(I18n.locale) %>"
+            >Remove from wishlists!!</button>
+          <% end %>
         <hr>
         <h4>Add your comment</h4>
         <% if current_user %>
@@ -65,7 +92,7 @@
           </form>
         <% end %>
         <hr>
-        <h4>User's comments</h4>
+        <h4>Users' comments</h4>
         <% if rv.comments.present? %>
           <% rv.comments.each do |rvCm| %>
             <%= image_tag rvCm.user.thumbnail_url%>

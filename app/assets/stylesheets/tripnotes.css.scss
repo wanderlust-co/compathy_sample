@@ -33,6 +33,10 @@
 .reviews-wrapper{
   margin-top: 150px;
   width: 100%;
+  .review-box {
+    border: solid 1px black;
+    padding: 10px;
+  }
 }
 
 .cover-photo {
@@ -60,6 +64,10 @@
   .header-right {
     float: right;
     margin: 20px;
+    a {
+      color: white;
+      margin-right: 10px;
+    }
   }
 }
 
@@ -68,6 +76,8 @@
   margin: 0 auto;
 }
 
-.review-box {
-  border: 1px, solid, black;
+.liked-users img {
+  border-radius: 20px;
+  height: 40px;
+  width: 40px;
 }

@@ -22,6 +22,7 @@ class UserReview < ActiveRecord::Base
   has_many :user_photos
   belongs_to :spot_route
   has_many :comments, -> {where(cm_type: CY_CM_TYPE_REVIEW)}, foreign_key: "cm_id", dependent: :destroy
+  has_many :likes, -> { where( like_type: CY_LIKE_TYPE_REVIEW ) }, foreign_key: "like_id", dependent: :destroy
 
   def self.create_with_photo(user, tripnote, photo, body: nil)
     review = self.new(

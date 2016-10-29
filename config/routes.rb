@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     post   "comments" => "comments#create"
     post   "favorites" => "favorites#create"
     delete "favorites/:id" => "favorites#destroy"
+    post   "likes" => "likes#create"
+    delete "likes/:id" => "likes#destroy"
   end
 
   resources :tripnotes

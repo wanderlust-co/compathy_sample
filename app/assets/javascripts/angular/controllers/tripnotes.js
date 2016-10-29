@@ -26,12 +26,6 @@
       });
     };
 
-    $scope.openLightboxModal = function(image) {
-      var index = 0;
-      var images = [image];
-      Lightbox.openModal(images, index);
-    };
-
     $scope.unfavTripnote = function(favId) {
       if (favId > 0) {
         $scope.isSaving = true;

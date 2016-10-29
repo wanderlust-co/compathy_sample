@@ -26,6 +26,8 @@ class TripnotesController < ApplicationController
     if current_user
       @favorite = current_user.favorites.where( tripnote_id: @tripnote.id ).first
     end
+    @likes = current_user.likes.where( like_id: @tripnote.user_reviews.pluck(:id) ) if current_user
+    prepare_tripnotes
   end
 
   private

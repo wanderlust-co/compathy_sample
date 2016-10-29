@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027064249) do
+ActiveRecord::Schema.define(version: 20161027103418) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id",    null: false
@@ -157,6 +157,17 @@ ActiveRecord::Schema.define(version: 20161027064249) do
   create_table "liked_states", force: true do |t|
     t.integer  "state_id"
     t.integer  "linked_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "likes", force: true do |t|
+    t.integer  "user_id",                    null: false
+    t.string   "like_type",     limit: 100,  null: false
+    t.integer  "like_id",                    null: false
+    t.string   "fb_story_id"
+    t.string   "cc",            limit: 2
+    t.string   "created_by_ua", limit: 1000
     t.datetime "created_at"
     t.datetime "updated_at"
   end
