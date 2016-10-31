@@ -1,5 +1,5 @@
 module Api
-  class FavoritesController < ApplicationController
+  class FavoritesController < Api::ApplicationController
     before_action :require_login
 
     before_action :set_favorite, only: %w(destroy)
@@ -9,7 +9,7 @@ module Api
       @favorite = Favorite.new(favorite_params)
       @favorite.user_id = current_user.id
       if @favorite.save
-        head :ok
+        head status: :created
       else
         render_error(message: @favorite.errors.inspect)
       end

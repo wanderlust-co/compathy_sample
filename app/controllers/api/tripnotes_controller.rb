@@ -1,5 +1,5 @@
 module Api
-  class TripnotesController < ApplicationController
+  class TripnotesController < ApplicationController::Base
     before_action :set_tripnote, only: %w(edit update add_cover_photo set_cover_photo set_openness)
     before_action :require_login, only: %w(edit update add_cover_photo set_cover_photo set_openness)
 

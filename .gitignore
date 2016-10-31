@@ -21,6 +21,7 @@
 .swo
 .swn
 .DS_Store
+.envrc
 
 
 # Ignore application configuration

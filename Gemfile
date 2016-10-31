@@ -72,3 +72,10 @@ gem 'delayed_job_active_record'
 
 # run daemon to execute queued task
 gem 'daemons'
+
+group :test, :development do
+  # for test
+  gem 'rspec-rails'
+  gem 'rspec-core'
+  gem 'factory_girl_rails'
+end
