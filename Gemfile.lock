@@ -145,6 +145,8 @@ GEM
     rails-assets-angular (1.4.14)
     rails-assets-angular-resource (1.4.14)
       rails-assets-angular (= 1.4.14)
+    rails-assets-angular-ui-router (0.3.1)
+      rails-assets-angular (>= 1.0.8, < 2)
     rails-assets-blueimp-canvas-to-blob (2.2.0)
     rails-assets-blueimp-load-image (1.14.0)
     rails-assets-blueimp-tmpl (2.5.5)
@@ -245,6 +247,7 @@ DEPENDENCIES
   rails (= 4.1.9)
   rails-assets-angular (~> 1.4.7)!
   rails-assets-angular-resource!
+  rails-assets-angular-ui-router!
   rails-assets-blueimp-load-image (= 1.14.0)!
   rails-assets-jquery (~> 2.1)!
   rails-assets-jquery-file-upload (= 9.11.2)!

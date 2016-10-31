@@ -63,6 +63,7 @@ source 'https://rails-assets.org' do
   gem "rails-assets-blueimp-load-image", "1.14.0"
   gem "rails-assets-jquery", "~> 2.1"
   gem "rails-assets-jquery-ui"
+  gem "rails-assets-angular-ui-router"
 end
 
 gem 'foursquare2'
