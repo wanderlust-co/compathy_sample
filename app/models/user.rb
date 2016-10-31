@@ -47,6 +47,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  def link_url      ; "/users/#{self.username}" ; end
+
   def thumbnail_url( square_size: 80 )
     return self.image_url if self.image_url.present?
 

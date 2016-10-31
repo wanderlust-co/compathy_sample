@@ -4,6 +4,8 @@ module Api
     before_action :set_like, only: %w(destroy)
     before_action :manage_allowed?, only: %w(destroy)
 
+    after_action :send_retention_messages, only: %w(create)
+
     # NOTE:
     #   e.g.) curl -v -H "cyAccessToken: xxxxxxxxxx" -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '{"episodeId": "17084"}' http://localhost:3000/api/v3/likes
     def create
@@ -73,6 +75,12 @@ module Api
       return true if manage_allowed
 
       not_permitted
+    end
+
+    def send_retention_messages
+      return unless @like
+      @like.send_retention_mail
+      # @like.send_mobile_notification
     end
   end
 end

@@ -42,13 +42,7 @@
           method: 'DELETE',
           params: {}
         }).success(function(/* data */) {
-          $scope.likeId = null;
-          var target = scope.likedUsers.filter(function(user) {
-            return user.username == $scope.currentUser.username;
-          })[0];
-          if (target) {
-            $scope.likedUsers.splice(scope.likedUsers.indexOf(target), 1);
-          }
+            $window.location.href = '/tripnotes/' + $scope.logbookId;
         }).error(function(msg) {
           console.log(msg);
         });

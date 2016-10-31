@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161027103418) do
+ActiveRecord::Schema.define(version: 20161029120956) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id",    null: false
@@ -145,6 +145,22 @@ ActiveRecord::Schema.define(version: 20161027103418) do
   end
 
   add_index "country_translations", ["cc", "locale"], name: "index_country_translations_on_cc_and_locale", length: {"cc"=>nil, "locale"=>10}, using: :btree
+
+  create_table "delayed_jobs", force: true do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
   create_table "favorites", force: true do |t|
     t.integer  "user_id",     null: false
@@ -330,7 +346,7 @@ ActiveRecord::Schema.define(version: 20161027103418) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                         null: false
+    t.string   "email",                                                  null: false
     t.string   "crypted_password"
     t.string   "salt"
     t.datetime "created_at"
@@ -343,7 +359,9 @@ ActiveRecord::Schema.define(version: 20161027103418) do
     t.string   "gender"
     t.string   "locale"
     t.integer  "tripnote_id"
-    t.string   "image_url",        limit: 2000
+    t.string   "image_url",              limit: 2000
+    t.boolean  "receive_retention_mail",                  default: true, null: false
+    t.text     "introduction",           limit: 16777215
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

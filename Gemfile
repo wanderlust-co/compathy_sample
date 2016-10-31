@@ -66,3 +66,9 @@ source 'https://rails-assets.org' do
 end
 
 gem 'foursquare2'
+
+# add task to queue
+gem 'delayed_job_active_record'
+
+# run daemon to execute queued task
+gem 'daemons'

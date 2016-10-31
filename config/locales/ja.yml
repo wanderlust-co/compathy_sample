@@ -1,3 +1,1232 @@
+# https://github.com/svenfuchs/rails-i18n/blob/master/rails/locale/ja.yml
 ja:
+  client:
+    about_compathy: "Compathyって？"
+    alert_favorited: "このログブックをお気に入りに追加しました"
+    alert_see_favorites: "お気に入りしたログブックの一覧を確認する"
+    alert_bookmarked_spot: "「{{spotName}}」を行ってみたい！リストに追加しました"
+    alert_bookmarked_this_spot: "このスポットを行ってみたい！リストに追加しました"
+    alert_see_wishlist: "{{countryName}}の行ってみたい！リストを確認する"
+    alert_create_plan: "旅行プランを作成"
+    error_already_withdrawed: "既に登録を解除しています。再開するには、support+compathy-web@wanderlust.co.jp までご連絡ください。"
+    error_unknown: "サーバに問題が発生しました。しばらく経ってから再度ご利用ください。ご迷惑をおかけして大変申し訳ございません。:"
+    error_sorry: "サーバーエラーが発生しました。何度も発生するようであれば、support+compathy-web@wanderlust.co.jp までお問い合わせいただくか、時間をおいて再度お試しください。ご迷惑をおかけして大変申し訳ございません。"
+    error_refresh: "サーバーエラーが発生しました。一度ブラウザを更新します。何度も発生するようであれば、お問い合わせいただくか、時間をおいて再度お試しください。"
+    error_please_login: "セッションタイムアウトしました。お手数ですが、再度ログインをお願いいたします。"
+    error_access_forbidden: "ご指定のURLは存在いたしません。「OK」をクリックすると、トップページに移動いたします。"
+    error_save_past_plan: "旅行の日程が過去の日時になっています。未来の日時に設定しなおしましょう。"
+    episodes: "口コミ・エピソード"
+    episodes_count: "エピソード"
+    search_destination: "旅先"
+    search_compathy: "コレクションを探す"
+    search_by_country: "国から探す"
+    search_by_tag: "テーマから探す"
+    search_explain: "みんなの旅のコレクション（旅行記、旅行計面、ロコミなど）を自由に検索できます。"
+    search_country_name: "国の名前で検索"
+    compathy_explain: "Compathyはみんなの旅の思い出から世界とつながる、旅のコレクションサービスです。"
+    loading_wishlists_html: "<b>行ってみたい！リスト</b>を読み込んでいます。<br>しばらくお待ちください。"
+    loading_spot_results_html: "<b>スポット</b>を探しています。<br>しばらくお待ちください。"
+    login: "ログイン"
+    login_and_create_tripnotes_1: "ログブック"
+    login_and_create_tripnotes_2: "（旅行記）を作る"
+    logout: "ログアウト"
+    signup: "新規登録"
+    see_collection: "コレクションを見る"
+    see_favorites: "お気に入りを見る"
+    see_wishlists: "行ってみたい！リスト"
+    create_tripnote: "コレクションを追加"
+    wish_to_go: "行ってみたい！"
+    confirm_leave_page_losing_data: "編集中の情報が失われてしまいますが、このページから移動してもよろしいでしょうか？"
+    confirm_leave_page_with_draft: "下書きのまま編集ページを離れますか？"
+    confirm_delete: "本当に削除しますか？"
+    confirm_delete_wishlist: "本当に行ってみたい場所リストから削除しますか？"
+    confirm_withdraw: "本当に登録を解除しますか？今までのデータは全て削除されて、元に戻すことはできません。"
+    confirm_back_to_draft: "一度編集すると、下書きのステータスになります。下書きにして編集しますか？"
+    official_account_note: "Compathy運営のオフィシャルアカウントです。コメントには返信できない可能性があります。"
+    male: "男性"
+    female: "女性"
+    spot_not_found_alphabet: "お探しの場所が見つかりませんか？場所名は、アルファベットで入力してみてください。"
+    spot_not_found_register: "それでも見つからない場合は、<u>こちら</u>から新しく場所を登録してみましょう。"
+    spot_not_found_area: "検索範囲が広すぎます。街の名前などの大まかなエリア名を1つ前のフィールドに入れた後で再度検索してください。"
+    "Gateway Time-out": "サーバーエラーが発生しました。お手数ですが、時間をおいて再度お試しください。"
+    "Bad Gateway": "サーバーエラーが発生しました。お手数ですが、時間をおいて再度お試しください。"
+    "error": "アップロードに失敗しました。お手数ですが、一度にアップロードする枚数を減らすか、時間をおいて再度お試しください。"
+    "Maximum number of files exceeded": "一度にアップロードできる上限を越えました。お手数ですが、数回に分けてアップロードしてください。"
+    upload_error: "アップロードに失敗しました。お手数ですが、一度にアップロードする枚数を減らすか、時間をおいて再度お試しください。"
+    plan__add_to_plan: "予定に入れる"
+    plan__confirm_delete_day: "選択した日程にはプランが含まれています。削除するとプランも失われますが、削除してよろしいでしょうか？"
+    plan__confirm_delete_days: "日程を短く変更しようとしています。変更するとプランも失われますが、削除してよろしいでしょうか？"
+    plan__create_confirm_without_date:
+    plan__day: "{{numOfDay}}日目"
+    plan__delete_day: "削除"
+    plan__delete_plan_item: "削除"
+    plan__directions: "移動方法"
+    plan__no_state_option_name: "その他"
+    plan__saved_title: "保存が完了しました！"
+    plan__saved_body: "プレビューは携帯でも閲覧可能です"
+    plan__show_spot_view: "スポット情報を見る"
+    plan__spot_search_placeholder_list: "行き先の国・都市を検索"
+    plan__spot_search_placeholder_keyword: "リストから選択、またはキーワードを入力"
+    plan__confirm_back_to_home: "プレビューを終了して、トップページに戻りますか？"
+    plan__added_to_plan_title: "プランに追加しました"
+    plan__added_to_plan_prefix: ""
+    plan__added_to_plan_postfix: "日目"
+    plan__added_to_wishlist: "行ってみたい！リストに追加しました"
+    plan__deleted_from_wishlist: "行ってみたい！リストから削除されました"
+    plan__refresh_dates: "旅行の日程が過去の日時になっているため、ご指定の日時ではホテルの空室情報などを提供できません。\n日程を更新しますか？"
+    plan__old_dates_hotel_search: "現在選択している日程(<%= original %>) が過去の日付になっているため、本日の日付(<%= today %>） を利用してホテルの予約情報を表示します。\n<%= suffix %>"
+    plan__old_dates_hotel_search_pc: "ホテルの予約情報を変更するには、旅行の日程や選択する日付を変更したうえで、再度ページを開き直してください。"
+    plan__old_dates_hotel_search_sp: "ホテルの予約情報を変更するには、スポットを追加する日付を変更するか、旅行計画の最初のページの「基本情報の編集」から、旅行の日程を変更してください。"
+    plan__hotel_room_refundable: "返金可"
+    plan__hotel_room_non_refundable: "返金不可"
+    plan__hotel_room_free_cancel: "キャンセル無料"
+    plan__hotel_room_no_free_cancel: "キャンセル有料"
+    plan__hotel_room_pay_later: "チェックアウト時支払い"
+    plan__hotel_room_no_pay_later: "事前支払い"
+    plan__hotel_room_breakfast: "朝食あり"
+    plan__hotel_room_no_breakfast: "朝食なし"
+    add: "追加"
+    delete: "削除"
+    view: "地図で見る"
+    collapse: "たたむ"
+    expand: "開く"
+    sites: "観光・ショッピング"
+    restaurants: "レストラン・グルメ・食べ物"
+    hotels: "ホテル・宿泊"
+    see: "見る & 買う"
+    eat: "食べる"
+    stay: "泊まる"
+    bookmark_spot: "行ってみたい！リストに追加"
+    bookmark_spot_remove: "行ってみたい！リストから外す"
+    see_more: "もっと見る"
+    searchbox__search_more_here: "表示エリアで再検索"
+
+  date:
+    abbr_day_names:
+    - 日
+    - 月
+    - 火
+    - 水
+    - 木
+    - 金
+    - 土
+  datetime:
+    count_in_words:
+      x_days: '%{count}日目'
+
+  simple_form:
+    labels:
+      spot:
+        name: "スポット名"
+        address: "住所"
+        lat: "緯度"
+        lng: "経度"
+        tel: "電話番号"
+        url: "URL"
+        station: "最寄りの駅"
+        take_time: "平均時間"
+        cost: "平均費用"
+
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "..."
+
+  user_mailer:
+    welcome:
+      subject: "【ようこそCompathyへ】あなただけの「旅のコレクション」をつくりましょう！"
+    friend_start_compathy:
+      subject: "【友だちの旅のコレクション】%{started_friend_name}さんもCompathyで旅のコレクションを始めました"
+    friend_create_tripnote:
+      subject: "【友だちの旅のコレクション】%{created_friend_name}さんが旅のコレクションに「%{tripnote_title}」を追加しました！"
+    favorite_tripnote:
+      subject: "【旅のコレクションがお気に入りに登録されました】%{faved_user_name}さんがあなたのログブック「%{tripnote_title}」をお気に入りに登録しました！"
+    like_user_review_no_spot:
+      subject: "%{liked_user_name}さんがあなたのログブックに「行ってみたい！」と言っています。"
+    like_user_review_with_spot:
+      subject: "%{liked_user_name}さんがあなたのログブックに「行ってみたい！」と言っています。"
+    add_comment_to_tripnote:
+      subject: "【旅のコレクションにコメントがありました】%{commented_user_name}さんがあなたのログブック「%{tripnote_title}」にコメントしました！"
+    add_comment_to_user_review:
+      subject: "【旅のコレクションへのみんなの反応】%{commented_user_name}さんがあなたのログブック「%{tripnote_title}」内のエピソードにコメントしました"
+    got_user_review_for_reviewed_spot:
+      subject: "%{just_reviewed_user_name}さんもあなたが行った場所のエピソードを書きました！"
+    got_user_review_for_bookmarked_spot:
+      subject: "%{just_reviewed_user_name}さんが、あなたが行ってみたい場所のエピソードを書きました！"
+    arrival_target_value:
+      subject: "【おめでとうございます！】あなたのログブック「%{tripnote_title}」が%{pv}viewを突破しました"
+    to_commenter_of_user_review_from_owner:
+      subject: "【あなたのコメントへの反応】あなたのコメントに返信がありました！"
+    to_commenter_of_user_review_from_other:
+      subject: "【みんなのコメント】%{commented_user_name}さんも%{tripnote_owner_name}さんのログブックにコメントしました！"
+    to_commenter_of_tripnote_from_owner:
+      subject: "【あなたのコメントへの反応】あなたのコメントに返信がありました！"
+    to_commenter_of_tripnote_from_other:
+      subject: "【みんなのコメント】%{commented_user_name}さんも%{tripnote_owner_name}さんのログブックにコメントしました！"
+    user_ranking_rankedin:
+      subject: "【おめでとうございます！】Compathyトップコレクターズに選ばれました！"
+#    TODO: implement invite function
+#    list_invitation_email:
+#      subject: "【Compathyへのご招待】あなたの友だちの%{friend_name}さんが%{user_name}さんを「世界とつながる旅のコレクション」Compathyに招待しています"
+
+  fb_notification:
+    friend_start_compathy:
+      href: "/users/%{started_friend_username}/logbooks"
+      template: "友だちの%{started_friend_name}さんもCompathyで旅のコレクションを始めました。ここをクリックしてさっそく%{started_friend_name}さんの旅のコレクションを見てみましょう！"
+    friend_create_tripnote:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "友だちの%{created_friend_name}さんが、Compathyでログブック「%{tripnote_title}」を旅のコレクションに追加しました！ここをクリックしてさっそく見てみましょう！"
+# NOTE: intentionary not sending（in order to avoid to be too noisy）.
+#       https://www.pivotaltracker.com/story/show/64027814
+#
+#    bookmark_tripnote:
+#      href: "/tripnotes/%{tripnote_id}"
+#      template: "%{booked_user_name}さんがあなたのログブック「%{tripnote_title}」をお気に入りに登録しました！"
+#    like_user_review_no_spot:
+#      href: "/tripnotes/%{tripnote_id}"
+#      template: "%{liked_user_name}さんがあなたのログブック「%{tripnote_title}」内のエピソードを読んで「行ってみたい！」と言っています"
+    add_comment_to_tripnote:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "Compathy上のあなたのログブック「%{tripnote_title}」に%{commented_user_name}さんがコメントしました！ここをクリックしてさっそく確認してみましょう！"
+    add_comment_to_user_review:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "Compathy上のあなたのログブック「%{tripnote_title}」のエピソードに%{commented_user_name}さんがコメントしました！ここをクリックしてさっそく確認してみましょう！"
+    got_user_review_for_reviewed_spot:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "Compathy上のあなたが行ったことのある%{spot_name}に関して、Compathyで新しいエピソードが登録されました。ここをクリックしてさっそく確認してみましょう！"
+    got_user_review_for_bookmarked_spot:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "%{just_reviewed_user_name}さんが、Compathyであなたが行ってみたい！リストに登録している%{spot_name}に関する新しいエピソードを追加しました。ここをクリックしてさっそく確認してみましょう！"
+    arrival_target_value:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "おめでとうございます！あなたのログブック「%{tripnote_title}」が%{pv}PVを達成しました。ここからシェアしてもっと多くの方に見てもらいましょう！"
+    to_commenter_of_tripnote_from_owner:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "あなたがCompathyでコメントしたログブック「%{tripnote_title}」に作者の%{tripnote_owner_name}さんから返信がありました！ここをクリックしてさっそく確認してみましょう！"
+    to_commenter_of_tripnote_from_other:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "あなたがCompathyでコメントしたログブック「%{tripnote_title}」に%{commented_user_name}さんもコメントしました！ここをクリックしてさっそく確認してみましょう！"
+    to_commenter_of_user_review_from_owner:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "あなたがCompathyでコメントしたログブック「%{tripnote_title}」に作者の%{tripnote_owner_name}さんから返信がありました！ここをクリックしてさっそく確認してみましょう！"
+    to_commenter_of_user_review_from_other:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "あなたがCompathyでコメントしたログブック「%{tripnote_title}」に%{commented_user_name}さんもコメントしました！ここをクリックしてさっそく確認してみましょう！"
+    user_ranking_rankedin:
+      href: "/rankings/users/%{order}"
+      template: "おめでとうございます！あなたがCompathyトップコレクターズで%{rank}位に選ばれました！こちらからランキングを確認してみましょう！"
+
+  tdk:
+    common:
+      title: "Compathy（コンパシー）"
+      description: "海外旅行の旅の記録を旅行記として日記形式でログに残すことができます。個人旅行でも自由旅行でも、ブログを書く時間のなかった人も、写真アルバムを作る要領で画像をアップするだけで、自分の旅行をまとめることができます。旅行記はGoogle map（Googlemaps）を活用し地図上にルートを自動的に掲載し、マップ形式でもまとめることができます。利用は無料です。"
+      keywords: "Compathy,コンパシー,海外,旅行,海外旅行,旅,自由旅行,海外個人旅行,海外自由旅行,旅行記,旅行記録,体験記,ブック,ログ,日記,ブログ,まとめ,アルバム,旅行計画,旅行プラン,しおり,予定,ルート検索,ルート,画像,写真,無料,記録,共有,地図,map,マップ,google,maps,googlemaps,google map,google maps"
+      go_to_top_html: "<strong class='pageName'>%{page_title}</strong><span> トップへ</span>"
+      ogp:
+        title: "世界とつながる旅のコレクション Compathy（コンパシー）"
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "「旅のコレクション」で旅をつなげよう。写真をアップするだけで、これまでにない旅の記録「ログブック」のできあがり。今すぐコレクションを始めることができます。"
+      twitter:
+        title: "世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "「旅のコレクション」で旅をつなげよう。写真をアップするだけで、これまでにない旅の記録「ログブック」のできあがり。今すぐコレクションを始めることができます。"
+        image: "%{top_ogp_url}"
+      page: "（%{num}ページめ）"
+    top:
+      title: "海外旅行の記録（旅行記）を「旅のコレクション」として共有しよう！ - Compathy（コンパシー）"
+    tripnote:
+      title: "%{tripnote_title} %{user_name}さん"
+      description: "%{user_name}さんの%{country_names}への旅行記「%{tripnote_title}」です。%{state_names}への旅が旅行記として、日記形式で記録されています。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{country_names}, %{state_names}, %{spot_names},地図,map,マップ,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録"
+      country_description: "%{country_name}の旅行記（ブログ）"
+      state_description: "%{state_name}（%{country_name}）の旅行記（ブログ）"
+      go_to_top: "%{tripnote_title}"
+      ogp:
+        type: "website"
+      twitter:
+        title: "%{user_name}さんの旅のコレクション「%{tripnote_title}」 - Compathy（コンパシー）"
+    tripnote_preview:
+      title: "ログブックのプレビュー"
+    profile:
+      title: "%{user_name}さんの旅のコレクション"
+      description: "%{user_name}さんの旅のコレクションです。これまでの旅の記録（ログブック）などを、地図上で%{user_name}さんの旅コレクションとして見ることができます。"
+      keywords: "Compathy,コンパシー,旅行,旅,自由旅行,個人旅行,旅行記,旅行記録,体験記,ブック,ログ,日記,ブログ,まとめ,アルバム,旅行計画,旅行プラン,しおり,予定,ルート検索,ルート,画像,写真,記録,共有,地図,map,マップ,google,maps,googlemaps,google map,google maps"
+      logbooks:
+        title: "%{user_name}さんの旅行記（ブログ）"
+        description: "%{user_name}さんの旅行記（ブログ）の一覧です。また、地図から%{user_name}さんのこれまでの旅を探し、地図に指し示された場所の旅行記（ブログ）を読むこともできます。"
+      wishlists:
+        title: "%{user_name}さんの旅のコレクション"
+        description: "%{user_name}さんの行ってみたい！リストの一覧です。大陸別、国別に%{user_name}さんが「行ってみたい！」とおもった場所のリストが掲載されています。また、地図から%{user_name}さんが「行ってみたい！」と思った場所に関する旅行情報を見ることもできます。"
+      favorites:
+        title: "%{user_name}さんのお気に入りの旅行記（ブログ）"
+        description: "%{user_name}さんのお気に入りの旅行記（ブログ）の一覧です。また、地図から%{user_name}さんのお気に入りの旅行記（ブログ）を探し、地図に指し示された場所に関して%{user_name}さんがお気に入りした旅行記（ブログ）を読むこともできます"
+      ogp:
+        type: "website"
+        image: "%{profile_map_url}"
+        description: "%{user_name}さんの旅のコレクションです。これまでの旅の記録（ログブック）などを、地図上で%{user_name}さんの旅コレクションとして見ることができます。"
+      twitter:
+        title: "%{user_name}さんの旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{user_name}さんの旅のコレクションです。これまでの旅の記録（ログブック）などを、地図上で%{user_name}さんの旅コレクションとして見ることができます。"
+        image: "%{profile_map_url}"
+    profile_wishlist:
+      title: "%{user_name}さんの%{country}の行ってみたい！リスト"
+      description: "%{user_name}さんの%{country}の行ってみたい！リストです。%{user_name}さんが%{country}で行ってみたいと思っている場所から、あなたが%{country}で行ってみたい場所を探してみましょう。"
+      keywords: "Compathy,コンパシー,旅行,旅,自由旅行,個人旅行,旅行記,旅行記録,体験記,ブック,ログ,日記,ブログ,まとめ,アルバム,旅行計画,旅行プラン,しおり,予定,ルート検索,ルート,画像,写真,記録,共有,地図,map,マップ,google,maps,googlemaps,google map,google maps"
+      ogp:
+        type: "website"
+        image: "%{profile_map_url}"
+        description: "%{user_name}さんの%{country}の行ってみたい！リストです。%{user_name}さんが%{country}で行ってみたいと思っている場所から、あなたが%{country}で行ってみたい場所を探してみましょう。"
+      twitter:
+        title: "%{user_name}さんの旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{user_name}さんの%{country}の行ってみたい！リストです。%{user_name}さんが%{country}で行ってみたいと思っている場所から、あなたが%{country}で行ってみたい場所を探してみましょう。"
+        image: "%{profile_map_url}"
+    country:
+      title: "%{country_name}の旅行ガイド"
+      description: "Compathyでは、%{country_name}の地図（マップ）、旅行記（ブログ）、口コミ、観光スポット、観光名所の人気/おすすめ情報をランキング形式で紹介しています。%{country_name}の中の都市/エリアや、グルメ/食べ物、遊び、ショッピング、宿泊などのカテゴリーから観光情報とその口コミ、旅行記を探すことができます。"
+      keywords: "%{country_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{country_name}の旅行ガイド"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{country_name}の旅のコレクションです。地図上で%{country_name}の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{country_name}の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{country_name}の旅のコレクションです。地図上で%{country_name}の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    country_logbooks:
+      title: "%{country_name}の旅行記（ブログ）"
+      description: "%{country_name}の旅行記（ブログ）の一覧です。%{country_name}の観光スポット、グルメ、レストラン、宿泊の情報を含む旅行記（ブログ）をランキングと地図で紹介しています。"
+      keywords: "%{country_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{country_name}の旅行記（ブログ）"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{country_name}の旅のコレクションです。地図上で%{country_name}の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{country_name}の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{country_name}の旅のコレクションです。地図上で%{country_name}の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    country_categories:
+      sites: "観光・買い物（ショッピング）"
+      restaurants: "レストラン・グルメ・食べ物"
+      hotels: "ホテル・宿泊"
+      title: "%{country_name}の%{category_name}情報"
+      description: "Compathyでは、%{country_name}の「%{category_name}」に関する海外旅行（自由旅行、個人旅行）の旅行記（旅のブログ）をまとめて紹介しています。%{promotion_word}の旅行記をランキング、行き先別などで探すことができます。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{country_name},%{category_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{country_name}の%{category_name}"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{country_name}の「%{category_name}」に関する旅のコレクションです。地図上で%{country_name}の「%{category_name}」に関する旅コレクションを見ることができます。"
+      twitter:
+        title: "%{country_name}の「%{category_name}」に関する旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{country_name}の「%{category_name}」に関する旅のコレクションです。地図上で%{country_name}の「%{category_name}」に関する旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    country_tags:
+      title: "%{country_name}の「%{tag_name}」の旅行記（ブログ）"
+      description: "Compathyでは、%{country_name}の「%{tag_name}」をテーマにした海外旅行（自由旅行、個人旅行）の旅行記（旅のブログ）をまとめて紹介しています。%{promotion_word}の旅行記をランキング、行き先別などで探すことができます。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{country_name},%{tag_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{country_name}の「%{tag_name}」の旅行記（ブログ）"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{country_name}の「%{tag_name}」をテーマにした旅のコレクションです。地図上で%{country_name}の「%{tag_name}」をテーマにした旅コレクションを見ることができます。"
+      twitter:
+        title: "%{country_name}の「%{tag_name}」をテーマにした旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{country_name}の「%{tag_name}」をテーマにした旅のコレクションです。地図上で%{country_name}の「%{tag_name}」をテーマにした旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    state:
+      title: "%{state_name}（%{country_name}）の旅行ガイド"
+      description: "Compathyでは、%{state_name}（%{country_name}）の地図（マップ）、旅行記（ブログ）、口コミ、観光スポット、観光名所の人気/おすすめ情報をランキング形式で紹介しています。%{state_name}（%{country_name}）の中の都市/エリアや、グルメ/食べ物、遊び、ショッピング、宿泊などのカテゴリーから観光情報とその口コミ、旅行記を探すことができます。"
+      keywords: "%{state_name},%{country_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{state_name}（%{country_name}）の旅行ガイド"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{state_name}（%{country_name}） の旅のコレクションです。地図上で%{state_name}（%{country_name}） の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{state_name}（%{country_name}） の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{state_name}（%{country_name}） の旅のコレクションです。地図上で%{state_name}（%{country_name}） の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    state_logbooks:
+      title: "%{state_name}（%{country_name}）の旅行記（ブログ）"
+      description: "%{state_name}（%{country_name}）の旅行記（ブログ）の一覧です。%{state_name}（%{country_name}）の観光スポット、グルメ、レストラン、宿泊の情報を含む旅行記（ブログ）をランキングと地図で紹介しています。"
+      keywords: "%{state_name},%{country_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{state_name}（%{country_name}）の旅行記（ブログ）"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{state_name}（%{country_name}） の旅のコレクションです。地図上で%{state_name}（%{country_name}） の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{state_name}（%{country_name}） の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{state_name}（%{country_name}） の旅のコレクションです。地図上で%{state_name}（%{country_name}） の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    state_categories:
+      sites: "観光・買い物（ショッピング）"
+      restaurants: "レストラン・グルメ・食べ物"
+      hotels: "ホテル・宿泊"
+      title: "%{state_name}（%{country_name}）の%{category_name}情報"
+      description: "Compathyでは、%{state_name}（%{country_name}） の「%{category_name}」に関する海外旅行（自由旅行、個人旅行）の旅行記（旅のブログ）をまとめて紹介しています。%{promotion_word}の旅行記をランキング、行き先別などで探すことができます。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{state_name},%{country_name},%{category_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{state_name}（%{country_name}）の%{category_name}"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{state_name}（%{country_name}） の「%{category_name}」に関する旅のコレクションです。地図上で%{state_name}（%{country_name}） の「%{category_name}」に関する旅コレクションを見ることができます。"
+      twitter:
+        title: "%{state_name}（%{country_name}） の「%{category_name}」に関する旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{state_name}（%{country_name}） の「%{category_name}」に関する旅のコレクションです。地図上で%{state_name}（%{country_name}） の「%{category_name}」に関する旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    state_tags:
+      title: "%{state_name}（%{country_name}）の「%{tag_name}」の旅行記（ブログ）"
+      description: "Compathyでは、%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした海外旅行（自由旅行、個人旅行）の旅行記（旅のブログ）をまとめて紹介しています。%{promotion_word}の旅行記をランキング、行き先別などで探すことができます。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{state_name},%{country_name},%{tag_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{state_name}（%{country_name}）の「%{tag_name}」の旅行記（ブログ）"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした旅のコレクションです。地図上で%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした旅コレクションを見ることができます。"
+      twitter:
+        title: "%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした旅のコレクションです。地図上で%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    spot:
+      title: "%{spot_name}（%{state_country}）の旅行記（ブログ）"
+      description: "%{spot_name}（%{state_name}, %{country_name}） の海外旅行情報と関連する旅のコレクション（旅行記、口コミ）です。このスポットは「%{main_category_name}」に分類され、%{spot_name}までの行き方や地図、その他お役立ち情報と、このスポットを含むみんなの旅のコレクションを見ることができます。Compathyでは%{spot_name}の他にも%{state_name}, %{country_name} のあなたにおすすめのスポットをはじめ海外の旅の情報、旅行の記録が含まれ、そこからあなただけの旅行プランを計画することができます。"
+      keywords: "%{spot_name},%{state_name},%{country_name},%{main_category_name},旅行記,口コミ,行き方,アクセス,ルート,地図,map,マップ"
+      go_to_top: "%{spot_name}（%{state_name}, %{country_name}）"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{spot_name}（%{state_name}, %{country_name}） の旅のコレクションです。地図上で%{spot_name}（%{state_name}, %{country_name}） の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{spot_name}（%{state_name}, %{country_name}） の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{spot_name}（%{state_name}, %{country_name}） の旅のコレクションです。地図上で%{spot_name}（%{state_name}, %{country_name}） の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    tag:
+      title: "「%{tag_name}」の旅行記（ブログ）"
+      description: "Compathyでは、「%{tag_name}」をテーマにした海外旅行（自由旅行、個人旅行）の旅行記（旅のブログ）をまとめて紹介しています。%{promotion_word}の旅行記をランキング、行き先別などで探すことができます。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{tag_name},Compathy,コンパシー,旅行,旅,自由旅行,個人旅行,旅行記,旅行記録,体験記,ブック,ログ,日記,ブログ,まとめ,アルバム,旅行計画,旅行プラン,しおり,予定,ルート検索,ルート,画像,写真,記録,共有,地図,map,マップ,google,maps,googlemaps,google map,google maps"
+      go_to_top: "「%{tag_name}」の旅行記（ブログ）"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{tag_name}に関する旅のコレクションです。地図上で%{tag_name}の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{tag_name}の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{tag_name}に関する旅のコレクションです。地図上で%{tag_name}の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    ranking_users:
+      favorites: "お気に入り獲得数"
+      views: "View数"
+      publishes: "ログブック数"
+      title: "Compathyトップコレクターズ（旅行記（ブログ）の人気ランキング）（%{order}）"
+      description: "Compathyのトップコレクターズ（旅行記（ブログ）の人気ランキング）（%{order}）ページです。人気/おすすめの旅行記（ブログ）作成者を%{order}のランキング形式で掲載しています。コレクターを選択すると、国/都市/エリア別にグルメ/食べ物、遊び、ショッピング、宿泊など観光情報とその口コミ、地図（マップ）とルート（行き方）を含む旅行記を見ることができます。"
+      keywords: "旅行記,ランキング,旅,ブログ,ブロガー,旅行,地図,map,マップ,おすすめ,おススメ,オススメ,観光,旅行記録,ログ,まとめ,画像,記録,ルート検索,ルート,写真"
+      go_to_top: "旅行記（ブログ）人気作者ランキング（%{order}）"
+      ogp:
+        type: "website"
+        image: "https://www.compathy.net/images/rankings/badge_ogp.png"
+        description: "Compathyのトップコレクターズ（旅行記（ブログ）の人気ランキング）ページです。人気/おすすめの旅行記（ブログ）作成者をランキング形式で掲載しています。"
+      twitter:
+        title: "Compathyトップコレクターズ（旅行記（ブログ）の人気ランキング）  - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "Compathyのトップコレクターズ（旅行記（ブログ）の人気ランキング）ページです。人気/おすすめの旅行記（ブログ）作成者をランキング形式で掲載しています。"
+    ranking_logbooks:
+      favorites: "お気に入り獲得数"
+      views: "View数"
+      dates: "新着"
+      friends: "友達のログブック"
+      title: "旅行記（ブログ）の人気ランキング（%{order}）"
+      description: "Compathyで人気・新着の旅行記（ブログ）のランキング（%{order}）ページです。人気/おすすめの旅行記（ブログ）を%{order}のランキング形式で掲載しています。旅行記（ブログ）を選択すると、国/都市/エリア別にグルメ/食べ物、遊び、ショッピング、宿泊など観光情報とその口コミ、地図（マップ）とルート（行き方）を含む旅行記を見ることができます。"
+      keywords: "旅行記,ランキング,旅,ブログ,ブロガー,旅行,地図,map,マップ,おすすめ,おススメ,オススメ,観光,旅行記録,ログ,まとめ,画像,記録,ルート検索,ルート,写真"
+      go_to_top: "旅行記（ブログ）人気ランキング（%{order}）"
+      ogp:
+        type: "website"
+        image: "%{top_cover_image_url}"
+        description: "Compathyで人気・新着の旅行記（ブログ）のランキングページです。人気/おすすめの旅行記（ブログ）をランキング形式で掲載しています。"
+      twitter:
+        title: "旅行記（ブログ）の人気ランキング（%{order}） - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "Compathyで人気・新着の旅行記（ブログ）のランキングページです。人気/おすすめの旅行記（ブログ）をランキング形式で掲載しています。"
+    subapp:
+      title: "旅行プラン作成 | Compathy（コンパシー）"
+
+  social_link:
+    twitter:
+      post_text: "みんなの「おすすめ」で作るソーシャル旅行プランニングサイト『Compathy（コンパシー）』"
+      link_text: "ツイート"
+
+  common:
+    top: "海外旅行記トップ"
+    close: "閉じる"
+    country: "国"
+    spot: "スポット"
+    all: "全部"
+    people: "人"
+    title: "タイトル"
+    description: "概要"
+    basicinfo: "基本情報"
+    see_more: "もっと見る"
+    see_other_spot: "行きたいスポットをもっと探す"
+    translate: "翻訳する"
+    review: "レビュー"
+    loading: "データを読み込んでいます..."
+    cancel: "キャンセル"
+    submit: "投稿する"
+    register: "登録する"
+    edit: "編集する"
+    delete: "削除する"
+    finish: "完了する"
+    add: "追加"
+    map: "地図"
+    compathy_connection: "Compathy でのつながり"
+    mandatory: "※ 必須"
+    not_permitted: "権限がありません"
+    back_to_top: "Topに戻る"
+    tagline: "Compathy（コンパシー） 世界とつながる旅のコレクション β ver."
+    post: "投稿"
+    see_detail: "詳細はこちら"
+    travel_collectors_ranking: "コレクターズランク"
+    see_travel_collectors_ranking: "トップコレクターズの一覧を見る"
+    states_in_prefix: ""
+    states_in_postfix: "の都市"
+    tripnote:
+      tripnote_name: "旅行記（ブログ）"
+      author: "作者"
+      title: "タイトル"
+      tags: "タグを設定してください"
+      route: "旅のルート"
+      description: "この旅のまとめ"
+      description_limit: "50文字以上"
+      episode_count: "エピソード"
+      tripnotes_in: "%{area}の旅行記 / ブログ（ログブック）"
+      tripnote_count: "件"
+      title_placeholder: "このログブックのタイトルを記入してください。"
+      description_placeholder: "この旅の目的や楽しみにしていたこと、振り返ってみての感想などを自由に記入してください。"
+      episode_placeholder: "ここではどんなエピソードがありましたか？"
+      choose_from_popular_tags: "人気のタグから選ぶ"
+      members: "メンバー"
+      read_more: "続きを読む"
+      search_in_by_theme: "%{area}の旅行記 / ブログ（ログブック）をテーマから探す"
+      from_prefix: "『"
+      from_postfix: "』より"
+      day_prefix: ""
+      day_postfix: "日目"
+      is_inspecting_date: "情報を取得中です..."
+      undefined_date: "日付未設定"
+      like_spot: "行ってよかった！"
+    user:
+      name_postfix: "さん"
+      age: "代"
+      male: "男性"
+      female: "女性"
+    breadcrumb:
+      tripnotes: "みんなの旅のコレクション（旅行記、旅行計画、口コミなど）"
+    header_logo_alt: "Compathy（コンパシー） 世界とつながる旅のコレクション β version"
+    notification:
+      please_login: "ご指定の機能を利用するには、ログインが必要です"
+    error_sorry: "サーバーエラーが発生しました。時間が経っても解決しない場合は、support+compathy-web@wanderlust.co.jp までお問い合わせください。"
+    image:
+      default_alt_tag: "Compathy 旅行記"
+
+  global_navi:
+    ios_app: "iPhoneアプリ"
+
+  top:
+    tagline_upper: "あなたの旅の思い出が、"
+    tagline_lower: "きっと誰かの旅につながっている"
+    header_1: "Compathyはみんなの旅の"
+    header_2: "思い出から世界とつながる、"
+    header_3: "旅のコレクションサービスです"
+    how_it_works: "Compathyについてもっと詳しく"
+    about_login_acount_1: "Facebookアカウントを利用して"
+    about_login_acount_2: "Compathyにログインします"
+    login_button_html: "ログイン/新規登録して<br>旅のコレクションをはじめる"
+    introduction_of_spot: "みんなの「行ってよかった！」が、あなたの「行ってみたい！」へ"
+    user:
+      create_collections_1: "海外旅行の記録（旅行記）"
+      create_collections_2: "を「旅のコレクション」として共有しよう"
+      age_step: "代"
+      male: "男性"
+      female: "女性"
+      visited:
+        places: "訪れた場所"
+        cities: "都市"
+        countries: "ヶ国"
+      tripnotes:
+        naming: "ログブック"
+        travelog: "（旅行記）"
+        num: "冊"
+    see_other_collection: "ほかの旅のコレクションを見る"
+    wish_to_go: "行ってみたい！"
+    search_by_country: "「行ってみたい！」を国から探す"
+    search_by_tag: "「行ってみたい！」をテーマから探す"
+    search_explain: "みんなの旅のコレクション（旅行記、旅行計面、ロコミなど）を自由に検索できます。"
+    promote_signup:
+      header_1: "Compathyであなたの旅の"
+      header_2: "「全て」をコレクションしてみませんか"
+      detail: "写真と文字だけでは伝えられない、旅の時間軸、旅路、一緒にいた人など、旅の全てをコレクションとして残すことができます。"
+      how_it_works: "Compathyについてもっと詳しく"
+      login_button_1: "ログインして"
+      login_button_2: "旅のコレクションをつくる"
+      tripnotes:
+        introduction: "あなたの旅をログブックとして記録できます"
+        read_this: "続きを読む"
+        more: "もっと見る"
+
+  home:
+    view: "view"
+    more: "もっと見る"
+    delete: "削除"
+    read_this: "続きを読む"
+    fav_num: "お気に入り獲得数"
+    view_num: "View数"
+    tripnote_num: "ログブック数"
+    see_top_collectors: "トップコレクターズの一覧を見る"
+    age_step: "代"
+    visited:
+      places: "訪れた場所"
+      cities: "都市"
+      countries: "ヶ国"
+    episode: "エピソード"
+    author: "作者"
+    profile_info:
+      username_suffix: "さん"
+      collectors_rank: "コレクターズランク"
+      my_collection: "旅のコレクション"
+      favorites: "お気に入り"
+      tripnotes:
+        fav_num: "冊"
+      wish_to_go: "行ってみたい！"
+      wished:
+        sites: "スポット"
+        countries: "ヶ国"
+      recent_tripnotes: "最近書いた旅行記（ブログ）"
+      draft_tripnotes: "（書きかけのログブック）"
+      create_new_collection: "コレクションを追加"
+      connections: "Compathyでのつながり"
+      see_all: "すべてみる"
+    all_activities:
+      title: "みんなのアクティビティ"
+      new: "最新のアクティビティ"
+      count: "件"
+      add_collection_1: "「"
+      add_collection_2: "」を旅のコレクションに追加しました。"
+      loved_to_be_there: " 行ってよかった！"
+      say_wish_to_go_1: "「"
+      say_wish_to_go_2: "」に行ってみたい！と言っています。"
+      commented_on_episode_in_1: "「"
+      commented_on_episode_in_2: "」内のエピソードにコメントしました。"
+      commented_on_1: "「"
+      commented_on_2: "」にコメントしました。"
+      add_fav_1: "「"
+      add_fav_2: "」をお気に入りに追加しました。"
+      see_detail: "詳しく見る"
+    top_travel_collectors:
+      title: "トップコレクターズ"
+    recommendations:
+      title: "あなたへのおすすめ"
+    features:
+      title: "注目の旅行記（ブログ）"
+      see_more_tripnotes: "旅行記（ブログ）をもっと見る"
+
+  rankings:
+    visited_places: "訪れた国"
+    countries: "ヶ国"
+    states: "都市"
+    users:
+      tripnotes:
+        gained_favorites: "お気に入り獲得数"
+        views: "View数"
+        publishes: "ログブック数"
+        seo_text: "【トップコレクターズ】みんなの旅行記（ブログ）作成者人気ランキング"
+      top_collectors: "Compathyトップコレクターズ"
+      see_tripnote_ranking: "旅行記（ブログ）のランキングを見る"
+      most_favorite_tripnotes: "みんなのお気に入りログブック"
+      most_viewed_tripnotes: "よく見られているログブック"
+      user_tripnotes_postfix: "さんのログブック"
+    tripnotes:
+      all_tripnotes: "みんなの旅行記（ブログ）・ランキング"
+      see_popular_user: "Compathyで人気のユーザを見る"
+      favorites: "みんなのお気に入り"
+      views: "View数の多い順"
+      dates: "新着"
+      friends: "友達の旅行記（ブログ）"
+
+  profile_edit:
+    welcome: "Compathyへようこそ！"
+    profile_explain_prefix: "はじめに"
+    profile_explain_postfix: "さんのCompathy上でのプロフィールを登録してください。このプロフィールはいつでも変更することができます。"
+    modal_title: "プロフィール編集"
+    welcome_message: "Compathyへようこそ"
+    user_id: "ユーザID"
+    disable_to_change_now: "※現在は変更できません"
+    profile_picture: "プロフィール写真"
+    email_address: "メールアドレス"
+    name: "名前"
+    from: "出身地"
+    language: "言語"
+    gender: "性別"
+    age: "年代"
+    age_step: "代"
+    male: "男性"
+    female: "女性"
+    show_your_age_in_public: "年代を公開する"
+    your_birthday_wont_be_shown: "誕生日は公開されません"
+    introduction: "自己紹介"
+    notifications: "通知メール"
+    mail_magazine: "メールマガジン"
+    campaigns_information: "キャンペーンや注目の旅情報についてお知らせします"
+    notifications_for_you: "あなたへのお知らせ"
+    notifications_with_email : "メールでのお知らせ"
+    notifications_with_facebook: "facebookでのお知らせ"
+    notifications_about_your_logbooks: "あなたの旅行記（ブログ）にコメントがあった場合などに通知する設定です。"
+    description_of_notification: "重要なお知らせは、メールを受け取らない設定の方にもお送りすることがございますので、あらかじめご了承ください。"
+    cancel: "キャンセル"
+    finish_editing: "プロフィール編集を完了"
+    share_start_compathy_with_facebook: "Compathyを始めたことをfacebook上の友だちと共有する"
+    start_compathy: "Compathyで旅のコレクション、始めました。"
+    start_compathy_with_this_content: "この内容で登録してCompathyを始める"
+    withdraw_1: "Compathyを退会するには、"
+    withdraw_2: "ユーザー登録解除"
+    withdraw_3: "を行ってください。"
+
+  user_profile:
+    map:
+      from_prefix: "『"
+      from_postfix: "』より"
+    name_postfix: "さん"
+    title: "%{user_name}さんの旅のコレクション"
+    travel_collection: "旅のコレクション"
+    wishlist_prefix_html: ""
+    wishlist_postfix_html: "<small>の行ってみたい！リスト</small>"
+    visited_places: "訪れた場所"
+    cities: "都市"
+    countries: "ヶ国"
+    favorites: "お気に入り"
+    favorites_count: "冊"
+    wish_to_go: "行ってみたい！"
+    spot_count: "スポット"
+    edit_profile_html: "<span class=\"inline-block\">プロフィールを</span><span class=\"inline-block\">編集する</span>"
+    gained_favorites: "お気に入り獲得数"
+    view_postfix: "数"
+    tripnote_count: "ログブック数"
+    create_tripnote_html: "コレクションを<span class=\"inline-block\">追加する</span>"
+    draft_tripnotes: "書きかけの旅行記（ブログ）"
+    draft_tripnotes_note: "公開されていません"
+    edit_it: "編集する"
+    edit: "編集"
+    delete: "削除"
+    tripnote: "旅行記（ブログ）"
+    see_more: "続きを読む"
+    favorite_tripnotes: "お気に入りした旅行記（ブログ）"
+    wishlist: "行ってみたい！リスト"
+
+  user_wishlist:
+    title_prefix_html: ""
+    title_postfix_html: "<small>の行ってみたい！リスト</small>"
+    from_prefix_html: ""
+    from_postfix_html: "<small>より</small>"
+    see_country_collection_prefix: ""
+    see_country_collection_postfix: "についてのコレクションを見る"
+    see_other_country_collection: "他の国のリストを見る"
+    back_to_collection: "コレクションに戻る"
+
+  # top_before_login:
+  #   sub_title: "あなたの旅の思い出が、きっと誰かの旅につながっている"
+  #   service_description: "Compathyはみんなの旅の思い出から世界とつながる、旅のコレクションサービスです"
+  #   how_it_works: "Compathyについてもっと詳しく"
+  #   about_login_account: "Facebookアカウントを利用してCompathyにログインします"
+  #   login_button: "Facebookアカウントでログイン/新規登録"
+
+  login_modal:
+    default:
+      title: "Compathyへのログイン/新規登録"
+      about_login_acount: "Compathyを利用するにはFacebookのアカウントが必要です"
+      login_button: "会員登録（無料）/ ログイン"
+      no_thank_you: "今は大丈夫です"
+    from_top:
+      title: "Compathyで旅のコレクションを始めよう！"
+      about_login_acount_html: "Compathyではみんなと旅の思い出を共有したり、<br>みんなの思い出から自分だけの旅行プランを作成することができます"
+      login_button: "会員登録（無料）/ ログイン"
+      login_button_small: "（facebookアカウントが必要です）*"
+    from_how_it_works:
+      create_travel_collection:
+        title: "会員登録（無料）またはログインが必要です"
+        about_login_acount: "旅のコレクションをつくりましょう"
+      create_wishlist:
+        title: "会員登録（無料）またはログインが必要です"
+        about_login_acount: "行ってみたい！リストをつくりましょう"
+      login_button: "会員登録（無料）/ ログイン"
+      login_button_small: "（facebookアカウントが必要です）*"
+    from_logbook_bookmark:
+      title: "会員登録（無料）またはログインが必要です"
+      login_button: "会員登録（無料）/ ログイン"
+      login_button_small: "（facebookアカウントが必要です）*"
+      about_login_acount: "このログブックを「お気に入り」に追加します"
+    from_logbook_like_with_spot:
+      title_html: "Compathyで<br>自分だけの旅行プランをつくろう！"
+      sp_title_html: "Compathyで<br>「行ってみたい」をあつめよう！"
+      about_login_acount_html: "Compathyでは<br class='brSp'>みんなの旅の思い出や「<span class='leadTextWithtogo'>行ってみたい</span>」を集めて、<br>自分だけの旅行プランを作成することができます"
+      sp_about_login_acount_html: "Compathyで見つけたエピソードや観光スポット情報を<br class='brSp'>「<span class='leadTextWithtogo'>行ってみたい</span>」リストに保存することで、<br>地図上でいつでも確認することができます"
+      login_button_html: "無料会員登録（ログイン）して<br>旅行プランを作成する"
+      sp_login_button_html: "無料会員登録（ログイン）して<br>行ってみたいリストをつくる"
+    from_logbook_like_without_spot:
+      title_html: "Compathyで<br>自分だけの旅行プランをつくろう！"
+      sp_title_html: "Compathyで<br>「行ってみたい」をあつめよう！"
+      about_login_acount_html: "Compathyでは<br class='brSp'>みんなの旅の思い出や「<span class='leadTextWithtogo'>行ってみたい</span>」を集めて、<br>自分だけの旅行プランを作成することができます"
+      sp_about_login_acount_html: "Compathyで見つけたエピソードや観光スポット情報を<br class='brSp'>「<span class='leadTextWithtogo'>行ってみたい</span>」リストに保存することで、<br>地図上でいつでも確認することができます"
+      login_button_html: "無料会員登録（ログイン）して<br>旅行プランを作成する"
+      sp_login_button_html: "無料会員登録（ログイン）して<br>行ってみたいリストをつくる"
+    from_leading_links:
+      title_html: "行きたい場所を選ぶだけで旅の計画表が！<br>旅行計画機能新登場！"
+      login_button_html: "無料会員登録（ログイン）して<br>旅行計画を作成する"
+      no_charge_text: "(利用に一切料金は発生しません)"
+    need_login_prefix: "旅のコレクションを作る"
+    need_login_postfix: "コレクションをつくるには、Compathyへのログインが必要です。"
+    login_button: "Facebookアカウントでログイン/新規登録する"
+    about_post_on_fb: "※ Compathyがあなたの許可無くFacebookに投稿することはありません"
+    reason_of_using_fb: "Facebookアカウントを利用する理由"
+    reason_of_using_fb_detail: "Compathyは下記の情報を利用するために、Facebookアカウントと連携しています。"
+    basic_info: "基本データ"
+    email_address : "あなたのメールアドレス"
+    profile_info: "あなたのプロフィール情報: 説明、生年月日、位置情報"
+    status_updates: "あなたの近況アップデート"
+    friends_locations : "友達の位置情報"
+    shared_photos : "あなたと共有された写真"
+    shared_updates: "あなたと共有された近況アップデート"
+
+  categories:
+    description_sites: "%{area}での観光・買い物（ショッピング）情報です。
+        %{area}の観光スポット、買い物（ショッピング）ができる場所に関する、みんなのおすすめ情報が一覧化されています。
+        気になる場所を選択すると、%{area}の観光スポット、買い物（ショッピング）ができる場所について、営業時間やアクセスなどもっとたくさんの情報を見ることができます。みんなのおすすめから、%{area}でお気に入りの観光・買い物（ショッピング）スポットを見つけましょう。"
+    description_restaurants: "%{area}でのレストラン・グルメ・食べ物情報です。
+      %{area}のレストラン、グルメ・食べ物に関係する場所について、みんなのおすすめ情報が一覧化されています。
+      気になる場所を選択すると、%{area}のレストラン、グルメ・食べ物に関係する場所について営業時間や予約の要否、公式ページなど、もっとたくさんの情報を見ることができます。みんなのおすすめから、%{area}でお気に入りのレストラン、グルメ・食べ物スポットを見つけましょう。"
+    description_hotels: "%{area}でのホテル・宿泊情報です。
+      %{area}のホテル・宿泊に関係する場所について、一般的なホテルからリゾートまで、みんなのおすすめ情報が一覧化されています。
+      気になる場所を選択すると、%{area}のホテル・宿泊に関係する場所の設備やアクセス、予約のできる公式ページなど、もっとたくさんの情報を見ることができます。みんなのおすすめから、%{area}でお気に入りのホテル・宿泊施設を見つけましょう。"
+
+  place:
+    popular_states_prefix: ""
+    popular_states_postfix: "の人気の都市"
+    tripnotes_count: "冊の旅行記（ブログ）"
+    no_tripnotes: "まだデータがありません。"
+    no_tripnotes_prefix: "まだ"
+    no_tripnotes_postfix_sites: "で『楽しむ』に関する投稿はありません。"
+    no_tripnotes_postfix_restaurants: "で『食べる』に関する投稿はありません。"
+    no_tripnotes_postfix_hotels: "で『泊まる』に関する投稿はありません。"
+    all_states: "すべての都市一覧"
+    sites_in_html: "%{area}での観光・買い物（ショッピング）"
+    restaurants_in_html: "%{area}でのレストラン・グルメ・食べ物"
+    hotels_in_html: "%{area}でのホテル・宿泊"
+
+  country:
+    description_html: "%{country}の旅行ガイドです。<br>
+      %{country}のガイド情報として、%{country}を旅行したみんなの旅行記（ブログ）、%{country}の観光情報をホテル（宿泊地）、グルメ（食事・食べ物）、観光・ショッピングに分類し、クチコミ情報と併せて一覧化された旅行ガイドを掲載しています。%{country}の各都市のページに行けば、指定した都市の情報の一覧を見ることもできます。%{country}現地を訪れた国内の方の情報や、現地に住む方からの情報、ツアーを使って行かれた方、航空券・宿泊地も個人で予約された方など、さまざまな%{country}での旅行情報が掲載された「みんなで作る%{country}の旅行ガイド」から、あなただけの旅行プランを考えてみてください。"
+
+  state:
+    description_html: "%{state}（%{country}）の旅行ガイドです。<br>
+      %{state}（%{country}）のガイド情報として、%{state}（%{country}）を旅行したみんなの旅行記（ブログ）、%{state}（%{country}）の観光情報をホテル（宿泊地）、グルメ（食事・食べ物）、観光・ショッピングに分類し、クチコミ情報と併せて一覧化された旅行ガイドを掲載しています。%{state}（%{country}）現地を訪れた国内の方の情報や、現地に住む方からの情報、ツアーを使って行かれた方、航空券・宿泊地も個人で予約された方など、さまざまな%{state}（%{country}）での旅行情報が掲載された「みんなで作る%{state}（%{country}）の旅行ガイド」から、あなただけの旅行プランを考えてみてください。"
+    states_in_prefix: ""
+    states_in_postfix: "の都市"
+
+  spot:
+    description_html: "%{spot}（%{state_country}）の写真、旅行のクチコミレポートと、%{spot}の写真とレポートを含む旅行記（ブログ）をまとめた%{spot}の旅行情報ページです。%{spot}（%{state_country}）を実際に訪問した方のレポートと、%{spot}と一緒に訪れた旅の旅行記（ブログ）から、気になる情報を調べてみましょう。"
+    spot_info: "スポット概要"
+    no_spot_info: "情報が見つかりませんでした"
+    address: "住所"
+    tel: "電話番号"
+    url: "URL"
+    bookmark_spot_prefix: ""
+    bookmark_spot_postfix: "を『行ってみたい！リスト』に登録"
+    bookmark_spot: "行ってみたい！リストに追加"
+    bookmark_spot_remove: "行ってみたい！リストから外す"
+    wish_to_go: "行ってみたい！"
+    no_bookmarked_user: "まだ行ってみたい！と言っている人はいません。"
+    has_booked: "人が行ってみたい！リストに追加"
+    episode_at_prefix: ""
+    episode_at_postfix: "の口コミ・エピソード"
+    visited_on_prefix: ""
+    visited_on_postfix: "に訪れました"
+    tripnote_rate: "行ってよかった！"
+    sites_prefix: ""
+    sites_postfix: "で『楽しむ』"
+    restaurants_prefix: ""
+    restaurants_postfix: "で『食べる』"
+    hotels_prefix: ""
+    hotels_postfix: "で『泊まる』"
+    breadcrumb_sites_prefix: ""
+    breadcrumb_sites_postfix: "で『楽しむ』"
+    breadcrumb_restaurants_prefix: ""
+    breadcrumb_restaurants_postfix: "で『食べる』"
+    breadcrumb_hotels_prefix: ""
+    breadcrumb_hotels_postfix: "で『泊まる』"
+
   tripnote:
-      add_comment: "コメントを追加"
+    previewing: "ログブックをプレビュー中"
+    back_to_edit: "編集画面へ戻る"
+    confirm_back_to_draft: "一度編集すると、下書きのステータスになります。下書きにして編集しますか？"
+    breadcrumb_user_collection: "さんの旅のコレクション"
+    see_collection: "コレクションを見る"
+    members: "この旅行のメンバー"
+    visited_places: "訪れた国"
+    favorite: "お気に入り"
+    add_favorite: "お気に入りに追加"
+    favorite_done: "お気に入り"
+    favorite_tooltip: "お気に入りに追加すれば、いつでもログブックを見返すことができます"
+    favorite_tooltip_login: "お気に入りに追加すれば、いつでも旅行記（ブログ）を見返すことができます（ログインが必要です）"
+    need_login: "ログインが必要です"
+    budget: "予算"
+    currency: "円"
+    num_of_episode_of_spot_html: "クチコミ<b>%{published_episodes_count}</b>件"
+    bookmark_spot: "行ってみたい！リストに追加"
+    offer_to_bookmark_spot: "行ってみたい！リストに登録してみましょう"
+    has_booked: "人が行ってみたい！リストに追加"
+    about_prefix: ""
+    about_postfix: "について詳しく"
+    wish_to_go: "行ってみたい！"
+    add_comment: "コメントする"
+    close_map: "地図を閉じる"
+    see_route: "この旅のルートを見る"
+    comments: "コメント"
+    user_collection_html: "さんの<span class=\"inline-block\">旅コレクション</span>"
+    signup_info_prefix: "今すぐ無料で"
+    signup_info_postfix: "Compathy をはじめる"
+    require_input:
+      wrap_up: "タイトルと旅のまとめを書いて完成です"
+      limit_prefix: "（残り"
+      limit_postfix: " 文字）"
+    need_more_info:
+      title: "未入力の情報があります"
+      body: "編集画面へ戻って、公開に必須な項目を入力してください"
+      back_to_edit: "編集画面へ戻る"
+    people_also_read: "この旅行記（ブログ）を読んだ人が読んでいます"
+
+  howitworks:
+    signup_button_1_upper: "旅のコレクションをつくる"
+    signup_button_1_lower: ""
+    signup_button_2_upper: "行ってみたい！リストを作る"
+    signup_button_2_lower: ""
+    create_tripnote_upper: "旅のコレクションを作る"
+    create_tripnote_lower: ""
+    create_wishlist_upper: "人気の旅行記（ブログ）から"
+    create_wishlist_lower: "行ってみたい！リストを作る"
+    title_upper: "Compathyはみんなの思い出から世界とつながる、"
+    title_lower: "旅のコレクションサービスです"
+    header_text_1: "旅の記録をログブックとして記録していくことで、あなただけの旅のコレクションが出来上がります。"
+    header_text_2: "Compathyの観光スポット情報を集めて、旅先でも見られる「行ってみたいリスト」を簡単に作成できます。"
+    merit_explain_1_1_html: "あなたの旅をログブックとして記録できます。<br>写真と文字だけでは伝えられない、旅の時間軸、旅路、一緒にいた人など、旅の全てを記録しましょう。"
+    merit_explain_1_2: "撮影した写真から自動的に「日時」と「場所」を取得し、旅の記録の手助けをします。"
+    merit_explain_1_2_note: "※ 写真に位置情報・撮影日時情報がない場合は、手動で入力していただく必要があります。"
+    merit_explain_1_3_html: "ログブックで行った場所をたくさん集めれば、それがあなたの旅のコレクションになります。<br>コレクションをどんどん増やしていきましょう。"
+    merit_explain_2_1_html: "Compathyで見つけたエピソードや観光スポット情報に『行ってみたい！』ボタンを押せば、リストとして保存して、地図上でいつでも確認することができます。<br>自分だけの『行ってみたい！リスト』をつくって、旅をもっと便利に楽しみましょう。"
+
+  logbook_is_in_draft:
+    title: "このログブックは下書き中のため、現在は見ることができません。"
+    description: "時間をおいて、再度アクセスしてみてください。"
+    back_to_top: "トップページへ戻る"
+
+  create_tripnote:
+    upload_modal:
+      title: "コレクションの追加"
+      title_sm: "（ログブックを作成）"
+      body: "まずは旅行の写真を選んでみましょう。"
+      note_for_mobile_upper: "スマートフォンでは下記の制限があります。"
+      note_for_mobile_lower: "あらかじめご了承ください。"
+      note_for_mobile_text: "写真から撮影地、撮影日時の情報をうまく取得できない可能性があります"
+      upload_photo: "写真を選択"
+      upload_limit_prefix: "（"
+      upload_limit_postfix_html: "枚まで<sup>※</sup>）"
+      upload_note: "※ 次の画面でも追加でアップロードできます。"
+
+  edit_tripnote:
+    editing_tripnote: "旅行記（ブログ）を編集中"
+    auto_save: "自動保存"
+    saving: "保存しています..."
+    saved: "変更内容をすべて保存しました"
+    last_update: "最終更新"
+    draft: "下書き"
+    dates: "日程"
+    see_tutorial: "チュートリアルを見る"
+    add_picture: "写真を追加"
+    add_picture_note_prefix: "（一度に"
+    add_picture_note_postfix: "枚まで）"
+    add_picture_same_day: "同じ日の写真を追加"
+    add_picture_same_day_note_prefix: "（一度に"
+    add_picture_same_day_note_postfix: "枚まで）"
+    post: "投稿"
+    preview: "プレビュー"
+    cover_picture: "カバー写真"
+    set_cover_picture_html: "カバー写真<br>にする"
+    set_cover_picture_html_sp: "カバー写真にする"
+    select_date: "日付を選択してください"
+    spent: "使った金額（円）"
+    input_price: "金額を数字で入力してください"
+    area_eg: "例"
+    area_tooltip: "写真を撮った場所を検索するために、街の名前など大まかなエリアを入れてください"
+    area_explain: "このエリアから写真を撮った場所を探します。"
+    spot_placeholder: "写真を撮った場所（レストランなど観光スポット）の名前（アルファベット）"
+    spot_empty: "スポットを設定するとルートが作成されます"
+    select_nearby: "近くの場所を選ぶ"
+    uploading_pictures: "アップロード中の写真"
+    uploading_panel_note_prefix: "※アップロード中の写真が表示されます"
+    uploading_panel_note_postfix: "（少し時間がかかる場合があります。）"
+    add_member_title: "旅行メンバーを追加"
+    add_member_explain_html: "一緒に旅行に行った友だちをメンバーに追加して、みんなで旅行記（ブログ）を楽しむことができます。"
+    search_fb_friends: "Compathyを利用中の友だちを検索"
+    note_search_fb_friends: "※ Compathyを利用しているFacebookの友達のみ追加することができます"
+    add_member_submit: "メンバーを追加する"
+    select_main_tag: "設定したタグからメインタグを選択（メインタグは7文字以内）"
+    share_social:
+      title: "旅のコレクションが追加されました！"
+      body_1: "お疲れさまでした！"
+      body_2: "あなたの旅のコレクションに"
+      body_3: "新しいログブック「"
+      body_4: "」が追加されました。"
+      body_5_html: "Facebookに共有して、<br>友だちにもあなたのログブックを紹介しましょう。"
+      share_fb: "Facebookの友だちに共有する"
+      no_share: "今は共有しない"
+
+  register_spot:
+    title: "新しく場所を登録する"
+    input_address_or_drag_marker: "住所を入力するか、ピンを撮影場所にドラッグしてください"
+    input_address_here: "ここに住所を入力してください"
+    enter_name_category: "名前とカテゴリを入力してください"
+    name_of_place: "この場所の名前"
+    category_of_place: "この場所のカテゴリ"
+    select_category: "カテゴリを選択"
+
+  pickup_spot:
+    title: "スポットを選択する"
+    search_nearby_photo: "撮影場所の近くで検索"
+
+  tags:
+    place_connector: "での"
+    breadcrumb_prefix: ""
+    breadcrumb_postfix: "についてのみんなのコレクション"
+    title_prefix: ""
+    title_postfix: "についてのみんなのコレクション（旅行記、旅行計画、口コミなど）"
+    description: "%{tag}に関する旅行記（ブログ）の一覧です。旅行記（ブログ）を選択すると、%{tag}の旅行記（ブログ）を読むことができます。みんなの%{tag}に関する旅行記（ブログ）を読んで、次の旅行の計画を立てましょう。"
+    description_area: "%{area}での%{tag}に関する旅行記（ブログ）の一覧です。旅行記（ブログ）を選択すると、%{area}での%{tag}の旅行記（ブログ）を読むことができます。みんなの%{area}での%{tag}に関する旅行記（ブログ）を読んで、次の旅行の計画を立てましょう。"
+
+  mobile_notification:
+    mb_friend_start_compathy:
+      message_body: "<b>%{started_friend_name}</b>さんがCompathyをはじめました！"
+      push_body: "%{started_friend_name}さんがCompathyをはじめました！"
+    mb_friend_create_tripnote:
+      message_body: "ともだちの%{created_friend_name}さんがログブック「<b>%{tripnote_title}</b>」を作成しました！"
+      push_body: "ともだちの%{created_friend_name}さんがログブックを作成しました！"
+    mb_favorite_tripnote:
+      message_body: "%{faved_user_name}さんがあなたのログブックをお気に入りしました！"
+      push_body: "%{faved_user_name}さんがあなたのログブックをお気に入りしました！"
+    mb_like_user_review_no_spot:
+      message_body: "%{liked_user_name}さんからあなたのログブックが「行ってみたい！」されました！"
+      push_body: "%{liked_user_name}さんからあなたのログブックが「行ってみたい！」されました！"
+    mb_like_user_review_with_spot:
+      message_body: "%{liked_user_name}さんからあなたのログブックが「行ってみたい！」されました！"
+      push_body: "%{liked_user_name}さんからあなたのログブックが「行ってみたい！」されました！"
+    mb_add_comment_to_tripnote:
+      message_body: "%{commented_user_name}さんからコメントが書かれました<br><b>%{comment}</b>"
+      push_body: "%{commented_user_name}さんからあなたのログブックにコメントが書かれました。"
+    mb_add_comment_to_user_review:
+      message_body: "%{commented_user_name}さんからコメントが書かれました<br><b>%{comment}</b>"
+      push_body: "%{commented_user_name}さんからあなたのエピソードにコメントが書かれました。"
+    mb_got_user_review_for_reviewed_spot:
+      message_body: "あなたが過去に行った<b>%{spot_name}（%{country_name}）</b>を含む新しいログブックが追加されました！"
+      push_body: "あなたが過去に行った場所を含む新しいログブックが追加されました！"
+    mb_got_user_review_for_bookmarked_spot:
+      message_body: "あなたが興味を持った<b>%{spot_name}（%{country_name}）</b>を含む新しいログブックが追加されました！"
+      push_body: "あなたが興味を持った場所を含む新しいログブックが追加されました！"
+    mb_arrival_target_value:
+      message_body: "あなたのログブック「<b>%{tripnote_title}</b>」が<b>%{pv}view</b>を達成しました！"
+      push_body: "あなたのログブック「%{tripnote_title}」が%{pv}viewを達成しました！"
+    mb_to_commenter_of_user_review_from_owner:
+      message_body: "あなたがコメントを書いたエピソードに作者からコメントが書かれました。<br><b>%{comment}</b>"
+      push_body: "あなたがコメントを書いたエピソードに作者からコメントが書かれました。"
+    mb_to_commenter_of_user_review_from_other:
+      message_body: "あなたがコメントを書いたエピソードに<b>%{commented_user_name}</b>さんからコメントが書かれました。"
+      push_body: "あなたがコメントを書いたエピソードに%{commented_user_name}さんからコメントが書かれました。"
+    mb_to_commenter_of_tripnote_from_owner:
+      message_body: "あなたがコメントを書いたログブックに作者からコメントが書かれました。<br><b>%{comment}</b>"
+      push_body: "あなたがコメントを書いたエピソードに作者からコメントが書かれました。"
+    mb_to_commenter_of_tripnote_from_other:
+      message_body: "あなたがコメントを書いたログブックに<b>%{commented_user_name}</b>さんからコメントが書かれました。"
+      push_body: "あなたがコメントを書いたログブックに%{commented_user_name}さんからコメントが書かれました。"
+
+  travel_plan:
+    common:
+      base_price: "市価"
+      travel_plan: "旅行プラン"
+      route: "ルート"
+      route_from: "出発地"
+      route_to: "目的地"
+      direction: "移動方法"
+      memo: "メモ"
+      no_memo: "この予定にはメモがありません"
+      help: "ヘルプ"
+      star: "つ星"
+      stars: "つ星"
+      per_night: "/ 1泊"
+    info_bar:
+      body: "Compathy に旅行プラン作成機能（β版）が登場！"
+      link_to_create: "さっそく作成！"
+    home:
+      draft: "書きかけの旅行プラン"
+    hotel_reservation:
+      make_hotel_reservation: "ホテルを予約する"
+      make_reservations: "その他のサイトでこのホテルの価格を検索する"
+      more_offers: "他のプロバイダも見る"
+      view_deals: "サイトを確認する"
+      book_now: "予約"
+      net_price_per_night: "1泊料金"
+      showing_date: "空室情報: "
+      guests: "人"
+      loading_placeholder: "ホテルの予約情報を読み込んでいます..."
+      loading_hotels_html: "あなたに最もおすすめな<br>場所を探しています..."
+      tips: "ヒント"
+      tip_zoom: "地図を動かしたり、ズームイン/アウトしたあとで地図上の「表示エリアで再検索」をクリックすると、表示している地図の範囲のスポットを再検索できます。"
+      tip_scroll: "スポットのリストをスクロールすると、更に多くの検索結果を得ることができます。"
+      tip_scroll_price: "スポットのリストをスクロールすると、更に多くの検索結果を得ることができ、また値段等の条件で並び替えることができます。"
+      provided_by: "Provided by"
+    create:
+      default_title: "%{name}さんの旅行プラン"
+      menu_option: "旅行プランを作成"
+      modal:
+        title: "旅行プランを作りましょう！"
+        link_to_how_to_use: "ご利用方法はこちら"
+        input_date:
+          nav_header: "日程を入力する"
+          description_html: "ご出発はいつですか？<b>日程は後から変更できます。</b>"
+          placeholder: "日付を選択してください"
+          create_plan: "旅行プランを作成"
+        skip_input_date:
+          nav_header: "日程はあとで決める"
+          description_html: "さっそく旅行プランを作ってみましょう。日程は編集画面で入力できます。"
+          description_sp_html: "さっそく旅行プランを作ってみましょう。<br/>みんなの旅の思い出から、あなただけのプランを作成することができます。"
+          create_plan: "日程を決めずに旅行プランを作成"
+          create_plan_sp: "旅行プランを作成する"
+
+    edit:
+      day: "{{ $index + 1 }}日目"
+      how_to_use: "ご利用方法"
+      modal:
+        change:
+          title: "日程の変更"
+          description: "新しい日付を選択すると、旅のプランに反映されます"
+          confirm: "変更"
+          placeholder: "新しい日付を選んでください"
+        memo:
+          title: "メモを書く"
+          confirm: "OK"
+          placeholder: "ここに忘れたくない情報をメモしておきましょう"
+        routes:
+          note_about_duration: "(交通機関の待ち時間を含んだトータルの時間です)"
+      options:
+        save: "プランを保存する"
+        see_preview: "プレビューを見る"
+        print: "印刷する"
+        add_day: "日を追加する"
+        request_google_form: "ご意見・ご要望"
+        directions: "移動方法"
+        no_directions: "移動方法が見つかりません"
+        add_memo: "メモを取る"
+        add_spot: "スポットを追加"
+      daily_plan:
+        placeholder:
+          title: "スポットを追加しましょう！"
+          description: "「行ってみたい！リスト」または「スポット検索」に表示されるエリア情報の ＋ ボタンか、ドラッグ＆ドロップで追加することができます。"
+      wishlist:
+        select_country: "行きたい国を選択するか、国名を入力"
+        select_state: "行きたい地域・都市を選択"
+        placeholder:
+          title: "行ってみたい！リスト"
+          description: "みんなのログブック（旅行記）やスポット詳細画面から、行ってみたい！ と思う場所をクリックすると、ここに表示されます。"
+          description_link: "行ってみたい！リスト、旅行プラン作成方法はこちら"
+      search:
+        title: "スポット検索"
+        location: "行きたい場所を選ぶ"
+        selectize_placeholder: "リストから選択、またはキーワードを入力"
+        no_more_results_title_html: "これ以上の検索結果が見つかりませんでした"
+        no_more_results_description_html: "次を試してみてください<br>・国や都市の名前で検索して、範囲を絞り込んでから再度検索してみてください<br>・場所の名前をアルファベットで入力してみてください"
+        register_spot_html: "それでも見つからない時は、<br>ここから新しく場所を追加できます"
+        select_subcategory: "サブカテゴリーを選択"
+        tab_list: "リスト"
+        tab_map: "地図"
+        placeholder:
+          start_search:
+            title: "行きたいスポットを探してみよう"
+            description: "「行き先の国・都市を検索」から行きたい国を選択してみましょう"
+          no_results_found:
+            title: "検索結果が見つかりませんでした"
+            description_html: "次を試してみてください<br>・国や都市の名前で検索して、範囲を絞り込んでから再度検索してみてください<br>・場所の名前をアルファベットで入力してみてください"
+        order:
+          title: "並べ替え"
+          episodes: "人気順"
+          likes: "注目順"
+          price: "価格順"
+          stars: "星順"
+      spotview:
+        title: "スポット詳細"
+        no_episodes:
+          image_alt: "おっと！"
+          title_html: "まだエピソードがありません"
+      basic_info:
+        title_placeholder: "ここから旅のタイトルを入力しましょう"
+        desc_placeholder: "ここから旅の概要を入力しましょう"
+        edit: "基本情報の編集"
+      modal_plan_location:
+        title: "行き先を選んでください"
+        search_by_keyword: "キーワードから探す"
+        search_by_list: "リストから選ぶ"
+      modal_plan_basic_info:
+        title: "タイトル、概要の変更"
+        title_sp: "旅の基本情報を入力"
+        title_needed: "タイトルを入力してください"
+        date_from: "出発日"
+        date_number: "日数"
+      change_order:
+        title: "予定を変更する"
+        move_here: "ここに移動する"
+        lead_text: "移動先を選択してください"
+    preview:
+      options:
+        share: "共有"
+        see_on_mobile: "プランを共有する"
+      overview:
+        title_placeholder: "（ここにタイトルが入ります）"
+        desc_placeholder: "（ここに概要が入ります）"
+        see_more: "もっと見る"
+        see_back: "元に戻す"
+        days: "日間"
+        day_prefix: ""
+        day_postfix: "日目"
+        map_view: "地図"
+      plan_item:
+        title: "予定の詳細"
+      routes:
+        title: "移動方法"
+      help:
+        offline:
+          header: "オフラインでの利用はできる？"
+          content: "現在は対応していません。インターネット接続ができない場所へ行く前に、画面キャプチャ機能を使って保存しておきましょう。"
+          link: "参考リンク"
+        add_to_home:
+          header: "携帯のホーム画面に追加するには？"
+          content: "一度ブラウザを閉じてしまっても再度アクセスできるように、画面下中央のシェアボタンを押して、「ホームに追加」を選択してください。"
+          link: "参考リンク"
+      header_lg:
+        title: "旅行プランのプレビュー"
+        sorry_for_sp_layout: "※ 現在は携帯端末用レイアウトがメインとなっております。あらかじめご了承ください。"
+        back_to_plan_edit: "編集画面に戻る"
+        back_to_preview_overview: "プレビュートップに戻る"
+      modal_plan_share:
+        title: "プランを共有する"
+        description_html: "共有リンクを作成すると、<br>別の端末でもログインすることなくプランを見ることができるようになります。"
+        create_pub_link: "共有リンクを作成する"
+        explaination: "QR コードを読み取るか、下記のURL にアクセスしてください"
+        note_about_public_link: "※ URL を知っている人は全員アクセスすることができます。"
+        delete_pub_link: "共有リンクを削除する"
+

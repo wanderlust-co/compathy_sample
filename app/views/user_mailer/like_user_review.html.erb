@@ -1,0 +1,116 @@
+<!-- content start -->
+<table class="top row">
+  <tr>
+    <td class="wrapper last">
+
+      <table class="twelve columns">
+        <tr>
+          <td>
+            <p><%= @user.name %>さん、こんにちは。<br>
+              Compathy（コンパシー）運営チームです。</p>
+            <p>
+              <%= @liked_user.name %>さんがあなたのログブックを読んで、「行ってみたい！」と言っています！
+            </p>
+          </td>
+          <td class="expander"></td>
+        </tr>
+        <tr>
+          <td style="ten sub-columns">
+            <%= image_tag @user_review.image_url(:medium), width: "auto", height: "220", class: "topPicture" %>
+          </td>
+          <td class="expander"></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="topHeader">
+              <h1 class="topHeader__text">行ってみたい！されたエピソード</h1>
+            </div>
+            <div class="topContent">
+              <h2 class="topContent__title"><%= @user_review.tripnote.title %></h2>
+              <% if @spot && @spot.country %>
+                <p class="topContent__text topContent__text--spot"><%= @spot.name + @spot.country.name %></p>
+              <% end %>
+                <% if date = @user_review.try(:tripnote_date) %>
+                  <p class="topContent__text topContent__text--date"><%= date.strftime("%Y/%m/%d") %></p>
+                <% end %>
+              <p class="topContent__text topContent__text--description">"<%= @user_review.body %>"</p>
+              <% episode_url = "https://www.compathy.net#{@user_review.link_url}" %>
+              <%= link_to(episode_url, episode_url, class: "topContent__text topContent__text--link topContent__text--last") %>
+            </div>
+          </td>
+          <td class="expander"></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+
+<table class="row">
+  <tr>
+    <td class="middle">
+      <table class="twelve columns">
+        <tr>
+          <td class="twelve sub-columns middleHeader">
+            <h2 class="middleHeader__text">行ってみたい！と言ったCompathyトラベラー</h2>
+          </td>
+          <td class="expander"></td>
+        </tr>
+      </table>
+      <table class="middleContent twelve columns">
+        <tr>
+          <td class="three sub-columns">
+            <!-- Top Left sub-grid -->
+            <div class="userPic">
+              <a class="userPic__link" href="<%= "https://www.compathy.net#{@liked_user.link_url}" %>">
+                <%= image_tag @liked_user.thumbnail_url, width: "100", height: "100", alt: @liked_user.name, class: "userPic__img profilePic"%>
+              </a>
+            </div>
+          </td>
+          <td class="rightContent nine sub-columns last">
+            <!-- Top Right sub-grid -->
+            <h5 class="rightContent__text rightContent__text--title"><%= @liked_user.name %>さん</h5>
+            <p class="rightContent__text"><%= @liked_user.introduction %></p>
+          </td>
+          <td class="expander"></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+</table>
+<!-- Panel with call to action -->
+<table class="row callout">
+  <tr>
+    <td class="wrapper last bottom">
+      <table class="twelve columns">
+        <tr>
+          <td class="bottomHeader">
+            <p class="bottomHeader__text">「行ってみたい！」と言っている<%= @liked_user.name %>さんの旅のコレクションも見てみましょう！</p>
+          </td>
+          <td class="expander"></td>
+        </tr>
+        <tr>
+          <td class="wrapper last">
+            <table class="twelve columns primary-color large-button radius">
+              <tr>
+                <td>
+                  <a class="large-button__text" href="<%= "https://www.compathy.net#{@liked_user.link_url}" %>">旅のコレクションを見る！</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td class="expander"></td>
+        </tr>
+        <tr>
+          <td class="bottomContent">
+            <p class="bottomContent__text">これからもCompathyで旅行体験をお楽しみください！</p>
+            <p class="bottomContent__text">Compathy運営チーム</p>
+          </td>
+          <td class="expander"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- container end below -->

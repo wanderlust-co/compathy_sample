@@ -1,25 +1,1229 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  client:
+    about_compathy: "About Compathy"
+    alert_favorited: "Favorited this Logbook!"
+    alert_see_favorites: "See Your Favorites"
+    alert_bookmarked_spot: "Added '{{spotName}}' to your Wishlist!"
+    alert_bookmarked_this_spot: "Added this spot to your Wishlist!"
+    alert_see_wishlist: "See Wishlist of {{countryName}}"
+    alert_create_plan: "Create a Travel Plan!"
+    error_already_withdrawed: "You've already withdrawed for this service. If you wish to re-register, please contact to: support+compathy-web@wanderlust.co.jp"
+    error_unknown: "Sorry, but some problem occurred. Please come back in some minutes. error: "
+    error_sorry: "Server error has occurred. Please re-try some minutes later. or please contact us at support+compathy-web@wanderlust.co.jp."
+    error_refresh: "Server error has occurred. Browser will be reloaded. If you always get error,  please contact us at support+compathy-web@wanderlust.co.jp."
+    error_please_login: "Your session has timed out. Please login again."
+    error_access_forbidden: "The specified content does not exist, or you are not allowed to access it. By clicking the OK button you'll be redirected to the Main Page."
+    error_save_past_plan: "Your plan's dates have already passed. Please update them before attempting to save again."
+    episodes: "Episodes"
+    episodes_count: ""
+    search_destination: "Destination"
+    search_compathy: "Search"
+    search_by_country: "by country names"
+    search_by_tag: "by themes"
+    search_explain: "You can find variety of travel collections and get many tips such as reviews and exact locations for your next travels."
+    search_country_name: "Search by Country Name"
+    compathy_explain: "Compathy is a travel collection service you can connect to the world with travelogs!"
+    loading_wishlists_html: "Loading your <b>Wishlist</b>.<br>Please wait."
+    loading_spot_results_html: "Looking for <b>spots</b>.<br>Please wait."
+    login: "Log in"
+    login_and_create_tripnotes_1: "Create"
+    login_and_create_tripnotes_2: "travelogs"
+    logout: "Log out"
+    signup: "Sign up"
+    see_collection: "My Collection"
+    see_favorites: "My Favorites"
+    see_wishlists: "My Wishlists"
+    create_tripnote: "Add new travel collection"
+    wish_to_go: "Wish to go!"
+    confirm_leave_page_losing_data: "You still have unsaved changes. Do you really want to leave this page?"
+    confirm_leave_page_with_draft: "leave this page without publishing logbook? (it will remain as draft.)"
+    confirm_delete: "Are you sure to delete?"
+    confirm_delete_wishlist: "Are you sure to delete it from wishlist?"
+    confirm_withdraw: "Are you sure to withdraw from Compathy? Your data will be deleted and won't be restored."
+    confirm_back_to_draft: "Once you edit, it turns back to 'Draft' status so you need to 'Post' again after you finish your edition."
+    official_account_note: "This is Compathy official account. Sometimes the user cannot respond to your comments."
+    male: "Male"
+    female: "Female"
+    spot_not_found_alphabet: "お探しの場所が見つかりませんか？場所名は、アルファベットで入力してみてください。"
+    spot_not_found_register: "the place you're looking for has not been registered yet. Let's register from <u>here</u>"
+    spot_not_found_area: "Sorry, but search range is too wide. please input city/area name to the form above."
+    "Gateway Time-out": "Server error has occurred. Please re-try some minutes later."
+    "Bad Gateway": "Server error has occurred. Please re-try some minutes later."
+    "error": "Server error has occurred. Please re-try some minutes later."
+    "Maximum number of files exceeded": "Maximum number of files exceeded."
+    upload_error: "The upload couldn't be completed. Please remove some of the files and try again."
+    # TODO: Shouldn't the following items be moved to the final "Travel Plan" 
+    # section if they're not used by the client's i18n translation function?
+    # That would also let us use a more readable naming convention (i.e. nesting instead of "plan__*")
+    plan__add_to_plan: "Add to plan"
+    plan__confirm_delete_day: "The selected day's contents will also be deleted. Do you still want to proceed?"
+    plan__confirm_delete_days: "By reducing the number of days of your plan you will delete the extra days and their planned items. Do you still want to proceed?"
+    plan__day: "Day {{numOfDay}}"
+    plan__delete_day: "Delete day"
+    plan__delete_plan_item: "Delete"
+    plan__directions: "Directions"
+    plan__no_state_option_name: "Others"
+    # TODO: Update this phrase once the Japanese version is correctly defined
+    plan__saved_title: "The plan was saved successfully!"
+    plan__saved_body: "You can see a preview of this plan via your mobile phone too."
+    plan__show_spot_view: "See spot details"
+    plan__spot_search_placeholder_list: "Select the country / area you want to visit"
+    plan__spot_search_placeholder_keyword: "Select from the list, or input a keyword"
+    plan__confirm_back_to_home: "Do you want to quit this preview and go back to the top page?"
+    plan__added_to_plan_title: "The spot was added to the plan successfully!"
+    plan__added_to_plan_prefix: "Day "
+    plan__added_to_plan_postfix: ""
+    plan__added_to_wishlist: "The spot was added to your Wishlist"
+    plan__deleted_from_wishlist: "The spot was removed from your Wishlist"
+    plan__refresh_dates: "Your plan's dates have already passed and that may affect your hotel search results.\nWould you like to update the dates now?"
+    plan__old_dates_hotel_search: "Since Day <%= day %> (<%= original %>) is a past date, we are showing you today's availability (<%= today %>) as a reference.\n<%= suffix %>"
+    plan__old_dates_hotel_search_pc: "You can change the search scope by selecting a different day or by changing your trip's dates."
+    plan__old_dates_hotel_search_sp: "If you'd like to update your trip's dates, please go back to the plan's top page and use the 'Edit basic info' button."
+    plan__hotel_room_refundable: "Refundable"
+    plan__hotel_room_non_refundable: "Non-refundable"
+    plan__hotel_room_free_cancel: "Free cancellation"
+    plan__hotel_room_no_free_cancel: "May not be cancelled"
+    plan__hotel_room_pay_later: "Pay later"
+    plan__hotel_room_no_pay_later: "Pay in advance"
+    plan__hotel_room_breakfast: "Includes breakfast"
+    plan__hotel_room_no_breakfast: "Breakfast not included"
+    add: "Add"
+    delete: "Delete"
+    view: "View on map"
+    collapse: "Collapse"
+    expand: "Expand"
+    sites: "THINGS TO DO"
+    restaurants: "EAT"
+    hotels: "STAY"
+    see: "See & Buy"
+    eat: "Eat"
+    stay: "Stay"
+    bookmark_spot: "Add to Wishlist"
+    bookmark_spot_remove: "Remove from Wishlist"
+    see_more: "See more"
+    searchbox__search_more_here: "Search Around This Area"
+
+  date:
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+  datetime:
+    count_in_words:
+      x_days: 'Day %{count}'
+
+  simple_form:
+    labels:
+      spot:
+        name: "Spot Name"
+        address: "Address"
+        lat: "Latitude"
+        lng: "Longitude"
+        tel: "Tel"
+        url: "URL"
+        station: "Station nearby"
+        take_time: "time to spend"
+        cost: "cost to spend"
+
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "..."
+
+  user_mailer:
+    welcome:
+      subject: "[Welcome to Compathy] Let's make your own travel plan!"
+    friend_start_compathy:
+      subject: "[Travel Collections of your friends] %{started_friend_name} also just joined our Compathy."
+    friend_create_tripnote:
+      subject: "[Your friend's travel collection] %{created_friend_name} just named the %{tripnote_title} of collection!"
+    favorite_tripnote:
+      subject: "[Your Travel Collection has been added into favorite] %{faved_user_name} has recoded your Log Book %{tripnote_title} on the favorite!"
+    like_user_review_no_spot:
+      subject: "%{liked_user_name} says \"Wish to go!\" in your Logbook!"
+    like_user_review_with_spot:
+      subject: "%{liked_user_name} says \"Wish to go!\" in your Logbook!"
+    add_comment_to_tripnote:
+      subject: "[There is a new comment oon your Travel Collection] %{commented_user_name} just left comment on your Log Book!"
+    add_comment_to_user_review:
+      subject: "[Reaction to your Travel Collection] %{commented_user_name} just left comment on tour episode."
+    got_user_review_for_reviewed_spot:
+      subject: "%{just_reviewed_user_name} also added the episode with the place where you have visited!"
+    got_user_review_for_bookmarked_spot:
+      subject: "%{just_reviewed_user_name} added the episode with the place where you want to visit!"
+    arrival_target_value:
+      subject: "[Congratulation!] Your Log Book just exceeded %{pv}view."
+    to_commenter_of_user_review_from_owner:
+      subject: "[Reaction to your comment] you got reply for your comment!"
+    to_commenter_of_user_review_from_other:
+      subject: "[New comment] %{commented_user_name}'s also commented to %{tripnote_owner_name}'s logbook!"
+    to_commenter_of_tripnote_from_owner:
+      subject: "[Reaction to your comment] you got reply for your comment!"
+    to_commenter_of_tripnote_from_other:
+      subject: "[New comment] %{commented_user_name}'s also commented to %{tripnote_owner_name}'s logbook!"
+    user_ranking_rankedin:
+      subject: "[Congratulation!] You’re elected as a “Top Collector” on Compathy!"
+#    TODO: implement invite function
+#    list_invitation_email:
+#      subject: "[Inviation to Compathy] Your friend %{invitation_friend_name} has inviteed youto Compathy: Internationalize travel Collection."
+
+  fb_notification:
+    friend_start_compathy:
+      href: "/users/%{started_friend_username}/logbooks"
+      template: "Your facebook friend %{started_friend_name} has also started Compathy travel collection. Click here to check %{started_friend_name}'s travel collection!"
+    friend_create_tripnote:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "Your facebook friend %{created_friend_name} has just added a new travel collection \"%{tripnote_title}\". Click here to read %{created_friend_name}'s travel collection!"
+# NOTE: intentionary not sending (in order to avoid to be too noisy).
+#       https://www.pivotaltracker.com/story/show/64027814
+#
+#    bookmark_tripnote:
+#      href: "/tripnotes/%{tripnote_id}"
+#      template: "%{booked_user_name}さんがあなたのログブック「%{tripnote_title}」をお気に入りに登録しました！"
+#    like_user_review_no_spot:
+#      href: "/tripnotes/%{tripnote_id}"
+#      template: "%{liked_user_name}さんがあなたのログブック「%{tripnote_title}」内のエピソードを読んで「行ってみたい！」と言っています"
+    add_comment_to_tripnote:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "%{commented_user_name} has just commented on your Logbook, \"%{tripnote_title}\". Click here to check what %{commented_user_name} wrote on your logbook."
+    add_comment_to_user_review:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "%{commented_user_name} has just commented on your episode in Logbook, \"%{tripnote_title}\". Clock here to check what %{commented_user_name} wrote on your episode."
+    got_user_review_for_reviewed_spot:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "A new episode has been added on Compathy about \"%{spot_name}\" where you've been to. Click here to check how the person felt at a place where you've been to."
+    got_user_review_for_bookmarked_spot:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "%{just_reviewed_user_name} has just added an episode about \"%{spot_name}\" where you said \"wish to go!\" on Compathy. Click here to check the new episode!"
+    arrival_target_value:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "Congratulations! Your Log Book, \"%{tripnote_title}\" just exceeded %{pv}view. Click here to share it with your friends and got more views!"
+    to_commenter_of_tripnote_from_owner:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "You got a reply from %{tripnote_owner_name} who is the author of a logbook, \"%{tripnote_title}\" which you commented. Click here to check what %{tripnote_owner_name} replied!"
+    to_commenter_of_tripnote_from_other:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "%{commented_user_name} has also commented on a Logbook. \"%{tripnote_title}\" whichi you commented. Click here to check what %{commented_user_name} replied!"
+    to_commenter_of_user_review_from_owner:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "You got a reply from %{tripnote_owner_name} who is the author of a logbook, \"%{tripnote_title}\" which you commented. Click here to check what %{tripnote_owner_name} replied!"
+    to_commenter_of_user_review_from_other:
+      href: "/tripnotes/%{tripnote_id}"
+      template: "%{commented_user_name} has also commented on a Logbook. \"%{tripnote_title}\" whichi you commented. Click here to check what %{commented_user_name} replied!"
+    user_ranking_rankedin:
+      href: "/rankings/users/%{order}"
+      template: "Congratulation! You're elected as a %{rank}th position of Top Collectors on Compathy! Click here and see the ranking!"
+
+  tdk:
+    common:
+      title: "Compathy"
+      description: "海外旅行の旅の記録を旅行記として日記形式でログに残すことができます。個人旅行でも自由旅行でも、ブログを書く時間のなかった人も、写真アルバムを作る要領で画像をアップするだけで、自分の旅行をまとめることができます。旅行記はGoogle map（Googlemaps）を活用し地図上にルートを自動的に掲載し、マップ形式でもまとめることができます。利用は無料です。"
+      keywords: "Compathy,コンパシー,海外,旅行,海外旅行,旅,自由旅行,海外個人旅行,海外自由旅行,旅行記,旅行記録,体験記,ブック,ログ,日記,ブログ,まとめ,アルバム,旅行計画,旅行プラン,しおり,予定,ルート検索,ルート,画像,写真,無料,記録,共有,地図,map,マップ,google,maps,googlemaps,google map,google maps"
+      go_to_top_html: "<span>Back to Top of </span><strong class='pageName'>%{page_title}</strong>"
+      ogp:
+        title: "世界とつながる旅のコレクション Compathy（コンパシー）"
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "「旅のコレクション」で旅をつなげよう。写真をアップするだけで、これまでにない旅の記録「ログブック」のできあがり。今すぐコレクションを始めることができます。"
+      twitter:
+        title: "世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "「旅のコレクション」で旅をつなげよう。写真をアップするだけで、これまでにない旅の記録「ログブック」のできあがり。今すぐコレクションを始めることができます。"
+        image: "%{top_ogp_url}"
+      page: "(page %{num})"
+    top:
+      title: "Compathy - Travel Collections around the world"
+    tripnote:
+      title: "%{tripnote_title} %{user_name}"
+      description: "%{user_name}さんの%{country_names}への旅行記「%{tripnote_title}」です。%{state_names}への旅が旅行記として、日記形式で記録されています。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{country_names}, %{state_names}, %{spot_names},地図,map,マップ,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録"
+      country_description: "%{country_name} Logbooks (Travelogs)"
+      state_description: "%{state_name} (%{country_name}) Logbooks (Travelogs)"
+      go_to_top: "%{tripnote_title}"
+      ogp:
+        type: "website"
+      twitter:
+        title: "%{user_name}さんの旅のコレクション「%{tripnote_title}」 - Compathy（コンパシー）"
+    tripnote_preview:
+      title: "Preview Logbook"
+    profile:
+      title: "%{user_name}'s Travel Collection"
+      description: "%{user_name}さんの旅のコレクションです。これまでの旅の記録（ログブック）などを、地図上で%{user_name}さんの旅コレクションとして見ることができます。"
+      keywords: "Compathy,コンパシー,旅行,旅,自由旅行,個人旅行,旅行記,旅行記録,体験記,ブック,ログ,日記,ブログ,まとめ,アルバム,旅行計画,旅行プラン,しおり,予定,ルート検索,ルート,画像,写真,記録,共有,地図,map,マップ,google,maps,googlemaps,google map,google maps"
+      logbooks:
+        title: "%{user_name}'s Logbooks (Travelogs)"
+        description: "%{user_name}さんの旅行記（ブログ）の一覧です。また、地図から%{user_name}さんのこれまでの旅を探し、地図に指し示された場所の旅行記（ブログ）を読むこともできます。"
+      wishlists:
+        title: "%{user_name}'s Wishlists"
+        description: "%{user_name}さんの行ってみたい！リストの一覧です。大陸別、国別に%{user_name}さんが「行ってみたい！」とおもった場所のリストが掲載されています。また、地図から%{user_name}さんが「行ってみたい！」と思った場所に関する旅行情報を見ることもできます。"
+      favorites:
+        title: "%{user_name}'s Favorites"
+        description: "%{user_name}さんのお気に入りの旅行記（ブログ）の一覧です。また、地図から%{user_name}さんのお気に入りの旅行記（ブログ）を探し、地図に指し示された場所に関して%{user_name}さんがお気に入りした旅行記（ブログ）を読むこともできます"
+      ogp:
+        type: "website"
+        image: "%{profile_map_url}"
+        description: "%{user_name}さんの旅のコレクションです。これまでの旅の記録（ログブック）などを、地図上で%{user_name}さんの旅コレクションとして見ることができます。"
+      twitter:
+        title: "%{user_name}さんの旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{user_name}さんの旅のコレクションです。これまでの旅の記録（ログブック）などを、地図上で%{user_name}さんの旅コレクションとして見ることができます。"
+        image: "%{profile_map_url}"
+    profile_wishlist:
+      title: "%{user_name}'s wishlists in %{country}"
+      description: "%{user_name}さんの%{country}の行ってみたい！リストです。%{user_name}さんが%{country}で行ってみたいと思っている場所から、あなたが%{country}で行ってみたい場所を探してみましょう。"
+      keywords: "Compathy,コンパシー,旅行,旅,自由旅行,個人旅行,旅行記,旅行記録,体験記,ブック,ログ,日記,ブログ,まとめ,アルバム,旅行計画,旅行プラン,しおり,予定,ルート検索,ルート,画像,写真,記録,共有,地図,map,マップ,google,maps,googlemaps,google map,google maps"
+      ogp:
+        type: "website"
+        image: "%{profile_map_url}"
+        description: "%{user_name}さんの%{country}の行ってみたい！リストです。%{user_name}さんが%{country}で行ってみたいと思っている場所から、あなたが%{country}で行ってみたい場所を探してみましょう。"
+      twitter:
+        title: "%{user_name}さんの旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{user_name}さんの%{country}の行ってみたい！リストです。%{user_name}さんが%{country}で行ってみたいと思っている場所から、あなたが%{country}で行ってみたい場所を探してみましょう。"
+        image: "%{profile_map_url}"
+    country:
+      title: "%{country_name} Travel Guide"
+      description: "Compathyでは、%{country_name}の地図（マップ）、旅行記（ブログ）、口コミ、観光スポット、観光名所の人気/おすすめ情報をランキング形式で紹介しています。%{country_name}の中の都市/エリアや、グルメ/食べ物、遊び、ショッピング、宿泊などのカテゴリーから観光情報とその口コミ、旅行記を探すことができます。"
+      keywords: "%{country_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{country_name} Travel Guide"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{country_name}の旅のコレクションです。地図上で%{country_name}の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{country_name}の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{country_name}の旅のコレクションです。地図上で%{country_name}の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    country_logbooks:
+      title: "%{country_name} Logbooks (Travelogs)"
+      description: "%{country_name}の旅行記（ブログ）の一覧です。%{country_name}の観光スポット、グルメ、レストラン、宿泊の情報を含む旅行記（ブログ）をランキングと地図で紹介しています。"
+      keywords: "%{country_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{country_name} Logbooks (Travelogs)"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{country_name}の旅のコレクションです。地図上で%{country_name}の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{country_name}の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{country_name}の旅のコレクションです。地図上で%{country_name}の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    country_categories:
+      sites: "THINGS TO DO"
+      restaurants: "EAT"
+      hotels: "STAY"
+      title: "%{category_name} in %{country_name}"
+      description: "Compathyでは、%{country_name}の「%{category_name}」に関する海外旅行（自由旅行、個人旅行）の旅行記（旅のブログ）をまとめて紹介しています。%{promotion_word}の旅行記をランキング、行き先別などで探すことができます。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{country_name},%{category_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{category_name} in %{country_name} "
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{country_name}の「%{category_name}」に関する旅のコレクションです。地図上で%{country_name}の「%{category_name}」に関する旅コレクションを見ることができます。"
+      twitter:
+        title: "%{country_name}の「%{category_name}」に関する旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{country_name}の「%{category_name}」に関する旅のコレクションです。地図上で%{country_name}の「%{category_name}」に関する旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    country_tags:
+      title: "Logbooks (Travelogs) about \"%{tag_name}\" in %{country_name}"
+      description: "Compathyでは、%{country_name}の「%{tag_name}」をテーマにした海外旅行（自由旅行、個人旅行）の旅行記（旅のブログ）をまとめて紹介しています。%{promotion_word}の旅行記をランキング、行き先別などで探すことができます。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{country_name},%{tag_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "Logbooks (Travelogs) about \"%{tag_name}\" in %{country_name}"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{country_name}の「%{tag_name}」をテーマにした旅のコレクションです。地図上で%{country_name}の「%{tag_name}」をテーマにした旅コレクションを見ることができます。"
+      twitter:
+        title: "%{country_name}の「%{tag_name}」をテーマにした旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{country_name}の「%{tag_name}」をテーマにした旅のコレクションです。地図上で%{country_name}の「%{tag_name}」をテーマにした旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    state:
+      title: "%{state_name} (%{country_name}) Travel Guide"
+      description: "Compathyでは、%{state_name}（%{country_name}）の地図（マップ）、旅行記（ブログ）、口コミ、観光スポット、観光名所の人気/おすすめ情報をランキング形式で紹介しています。%{state_name}（%{country_name}）の中の都市/エリアや、グルメ/食べ物、遊び、ショッピング、宿泊などのカテゴリーから観光情報とその口コミ、旅行記を探すことができます。"
+      keywords: "%{state_name},%{country_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{state_name} (%{country_name}) Travel Guide"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{state_name}（%{country_name}） の旅のコレクションです。地図上で%{state_name}（%{country_name}） の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{state_name}（%{country_name}） の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{state_name}（%{country_name}） の旅のコレクションです。地図上で%{state_name}（%{country_name}） の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    state_logbooks:
+      title: "%{state_name} (%{country_name}) Logbooks (Travelogs)"
+      description: "%{state_name}（%{country_name}）の旅行記（ブログ）の一覧です。%{state_name}（%{country_name}）の観光スポット、グルメ、レストラン、宿泊の情報を含む旅行記（ブログ）をランキングと地図で紹介しています。"
+      keywords: "%{state_name},%{country_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{state_name} (%{country_name}) Logbooks (Travelogs)"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{state_name}（%{country_name}） の旅のコレクションです。地図上で%{state_name}（%{country_name}） の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{state_name}（%{country_name}） の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{state_name}（%{country_name}） の旅のコレクションです。地図上で%{state_name}（%{country_name}） の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    state_categories:
+      sites: "THINGS TO DO"
+      restaurants: "EAT"
+      hotels: "STAY"
+      title: "%{state_name}（%{country_name}）の%{category_name}情報"
+      description: "Compathyでは、%{state_name}（%{country_name}） の「%{category_name}」に関する海外旅行（自由旅行、個人旅行）の旅行記（旅のブログ）をまとめて紹介しています。%{promotion_word}の旅行記をランキング、行き先別などで探すことができます。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{state_name},%{country_name},%{category_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "%{category_name} in %{state_name} (%{country_name})"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{state_name}（%{country_name}） の「%{category_name}」に関する旅のコレクションです。地図上で%{state_name}（%{country_name}） の「%{category_name}」に関する旅コレクションを見ることができます。"
+      twitter:
+        title: "%{state_name}（%{country_name}） の「%{category_name}」に関する旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{state_name}（%{country_name}） の「%{category_name}」に関する旅のコレクションです。地図上で%{state_name}（%{country_name}） の「%{category_name}」に関する旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    state_tags:
+      title: "Logbooks (Travelogs) of \"%{tag_name}\" in %{state_name} (%{country_name})"
+      description: "Compathyでは、%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした海外旅行（自由旅行、個人旅行）の旅行記（旅のブログ）をまとめて紹介しています。%{promotion_word}の旅行記をランキング、行き先別などで探すことができます。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{state_name},%{country_name},%{tag_name},旅行記,旅行記録,ログ,ブログ,まとめ,旅行計画,旅行プラン,予定,ルート検索,ルート,写真,画像,記録,地図,map,マップ,人気,人気ランキング,おすすめ,おススメ,オススメ,観光,観光スポット,観光地,観光名所,情報,グルメ,食べ物,食事,ショッピング,買い物,遊び,夜遊び,空港,ホテル,宿泊,現地,地元"
+      go_to_top: "\"%{tag_name}\" in %{state_name} (%{country_name})"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした旅のコレクションです。地図上で%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした旅コレクションを見ることができます。"
+      twitter:
+        title: "%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした旅のコレクションです。地図上で%{state_name}（%{country_name}） の「%{tag_name}」をテーマにした旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    spot:
+      title: "Logbooks (Travelogs) in %{spot_name} (%{state_country})"
+      description: "%{spot_name}（%{state_name}, %{country_name}） の海外旅行情報と関連する旅のコレクション（旅行記、口コミ）です。このスポットは「%{main_category_name}」に分類され、%{spot_name}までの行き方や地図、その他お役立ち情報と、このスポットを含むみんなの旅のコレクションを見ることができます。Compathyでは%{spot_name}の他にも%{state_name}, %{country_name} のあなたにおすすめのスポットをはじめ海外の旅の情報、旅行の記録が含まれ、そこからあなただけの旅行プランを計画することができます。"
+      keywords: "%{spot_name},%{state_name},%{country_name},%{main_category_name},旅行記,口コミ,行き方,アクセス,ルート,地図,map,マップ"
+      go_to_top: "%{spot_name}（%{state_name}, %{country_name}）"
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{spot_name}（%{state_name}, %{country_name}） の旅のコレクションです。地図上で%{spot_name}（%{state_name}, %{country_name}） の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{spot_name}（%{state_name}, %{country_name}） の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{spot_name}（%{state_name}, %{country_name}） の旅のコレクションです。地図上で%{spot_name}（%{state_name}, %{country_name}） の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    tag:
+      title: "Logbooks (Travelogs) about \"%{tag_name}\""
+      description: "Compathyでは、「%{tag_name}」をテーマにした海外旅行（自由旅行、個人旅行）の旅行記（旅のブログ）をまとめて紹介しています。%{promotion_word}の旅行記をランキング、行き先別などで探すことができます。旅行記（旅のブログ）は地図とルートも掲載していますので、それをベースに旅行計画を立てることもできます。"
+      keywords: "%{tag_name},Compathy,コンパシー,旅行,旅,自由旅行,個人旅行,旅行記,旅行記録,体験記,ブック,ログ,日記,ブログ,まとめ,アルバム,旅行計画,旅行プラン,しおり,予定,ルート検索,ルート,画像,写真,記録,共有,地図,map,マップ,google,maps,googlemaps,google map,google maps"
+      go_to_top: "Logbooks (Travelogs) about \"%{tag_name}\""
+      ogp:
+        type: "website"
+        image: "%{top_ogp_url}"
+        description: "%{tag_name}に関する旅のコレクションです。地図上で%{tag_name}の旅コレクションを見ることができます。"
+      twitter:
+        title: "%{tag_name}の旅のコレクション - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "%{tag_name}に関する旅のコレクションです。地図上で%{tag_name}の旅コレクションを見ることができます。"
+        image: "%{top_ogp_url}"
+    ranking_users:
+      favorites: "Got Favs"
+      views: "View"
+      publishes: "Logbooks"
+      title: "Compathy's Top Travel Collectors: Logbooks (Travelogs) Popularity Ranking by %{order}"
+      description: "Compathyのトップコレクターズ（旅行記（ブログ）の人気ランキング）（%{order}）ページです。人気/おすすめの旅行記（ブログ）作成者を%{order}のランキング形式で掲載しています。コレクターを選択すると、国/都市/エリア別にグルメ/食べ物、遊び、ショッピング、宿泊など観光情報とその口コミ、地図（マップ）とルート（行き方）を含む旅行記を見ることができます。"
+      keywords: "旅行記,ランキング,旅,ブログ,ブロガー,旅行,地図,map,マップ,おすすめ,おススメ,オススメ,観光,旅行記録,ログ,まとめ,画像,記録,ルート検索,ルート,写真"
+      go_to_top: "Logbooks (Travelogs) Popularity Ranking by %{order}"
+      ogp:
+        type: "website"
+        image: "https://www.compathy.net/images/rankings/badge_ogp.png"
+        description: "Compathyのトップコレクターズ（旅行記（ブログ）の人気ランキング）ページです。人気/おすすめの旅行記（ブログ）作成者をランキング形式で掲載しています。"
+      twitter:
+        title: "Compathyトップコレクターズ（旅行記（ブログ）の人気ランキング）  - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "Compathyのトップコレクターズ（旅行記（ブログ）の人気ランキング）ページです。人気/おすすめの旅行記（ブログ）作成者をランキング形式で掲載しています。"
+    ranking_logbooks:
+      favorites: "Got Favs"
+      views: "View"
+      dates: "New"
+      friends: "Friends"
+      title: "Popular Logbooks (Travelogs) (%{order})"
+      description: "Compathyで人気・新着の旅行記（ブログ）のランキング（%{order}）ページです。人気/おすすめの旅行記（ブログ）を%{order}のランキング形式で掲載しています。旅行記（ブログ）を選択すると、国/都市/エリア別にグルメ/食べ物、遊び、ショッピング、宿泊など観光情報とその口コミ、地図（マップ）とルート（行き方）を含む旅行記を見ることができます。"
+      keywords: "旅行記,ランキング,旅,ブログ,ブロガー,旅行,地図,map,マップ,おすすめ,おススメ,オススメ,観光,旅行記録,ログ,まとめ,画像,記録,ルート検索,ルート,写真"
+      go_to_top: "Popular Logbooks (Travelogs) (%{order})"
+      ogp:
+        type: "website"
+        image: "%{top_cover_image_url}"
+        description: "Compathyで人気・新着の旅行記（ブログ）のランキングページです。人気/おすすめの旅行記（ブログ）をランキング形式で掲載しています。"
+      twitter:
+        title: "旅行記（ブログ）の人気ランキング（%{order}） - 世界とつながる旅のコレクション Compathy（コンパシー）"
+        description: "Compathyで人気・新着の旅行記（ブログ）のランキングページです。人気/おすすめの旅行記（ブログ）をランキング形式で掲載しています。"
+    subapp:
+      title: "Create Travel Plan | Compathy"
+
+  social_link:
+    twitter:
+      post_text: "Compathy is a social travel planning service with recommendations from local people."
+      link_text: "Tweet"
+
+  common:
+    top: "Top"
+    close: "Close"
+    country: "Country"
+    spot: "Spot"
+    all: "All"
+    people: " "
+    title: "Title"
+    description: "Description"
+    basicinfo: "Basic information"
+    see_more: "See more"
+    see_other_spot: "See other spots"
+    translate: "Translate"
+    review: "Review"
+    loading: "Loading..."
+    cancel: "Cancel"
+    submit: "Submit"
+    register: "Register"
+    edit: "Edit"
+    delete: "Delete"
+    finish: "Finish"
+    add: "Add"
+    map: "Map"
+    compathy_connection: "Your connection on Compathy"
+    mandatory: "*"
+    not_permitted: "You have no permission to do it"
+    back_to_top: "Back to Top"
+    tagline: "Compathy - Travel Collections around the world β ver."
+    post: "Post"
+    see_detail: "See Details"
+    travel_collectors_ranking: "Travel Collectors Ranking"
+    see_travel_collectors_ranking: "See all Top Collectors"
+    states_in_prefix: "Cities in "
+    states_in_postfix: ""
+    tripnote:
+      tripnote_name: "Logbooks (Travelogs)"
+      author: "Travel Collector"
+      title: "Title"
+      tags: "Tags"
+      route: "Travel Tracking"
+      description: "Description"
+      description_limit: "more than 50 characters"
+      episode_count: "Episodes"
+      tripnotes_in: "Logbooks (Travelogs) in %{area}"
+      tripnote_count: ""
+      title_placeholder: "Enter the title of this logbook"
+      description_placeholder: "Write the purpose of your travel, or what you felt through this travel and so on..."
+      episode_placeholder: "Tell us your story here"
+      choose_from_popular_tags: "Choose from popular tags, please do not put space in. ex) x world heritage"
+      members: "Members"
+      read_more: "Read more"
+      search_in_by_theme: "Find Logbooks (Travelogs) in %{area} by Themes"
+      from_prefix: "From \""
+      from_postfix: "\""
+      day_prefix: "Day "
+      day_postfix: ""
+      is_inspecting_date: "retrieving date..."
+      undefined_date: "Undefined Date"
+      like_spot: "Loved to be there!"
+    user:
+      name_postfix: ""
+      age: "s "
+      male: "male"
+      female: "female"
+    breadcrumb:
+      tripnotes: "travel collections (Travelog)"
+    header_logo_alt: "Compathy - Travel Collections around the world beta version"
+    notification:
+      please_login: "You need to log in to use this feature"
+    error_sorry: "We're sorry but a system error occurred. please try again later, or email us support+compathy-web@wanderlust.co.jp."
+    image:
+      default_alt_tag: "Compathy Travelog"
+
+  global_navi:
+    ios_app: "iPhone App"
+
+  top:
+    tagline_upper: "Your Travelog"
+    tagline_lower: "leads to Someone’s Departure."
+    header_1: "Compathy is a travel collection "
+    header_2: "service you can connect "
+    header_3: "to the world with travelogs!"
+    how_it_works: "How it works?"
+    about_login_acount_1: "Log in / Sign up with Compathy"
+    about_login_acount_2: "using your Facebook account"
+    login_button_html: "Log in / Sign up"
+    introduction_of_spot: "Find your 'Wish to go!' from someone's 'Happy to have been there!'"
+    user:
+      create_collections_1: "Create travel collections "
+      create_collections_2: "only for you"
+      age_step: "s "
+      male: "Male"
+      female: "Female"
+      visited:
+        places: "Places visited"
+        cities: "Cities"
+        countries: "Countries"
+      tripnotes:
+        naming: "Logbooks"
+        travelog: "(Travelog)"
+        num: "s"
+    see_other_collection: "See other Travel Collection"
+    wish_to_go: "Wish to go!"
+    search_by_country: "Find \"Wish to go!\" from these countries"
+    search_by_tag: "Find \"Wish to go!\" from these themes"
+    search_explain: "You can search travel collections (Travelogs, plans, reviews, and so on) as you like."
+    promote_signup:
+      header_1: "Collect 'Everything' of your travel "
+      header_2: "with Compathy"
+      detail: "Everything of travel including timelines, tracks, and people you were with, besides your photos and text stories."
+      how_it_works: "How It Works"
+      login_button_1: "Log in / Sign up "
+      login_button_2: "to start collecting your travels"
+      tripnotes:
+        introduction: "You can make your travels into 'Logbooks'."
+        read_this: "Read this logbook"
+        more: "More Logbooks"
+
+  home:
+    view: "view"
+    more: "More"
+    delete: "Delete"
+    read_this: "Read this logbook"
+    fav_num: "Got Favs"
+    view_num: "View"
+    tripnote_num: "Logbooks"
+    see_top_collectors: "See all Top Collectors"
+    age_step: "s"
+    visited:
+      places: "Places visited"
+      cities: "Cities"
+      countries: "Countries"
+    episode: "episodes"
+    author: "Travel Collector"
+    profile_info:
+      username_suffix: ""
+      collectors_rank: "Travel Collectors Ranking"
+      my_collection: "My Collection"
+      favorites: "Favorites"
+      tripnotes:
+        fav_num: "Favs"
+      wish_to_go: "Wish to go!"
+      wished:
+        sites: "Sites"
+        countries: "Countries"
+      recent_tripnotes: "Recent Logbooks"
+      draft_tripnotes: "(Draft Logbook)"
+      create_new_collection: "Create a new Travel Collection"
+      connections: "Your Connection on Compathy"
+      see_all: "See All"
+    all_activities:
+      title: "All activities"
+      new: "New activities"
+      count: ""
+      add_collection_1: "Added '"
+      add_collection_2: "' into the Travel Collection."
+      loved_to_be_there: "Loved to be there!"
+      say_wish_to_go_1: "Says 'Wish to go!' to '"
+      say_wish_to_go_2: "'"
+      commented_on_episode_in_1: "Commented on a episode in '"
+      commented_on_episode_in_2: "'"
+      commented_on_1: "Commented on '"
+      commented_on_2: "'"
+      add_fav_1: "Favorited '"
+      add_fav_2: "'"
+      see_detail: "See detail"
+    top_travel_collectors:
+      title: "Top Travel Collectors"
+    recommendations:
+      title: "Recommendations for you"
+    features:
+      title: "Featured Logbooks (Travelogs)"
+      see_more_tripnotes: "See more Logbooks (Travelogs)"
+
+  rankings:
+    visited_places: "Places visited"
+    countries: "Countries"
+    states: "States"
+    users:
+      tripnotes:
+        gained_favorites: "Got Favs"
+        views: "View"
+        publishes: "Logbooks"
+        seo_text: "[Top Collectors] Ranking of Travel Collectors by Logbook"
+      top_collectors: "Compathy Top Collectors"
+      see_tripnote_ranking: "See the Ranking of Logbooks (Travelogs)"
+      most_favorite_tripnotes: "Most favorited Logbooks"
+      most_viewed_tripnotes: "Popular Logbooks"
+      user_tripnotes_postfix: "'s Logbooks"
+    tripnotes:
+      all_tripnotes: "All Logbooks (Travelogs)"
+      see_popular_user: "See Popular Users on Compathy"
+      favorites: "Most Favorited"
+      views: "Most Viewed"
+      dates: "New"
+      friends: "friends"
+
+  profile_edit:
+    welcome: "Welcome to Compathy!"
+    profile_explain_prefix: "First of all, please fill out"
+    profile_explain_postfix: "'s profile on Compathy. You can edit this information at any time."
+    modal_title: "Edit Profile"
+    welcome_message: "Welcome to Compathy"
+    user_id: "User Id"
+    disable_to_change_now: "* unable to Change for now"
+    profile_picture: "Profile Picture"
+    email_address: "e-mail address"
+    name: "Name"
+    from: "From"
+    language: "Language"
+    gender: "Gender"
+    age: "Age"
+    age_step: "s"
+    male: "Male"
+    female: "Female"
+    show_your_age_in_public: "Show your age in public"
+    your_birthday_wont_be_shown: "Your birthday won't be shown"
+    introduction: "Introduction"
+    notifications: "Notifications"
+    mail_magazine: "Mail Magazine"
+    campaigns_information: "We will send you about our campaigns and other useful information"
+    notifications_for_you: "Notifications for you"
+    notifications_with_email : "e-mail"
+    notifications_with_facebook: "Facebook"
+    notifications_about_your_logbooks: "Notifications about your logbooks(Comments, Favorited, and so on)"
+    description_of_notification: "We might send you important information no matter if you set your notification settings 'off' when we need to."
+    cancel: "Cancel"
+    finish_editing: "Finish Editing"
+    share_start_compathy_with_facebook: "Share starting Travel Collection on Compathy with friends on Facebook"
+    start_compathy: "I started Travel Collection on Compathy!"
+    start_compathy_with_this_content: "Save and start Compathy"
+    withdraw_1: "Click"
+    withdraw_2: "Here"
+    withdraw_3: "to withdraw from Compathy"
+
+  user_profile:
+    map:
+      from_prefix: "From \""
+      from_postfix: "\""
+    name_postfix: ""
+    title: "%{user_name}"
+    travel_collection: "Travel Collection"
+    wishlist_prefix_html: "<small class=\"marginRightForEn\">Your wishlist in </small>"
+    wishlist_postfix_html: ""
+    visited_places: "Places visited"
+    cities: "Cities"
+    countries: "Countries"
+    favorites: "Favorites"
+    favorites_count: "Favs"
+    wish_to_go: "Wish to go!"
+    spot_count: "Sites"
+    edit_profile_html: "<span class=\"inline-block marginRightForEn\">Edit</span><span class=\"inline-block\">Profile</span>"
+    gained_favorites: "Got Favs"
+    view_postfix: ""
+    tripnote_count: "Logbooks"
+    create_tripnote_html: "Create a new <span class=\"inline-block\">Travel Collection</span>"
+    draft_tripnotes: "Draft Logbooks (Travelogs)"
+    draft_tripnotes_note: "Not opened"
+    edit_it: "Edit"
+    edit: "Edit"
+    delete: "Delete"
+    tripnote: "Logbooks (Travelogs)"
+    see_more: "See more"
+    favorite_tripnotes: "Favorites"
+    wishlist: "Wishlists"
+
+  user_wishlist:
+    title_prefix_html: "<small class=\"marginRightForEn\">Your Wishlists in </small>"
+    title_postfix_html: ""
+    from_prefix_html: "<small>from </small>"
+    from_postfix_html: ""
+    see_country_collection_prefix: "See all Travel Collections about "
+    see_country_collection_postfix: ""
+    see_other_country_collection: "Your Wishlists in other countries"
+    back_to_collection: "Back to your Travel Collections"
+
+  # top_before_login:
+  #   sub_title: "Your Travelog leads to Someone's Departure."
+  #   service_description: "Compathy is a travel collection service you can connect to the world with travelogs!"
+  #   how_it_works: "How it works?"
+  #   about_login_account: "Log in / Sign up with Compathy using your Facebook account"
+  #   login_button: "Log in / Sign up"
+
+  login_modal:
+    default:
+      title: "Log in to / Sign up for Compathy"
+      about_login_acount: "You need a Facebook account to start using Compathy"
+      login_button: "Log in / Sign up"
+      login_button_small: "(You need a Facebook account)*"
+      no_thank_you: "No Thank you"
+    from_top:
+      title: "Let's start your travel collection"
+      about_login_acount_html: "you can create your own travel colleciton<br>by sharing travel memories & plans<br>with Compathy."
+      login_button: "Sign up(Free) / Log in"
+      login_button_small: "(You need a Facebook account)*"
+    from_how_it_works:
+      create_travel_collection:
+        title: "You need to Log in to / Sign up for Compathy"
+        about_login_acount: "Let's Log in to / Sign up for Compathy to create your travel collection"
+      create_wishlist:
+        title: "You need to Log in to / Sign up for Compathy"
+        about_login_acount: "Let’s Log in to / Sign up for Compathy to create your wishlist"
+      login_button: "Sign up(Free) / Log in"
+      login_button_small: "(You need a Facebook account)*"
+    from_logbook_bookmark:
+      title: "You need to Log in to / Sign up for Compathy"
+      about_login_acount: "Let's Log in to / Sign up for Compathy and bookmark this logbook"
+      login_button: "Sign up(Free) / Log in"
+      login_button_small: "(You need a Facebook account)*"
+      about_login_acount: "Add this Logbook into Favorites"
+    from_logbook_like_with_spot:
+      title_html: "Let's create your travel plan<br>with Compathy!"
+      sp_title_html: "Let's create your Wishlist<br>with Compathy!"
+      about_login_acount_html: "you can create your own travel plan<br>by gathering other people's travel memories<br>with Compathy."
+      sp_about_login_acount_html: "you can create your own Wishlist<br>by gathering other people's travel memories<br>with Compathy."
+      login_button_html: "Log in to / Sign up for Compathy<br>to create travel plan"
+      sp_login_button_html: "Log in to / Sign up for Compathy<br>to create Wishlist"
+    from_logbook_like_without_spot:
+      title_html: "Let's create your travel plan<br>with Compathy!"
+      sp_title_html: "Let's create your Wishlist<br>with Compathy!"
+      about_login_acount_html: "you can create your own travel plan<br>by gathering other people's travel memories<br>with Compathy."
+      sp_about_login_acount_html: "you can create your own Wishlist<br>by gathering other people's travel memories<br>with Compathy."
+      login_button_html: "Log in to / Sign up for Compathy<br>to create travel plan"
+      sp_login_button_html: "Log in to / Sign up for Compathy<br>to create Wishlist"
+    from_leading_links:
+      title_html: "Turn your wish-to-gos into a real plan! <br />Compathy's new travel feature"
+      login_button_html: "Log in / sign up for Compathy <br />and make a travel plan"
+      no_charge_text: "(There will not be any charge in using Compathy.)"
+    need_login_prefix: "Login to Compathy"
+    need_login_postfix: "to create your Travel Collection"
+    login_button: "Log in / Sign up"
+    about_post_on_fb: "* Compathy does NOT post on your Facebook without your permission."
+    reason_of_using_fb: "The reason we need your Facebook information"
+    reason_of_using_fb_detail: "Compathy needs your Facebook information below so that we can serve your better travel experiences."
+
+    basic_info: "Your basic info"
+    email_address : "Your email address"
+    profile_info: "Your profile info: description, activities, birthday and location"
+    status_updates: "Your status updates"
+    friends_locations : "Friends' locations"
+    shared_photos : "Photos shared with you"
+    shared_updates: "Status updates shared with you"
+
+  categories:
+    description_sites: "This is the information we have available about Tourism and Shopping in the %{area} area. It's a list of all the recommended touristic spots and shops available or related to %{area}. You can choose any option that piques your interest to see more detailed information, like open hours and access, among other things. Let's see what everyone's saying about the Tourism and Shopping in %{area} so we can schedule our activities!"
+    description_restaurants: "This is the information we have available about Restaurants and Gourmet Cuisine in the %{area} area. It's a list of all the recommended options available or related to %{area}. You can choose any option that piques your interest to see more detailed information, like open hours, reservation requirements, and the site's official page, among many other things. Let's see what everyone's saying about the Restaurants and Gourmet Cuisine in %{area} so we can pick the best place!"
+    description_hotels: "This is the information we have available about the Hotels and Accommodations found in the %{area} area. It's a list of all the recommended options, ranging from small lodges all the way up to huge resorts, available or related to %{area}. You can choose any option that piques your interest to see more detailed information, like facilities, access, and an official reservation page, among many other things. Let's see what everyone's saying about the Hotels and Accommodations in %{area} so we can make the best choice!"
+
+  place:
+    popular_states_prefix: "Popular cities in "
+    popular_states_postfix: ""
+    tripnotes_count: "Logbooks (Travelogs)"
+    no_tripnotes: "No Logbook here."
+    no_tripnotes_prefix: "No Logbook about "
+    no_tripnotes_postfix_sites: ""
+    no_tripnotes_postfix_restaurants: ""
+    no_tripnotes_postfix_hotels: ""
+    all_states: "All Cities"
+    sites_in_html: "THINGS TO DO in %{area}"
+    restaurants_in_html: "EAT in %{area}"
+    hotels_in_html: "STAY in %{area}"
+
+  country:
+    description_html: "Logbooks (Travelogs), Maps, Episodes, Reviews and tourist information about %{country}. You can find Reviews and Logbooks (Travelogs) about popular cities in %{country} from categories such as Foods, Sightseeing, Shopping, and Staying."
+
+  state:
+    description_html: "Logbooks (Travelogs), Maps, Episodes, Reviews and tourist information about %{state}(%{country}). You can find Reviews and Logbooks (Travelogs), not only about %{state}, but also about other popular cities in %{country} from categories such as Foods, Sightseeing, Shopping, and Accomodation."
+    states_in_prefix: "Cities in "
+    states_in_postfix: ""
+
+  spot:
+    description_html: "This is a page where you can find photos of %{spot} (%{state_country}), trip reviews, comments, and Logbooks (Travelogs) with information and pictures related to %{spot}. If it piques your interest, how about reading the reports written by other travelers who actually went to %{state_country} and saw %{spot}?"
+    spot_info: "Spot Information"
+    no_spot_info: "Sorry, no information found."
+    address: "Address"
+    tel: "TEL"
+    url: "URL"
+    bookmark_spot_prefix: "Add "
+    bookmark_spot_postfix: " to your Wishlist"
+    bookmark_spot: "Add to Wishlist"
+    bookmark_spot_remove: "Remove from Wishlist"
+    wish_to_go: "Wish to go!"
+    no_bookmarked_user: "No one added to Wishlist yet."
+    has_booked: " People added to Wishlists"
+    episode_at_prefix: "Episode about "
+    episode_at_postfix: ""
+    visited_on_prefix: "Visited on "
+    visited_on_postfix: ""
+    tripnote_rate: "Loved to be there!"
+    sites_prefix: "THINGS TO DO in"
+    sites_postfix: ""
+    restaurants_prefix: "EAT in "
+    restaurants_postfix: ""
+    hotels_prefix: "STAY in "
+    hotels_postfix: ""
+    breadcrumb_sites_prefix: "THINGS TO DO in"
+    breadcrumb_sites_postfix: ""
+    breadcrumb_restaurants_prefix: "EAT in "
+    breadcrumb_restaurants_postfix: ""
+    breadcrumb_hotels_prefix: "STAY in "
+    breadcrumb_hotels_postfix: ""
+
   tripnote:
-    add_comment: "Add comment"
+    previewing: "Previewing a Logbook (Travelog)"
+    back_to_edit: "Back to editing"
+    confirm_back_to_draft: "Once you edit, it turns back to 'Draft' status so you need to 'Post' again after you finish your edition."
+    breadcrumb_user_collection: "'s Travel Collection"
+    see_collection: "See all collections"
+    members: "Members of this trip"
+    visited_places: "Places visited"
+    favorite: "Favorite"
+    add_favorite: "Favorite"
+    favorite_done: "Favorited"
+    favorite_tooltip: "by adding to favorite, you can access this Logbook at anytime"
+    favorite_tooltip_login: "by adding to favorite, you can access this Logbook(Travelog) at anytime (need Login)"
+    need_login: "need Login"
+    budget: "Budget"
+    currency: "USD"
+    num_of_episode_of_spot_html: "<b>%{published_episodes_count}</b> reviews"
+    bookmark_spot: "Add to Wishlist"
+    offer_to_bookmark_spot: "Click and add this site to your Wishlist"
+    has_booked: " people added this site to their wishlist"
+    about_prefix: "About "
+    about_postfix: ""
+    wish_to_go: "Wish to go!"
+    add_comment: "Comment"
+    close_map: "Close Map"
+    see_route: "See Travel Tracking"
+    comments: "Comments"
+    user_collection_html: "'s <span class=\"inline-block\">Travel Collection</span>"
+    signup_info_prefix: "Sign up for FREE"
+    signup_info_postfix: "to start your travel story"
+    require_input:
+      wrap_up: "Wrap up by filling Title and Description and so on."
+      limit_prefix: " ("
+      limit_postfix: " characters to go)"
+    need_more_info:
+      title: "Need more info"
+      body: "please input informations to publish"
+      back_to_edit: "Back to edit page"
+    people_also_read: "People also read these Logbooks (Travelogs)"
+
+  howitworks:
+    signup_button_1_upper: "Create a travel collection"
+    signup_button_1_lower: ""
+    signup_button_2_upper: "Create your own wishlist"
+    signup_button_2_lower: ""
+    create_tripnote_upper: "Create a new Travel Collection"
+    create_tripnote_lower: ""
+    create_wishlist_upper: "Create your wishlists"
+    create_wishlist_lower: "with popular Logbooks (Travelogs)"
+    title_upper: "Compathy is a travel collection service"
+    title_lower: "you can connect to the world with travelogs."
+    header_text_1: "Now you can have your own travel collections through logging your travels as \"Logbooks\"."
+    header_text_2: "You can have your own Wishlists available in your destinations by just clicking \"Wish to go\" button."
+    merit_explain_1_1_html: "You can log your travel as \"Logbook\".<br>Logbook can tell \"everything\" of your travels including timeline and tracks, which can’t be told by only pictures and texts."
+    merit_explain_1_2: "Compathy helps creating logbooks by taking time and location information from your pictures automatically."
+    merit_explain_1_2_note: "*You need to enter manually when your pictures don’t have such information."
+    merit_explain_1_3_html: "Let’s make your amazing travel collections!"
+    merit_explain_2_1_html: "Click “Wish to go!” button when you find sites and food you want to try, then you’ll get your own \"Wishlist\" with map automatically.<br>Since the list will be translated into a map, you can use them in your destinations."
+
+  logbook_is_in_draft:
+    title: "Sorry, this Logbook is in draft mode now."
+    description: "Please come back a few minutes later. thank you."
+    back_to_top: "Back to top page"
+
+  create_tripnote:
+    upload_modal:
+      title: "Create a new Travel Collection"
+      title_sm: " (A new Logbook)"
+      body: "First of all, let’s choose pictures you want to use for your logbook."
+      note_for_mobile_upper: "Please keep in mind that there are some limitations"
+      note_for_mobile_lower: "if you're using mobile devices."
+      note_for_mobile_text: "Sometime it fails to get informations from pictures such as location, datetime"
+      upload_photo: "Upload pictures"
+      upload_limit_prefix: ", up to "
+      upload_limit_postfix_html: " pictures<sup>*</sup>"
+      upload_note: "* You can upload more pictures in the next step."
+
+  edit_tripnote:
+    editing_tripnote: "Editing a Logbook (Travelog)"
+    auto_save: "Auto Save"
+    saving: "Saving..."
+    saved: "Saved all changes"
+    last_update: "last update"
+    draft: "Draft"
+    dates: "Dates"
+    see_tutorial: "See Tutorial"
+    add_picture: "Add Pictures"
+    add_picture_note_prefix: ", up to "
+    add_picture_note_postfix: " pictures at once"
+    add_picture_same_day: "Add pictures taken on the same day,"
+    add_picture_same_day_note_prefix: " up to "
+    add_picture_same_day_note_postfix: " pictures"
+    post: "Post"
+    preview: "Preview"
+    cover_picture: "Cover picture"
+    set_cover_picture_html: "Set as<br>Cover picture"
+    set_cover_picture_html_sp: "Set as Cover picture"
+    select_date: "Select Date"
+    spent: "Price (USD)"
+    input_price: "input price"
+    area_eg: "e.g."
+    area_tooltip: "please input city/area name, in order to search spot where you took picture"
+    area_explain: "Search the name of this place from this area."
+    spot_placeholder: "Name of this place (Name of the restaurant, sites, and so on…)"
+    spot_empty: "Spot is not set"
+    select_nearby: "Find nearby"
+    uploading_pictures: "uploading pictures"
+    uploading_panel_note_prefix: "you can see pictures uploading in progress here."
+    uploading_panel_note_postfix: "(It might take a time to start uploading)"
+    add_member_title: "Select your travel buddies"
+    add_member_explain_html: "You can add your friends as travel buddies<br>so that you can share the fun and memories of your travel."
+    search_fb_friends: "Search friends who also use Compathy"
+    note_search_fb_friends: "* You can add your facebook friends only who registered into Compathy."
+    add_member_submit: "Add"
+    select_main_tag: "select main tag from tags (max length: 7)"
+    share_social:
+      title: "Your Travel Collection was successfully added!"
+      body_1: "Well done!"
+      body_2: "Your Travel Collection just got"
+      body_3: "a new Logbook \""
+      body_4: "\" right now."
+      body_5_html: "Let's tell your friends about your Logbook via Facebook."
+      share_fb: "Share with Facebook friends"
+      no_share: "Not now"
+
+  register_spot:
+    title: "Register a new place"
+    input_address_or_drag_marker: "Input address or Drag the pin on the place where you took this picture on the map."
+    input_address_here: "Input the address here"
+    enter_name_category: "Enter the name and category"
+    name_of_place: "The name of this place"
+    category_of_place: "Category of this place"
+    select_category: "select category"
+
+  pickup_spot:
+    title: "Select Spot"
+    search_nearby_photo: "Search nearby place the photo taken"
+
+  tags:
+    place_connector: "'s "
+    breadcrumb_prefix: "Travel Collections about "
+    breadcrumb_postfix: ""
+    title_prefix: "Travel Collections about "
+    title_postfix: " (Travelogs, Travel Plans, and Reviews)"
+    description: "This is a summary of all the Logbooks (Travelogs) related to %{tag} that we have available. Please go ahead and click on them if you want to read their contents. Does reading about %{tag} make you want to go traveling? In that case let's start planning your next trip!"
+    description_area: "This is a summary of all the Logbooks (Travelogs) related to %{tag} that we have available for the %{area} area. Please go ahead and click on them if you want to read their contents. Does reading about %{tag} in %{area} make you want to go there too? In that case let's start planning your next trip!"
+
+  # TODO: need to convert these sentence to english
+  mobile_notification:
+    mb_friend_start_compathy:
+      message_body: "<b>%{started_friend_name}</b>さんがCompathyをはじめました！"
+      push_body: "%{started_friend_name}さんがCompathyをはじめました！"
+    mb_friend_create_tripnote:
+      message_body: "ともだちの%{created_friend_name}さんがログブック「<b>%{tripnote_title}</b>」を作成しました！"
+      push_body: "ともだちの%{created_friend_name}さんがログブックを作成しました！"
+    mb_favorite_tripnote:
+      message_body: "%{faved_user_name}さんがあなたのログブックをお気に入りしました！"
+      push_body: "%{faved_user_name}さんがあなたのログブックをお気に入りしました！"
+    mb_like_user_review_no_spot:
+      message_body: "%{liked_user_name}さんからあなたのログブックが「いってみたい！」されました！"
+      push_body: "%{liked_user_name}さんからあなたのログブックが「いってみたい！」されました！"
+    mb_like_user_review_with_spot:
+      message_body: "%{liked_user_name}さんからあなたのログブックが「いってみたい！」されました！"
+      push_body: "%{liked_user_name}さんからあなたのログブックが「いってみたい！」されました！"
+    mb_add_comment_to_tripnote:
+      message_body: "%{commented_user_name}さんからコメントが書かれました<br><b>%{comment}</b>"
+      push_body: "%{commented_user_name}さんからあなたのログブックにコメントが書かれました。"
+    mb_add_comment_to_user_review:
+      message_body: "%{commented_user_name}さんからコメントが書かれました<br><b>%{comment}</b>"
+      push_body: "%{commented_user_name}さんからあなたのエピソードにコメントが書かれました。"
+    mb_got_user_review_for_reviewed_spot:
+      message_body: "あなたが過去に行った<b>%{spot_name}（%{country_name}）</b>を含む新しいログブックが追加されました！"
+      push_body: "あなたが過去に行った場所を含む新しいログブックが追加されました！"
+    mb_got_user_review_for_bookmarked_spot:
+      message_body: "あなたが興味を持った<b>%{spot_name}（%{country_name}）</b>を含む新しいログブックが追加されました！"
+      push_body: "あなたが興味を持った場所を含む新しいログブックが追加されました！"
+    mb_arrival_target_value:
+      message_body: "あなたのログブック「<b>%{tripnote_title}</b>」が<b>%{pv}view</b>を達成しました！"
+      push_body: "あなたのログブック「%{tripnote_title}」が%{pv}viewを達成しました！"
+    mb_to_commenter_of_user_review_from_owner:
+      message_body: "あなたがコメントを書いたエピソードに作者からコメントが書かれました。<br><b>%{comment}</b>"
+      push_body: "あなたがコメントを書いたエピソードに作者からコメントが書かれました。"
+    mb_to_commenter_of_user_review_from_other:
+      message_body: "あなたがコメントを書いたエピソードに<b>%{commented_user_name}</b>さんからコメントが書かれました。"
+      push_body: "あなたがコメントを書いたエピソードに%{commented_user_name}さんからコメントが書かれました。"
+    mb_to_commenter_of_tripnote_from_owner:
+      message_body: "あなたがコメントを書いたログブックに作者からコメントが書かれました。<br><b>%{comment}</b>"
+      push_body: "あなたがコメントを書いたエピソードに作者からコメントが書かれました。"
+    mb_to_commenter_of_tripnote_from_other:
+      message_body: "あなたがコメントを書いたログブックに<b>%{commented_user_name}</b>さんからコメントが書かれました。"
+      push_body: "あなたがコメントを書いたログブックに%{commented_user_name}さんからコメントが書かれました。"
+
+  travel_plan:
+    common:
+      base_price: "avg."
+      route: "Route"
+      route_from: "From"
+      route_to: "To"
+      direction: "Direction"
+      memo: "Memo"
+      no_memo: "No notes were found"
+      help: "Help"
+      star: " star"
+      stars: " stars"
+      per_night: " per night"
+    info_bar:
+      body: "We are introducing a new \"βeta\" feature that allows you to create a Travel Plan!"
+      link_to_create: "Let's try it out!"
+    home:
+      draft: "Draft Plan"
+    hotel_reservation:
+      make_hotel_reservation: "Make a reservation"
+      make_reservations: "Find room prices on the Internet"
+      more_offers: "Find more offers on the Internet"
+      view_deals: "View Deals"
+      book_now: "Book now"
+      net_price_per_night: "per night"
+      showing_date: "Prices for: "
+      guests: "guest"
+      loading_placeholder: "Contacting our Hotel Providers. Please wait..."
+      loading_hotels_html: "Searching for the best results..."
+      tips: "Tips"
+      tip_zoom: "Zoom in or out of the map to improve your search results."
+      tip_scroll: "Keep scrolling down the list to get more results."
+      tip_scroll_price: "Keep scrolling down the list to get more results with price offers."
+      provided_by: "Prices kindly provided by"
+    create:
+      default_title: "%{name}'s Travel Plan"
+      menu_option: "Create a Travel Plan"
+      modal:
+        title: "Let's create a plan!"
+        link_to_how_to_use: "Read the Use Guide (Japanese Only)"
+        input_date:
+          nav_header: "Select date"
+          description_html: "When are you leaving?<br/>(You can change the dates later)"
+          placeholder: "Please select the dates"
+          create_plan: "Create the plan!"
+        skip_input_date:
+          nav_header: "Later"
+          description_html: "Let's proceed to create plan! (You can change the dates later)"
+          description_sp_html: "You can create a your original travel plan from your wishlist, reviews by other travelers."
+          create_plan: "Proceed without choosing the dates"
+          create_plan_sp: "Create my plan"
+    edit:
+      day: "Day {{ $index + 1 }}"
+      how_to_use: "How to Use"
+      modal:
+        change:
+          title: "Change of plans?"
+          description: "Don't worry! Just choose the new dates and you'll be all set an ready to go!"
+          confirm: "Do it!"
+          placeholder: "Please select the new dates"
+        memo:
+          title: "Let's write down a memo!"
+          confirm: "Done"
+          placeholder: "You can write here all the important information you don't want to forget"
+        routes:
+          note_about_duration: "( This duration includes waiting time. )"
+      options:
+        save: "Save the Plan"
+        see_preview: "See preview"
+        print: "Print"
+        add_day: "Add One Day"
+        request_google_form: "Feedback / Requests"
+        directions: "Directions"
+        no_directions: "No directions were found"
+        add_memo: "Add notes"
+        add_spot: "Add spots"
+      daily_plan:
+        placeholder:
+          title: "Let's add a spot!"
+          description: "You can click the (+) button on one of your wishlist items, or simply drag and drop it here."
+      wishlist:
+        select_country: "Select the country you want to visit"
+        select_state: "Select the area / state you want to visit"
+        placeholder:
+          title: "Wishlist"
+          description: "While browsing everyone's Logbooks (Travelogs) you'll find many places that will pique your interest. Including them in your wishlist will make them available here so you can add them to your plan."
+          description_link: "Click here to read the Use Guide (Japanese Only)"
+      search:
+        title: "Search"
+        location: "Search by Location"
+        selectize_placeholder: "Choose from list, or type keyword"
+        no_more_results_title_html: "No More Results Found!"
+        no_more_results_description_html: "please re-try with different search options, or change zoom or area of the map"
+        register_spot_html: "If you cannot find a target spot,<br>you can add a new spot from here"
+        select_subcategory: "Select a subcategory"
+        tab_list: "List"
+        tab_map: "Map"
+        placeholder:
+          start_search:
+            title: "Let's Begin Searching"
+            description: "Please select first at least one of the options available!"
+          no_results_found:
+            title: "No Results Found"
+            description_html: "Please change the search criteria and try again!"
+        order:
+          title: "Order By"
+          episodes: "Popular"
+          likes: "Attractive"
+          price: "Price"
+          stars: "Stars"
+      spotview:
+        title: "Spot detail"
+        no_episodes:
+          # When the Japanese version gets updated we can fix these ones too!
+          image_alt: "Oops!"
+          title_html: "We have no user reviews for this spot"
+      basic_info:
+        title_placeholder: "Title"
+        desc_placeholder: "Description"
+        edit: "Edit basic info"
+      modal_plan_location:
+        title: "What is your Destination?"
+        search_by_keyword: "Keyword search"
+        search_by_list: "Select from a list"
+      modal_plan_basic_info:
+        title: "Modification"
+        title_sp: "Basic information"
+        title_needed: "Please input the title"
+        date_from: "From"
+        date_number: "Days"
+      change_order:
+        title: "Change the schedule"
+        move_here: "move here"
+        lead_text: "Where do you want to move?"
+    preview:
+      options:
+        share: "Share"
+        see_on_mobile: "Share with friends"
+      overview:
+        title_placeholder: "(Title will be here)"
+        desc_placeholder: "(Description will be here)"
+        see_more: "See more"
+        see_back: "Back"
+        days: "days"
+        day_prefix: "Day"
+        day_postfix: ""
+        map_view: "Map View"
+      plan_item:
+        title: "Detail of plan"
+      routes:
+        title: "How to move"
+      help:
+        offline:
+          header: "Can I see my plan at offline?"
+          content: "Sorry, we have no feature of offline for now. It might be useful if you take a screen shot using your mobile phone."
+          link: "Links"
+        add_to_home:
+          header: "How to add a shortcut on the home page of my phone?"
+          content: "Please try opening 'Share' and select 'Add to Home'."
+          link: "Links"
+      header_lg:
+        title: "Preview of the travel plan"
+        sorry_for_sp_layout: "* We're currently serving mainly for a mobile layout."
+        back_to_plan_edit: "Back to edit"
+        back_to_preview_overview: "Back to preview top"
+      modal_plan_share:
+        title: "Share with friends"
+        description_html: "By creating public link,<br>you can access your travel plan even if you don't login to Compathy."
+        create_pub_link: "Create public link"
+        explaination: "Scan QR code, or use the URL below."
+        note_about_public_link: "* all people who know the URL can access this travel plan"
+        delete_pub_link: "Delete public link"
+

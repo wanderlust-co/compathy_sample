@@ -30,11 +30,12 @@ class Like < ActiveRecord::Base
 
     user_review = self.user_review
     user_review_owner = user_review.user
-    return if self.user == user_review_owner
+    # return if self.user == user_review_owner
     return unless user_review_owner.receive_retention_mail
     return unless user_review_owner.email
 
     UserMailer.delay.like_user_review( user_review_owner, self.user, user_review )
+    # binding.pry
   end
 
   def send_mobile_notification

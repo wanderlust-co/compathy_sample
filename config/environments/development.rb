@@ -14,7 +14,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -34,6 +34,23 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+
+  config.action_mailer.default_url_options = { :host => "localhost", :port => 3000 }
+  config.action_mailer.default_options = { from: ENV['MAIL_SMTP_FROM'] }
+
+  # suppress sending mail for development
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address        => ENV['MAIL_SMTP_ADDRESS'],
+    :port           => ENV['MAIL_SMTP_PORT'],
+    :domain         => ENV['MAIL_SMTP_DOMAIN'],
+    :user_name      => ENV['MAIL_SMTP_USER'],
+    :password       => ENV['MAIL_SMTP_PASSWORD'],
+    :authentication => ENV['MAIL_SMTP_AUTHENTICATION'],
+    :enable_starttls_auto => true,
+  }
+
   config.paperclip_defaults = {
     storage: :s3,
     url: ":s3.amazonaws.com",
