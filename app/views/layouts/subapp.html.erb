@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="cySubapp" ng-strict-di>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="apple-touch-icon" href="/logo_100x100.png" />
+
+    <!-- enable photo access for Safari on iOS8 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- enable smart app banners for Safari on iOS6 or Later -->
+    <meta name="apple-itunes-app" content="app-id=964732203"/>
+
+    <%= stylesheet_link_tag "application", media: "all" %>
+
+    <meta name="google-site-verification" content="qKSO1GNl7KvCMW2lIIlCkunfXaMTUvPQjye4YzgJTn4" />
+    <meta name="google-translate-customization" content="f16b190a46b4a5c4-abc4b0ef781e248a-gcd4a9e5f4ad48098-10"></meta>
+    <title><%= t("tdk.subapp.title") %></title>
+    <base href="/sa/">
+    <%= javascript_include_tag "subapp" %>
+  </head>
+  <body class="subAppBody">
+    <cy-alert class="alert"></cy-alert>
+    <div class="subAppUiView" ui-view></div>
+
+    <%#= render "layouts/go_to_top" %>
+    <%#= render "layouts/footer" %>
+    <%#= render "layouts/google_analytics" %>
+  </body>
+</html>
