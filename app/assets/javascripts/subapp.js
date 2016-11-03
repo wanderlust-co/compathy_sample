@@ -22,8 +22,10 @@
 
 //= require restangular
 
+//= require      ./angular_common/spots/spots.module.js
 //= require      ./angular_common/restangular.config.js
 //= require      ./angular_subapp/plans/plans.module.js
+//= require      ./angular_subapp/bookmarks/bookmarks.module.js
 //= require      ./angular_subapp/app.js
 //= require_tree ./angular_subapp
 //= require_tree ./angular_common

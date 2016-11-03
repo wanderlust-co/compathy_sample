@@ -3,7 +3,8 @@
 
   angular
   .module('cySubapp.plans', [
-      'cyCommon.restangular.v3',
-      'cySubapp.bookmarks',
-    ]);
+    'cyCommon.restangular.v3',
+    'cyCommon.spots',
+    'cyCommon.countries',
+  ]);
 })();
