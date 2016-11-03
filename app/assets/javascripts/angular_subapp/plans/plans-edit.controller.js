@@ -30,7 +30,7 @@
     vm.hasMoreData = false;
 
     vm.selects = {
-      bkCountry: {
+      country: {
         model: null,
         options: [],
         config: {
@@ -42,28 +42,16 @@
           maxItems: 1,
           selectOnTab: true,
           onChange: function(cc) {
-            function applyBkCountryFilter(data) {
-              vm.bookmarkSpots = data.bookmarks.map(mapBookmarkToSpot);
-              if (!vm.isSpotSearch) {
-                vm.spots = vm.bookmarkSpots;
-              }
-              resetBkStates(vm.bookmarkSpots);
-              setSpotMarkers();
-              fitMarkerBounds(vm.spotMarkers);
-              vm.spotIsLoading = false;
-            }
+            vm.spotIsLoading = true;
 
-            if (cc != vm.selects.bkCountry.model) {
-              vm.selects.bkCountry.model = cc;
-              vm.spotIsLoading = true;
-              if (cyUtil.isPresent(cc)) {
-                BookmarkManager.getListByCc(vm.currentUser.username, cc).then(applyBkCountryFilter);
-              } else {
-                BookmarkManager.getRecent(vm.currentUser.username).then(applyBkCountryFilter);
-              }
-
-              if ($window.ga) {
-                $window.ga('send', 'event', 'CreatePlan', 'Wishlist', 'SelectCountry');
+            if (cc != vm.selects.country.model) {
+              vm.selects.country.model = cc;
+              if (!!cc) {
+                SpotManager.getFilteredList(cc).then(function(data) {
+                  $log.info(data);
+                  vm.spots = data;
+                  vm.spotIsLoading = false;
+                });
               }
             }
           }
@@ -74,7 +62,7 @@
     vm.spots          = [];
 
     CountryManager.getCountries().then(function(countries) {
-      vm.selects.bkCountry.options = countries;
+      vm.selects.country.options = countries;
       vm.countries                 = countries;
     });
 

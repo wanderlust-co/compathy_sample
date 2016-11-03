@@ -11,6 +11,7 @@
     var co1 = { id: 1, cc: 'AD', name: 'アンドラ', logbooksCount: 5 };
     var co2 = { id: 2, cc: 'AE', name: 'アラブ首長国連邦', logbooksCount: 64 };
 
+    // FIXME: use real API
     // var countries;
     var countries = [co1, co2];
     var __CountryManager = Restangular.service('countries');

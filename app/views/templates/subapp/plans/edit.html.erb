@@ -1,8 +1,13 @@
-new
+edit
+
+<selectize placeholder="国を選んでね"
+config="vm.selects.country.config" options="vm.selects.country.options" ng-model="vm.selects.country.model"></selectize>
 
 <ul>
-  <li ng-repeat="co in vm.countries">
-  <span>{{ co.name }}</span>
+  <li ng-repeat="sp in vm.spots">
+  <p>{{ sp.name }}</p>
+  <p>{{ sp.lat }}</p>
+  <p>{{ sp.lng }}</p>
   </li>
 </ul>
 
