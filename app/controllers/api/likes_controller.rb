@@ -1,5 +1,5 @@
 module Api
-  class LikesController < ApplicationController
+  class LikesController < Api::ApplicationController
     before_action :require_login
     before_action :set_like, only: %w(destroy)
     before_action :manage_allowed?, only: %w(destroy)

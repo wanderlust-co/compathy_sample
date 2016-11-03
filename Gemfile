@@ -58,12 +58,28 @@ gem "annotate"
 
 source 'https://rails-assets.org' do
   gem "rails-assets-angular", "~> 1.4.7"
+  gem "rails-assets-angular-animate"
+  gem "rails-assets-angular-bootstrap"
+  gem "rails-assets-angular-cookies"
+  gem "rails-assets-angular-google-maps", "~> 2.2.1"
   gem "rails-assets-angular-resource"
   gem "rails-assets-angular-ui-router"
+  gem "rails-assets-angular-translate"
+  gem "rails-assets-angular-translate-loader-static-files"
+  gem "rails-assets-angular-translate-storage-cookie"
+  gem "rails-assets-angular-ui-bootstrap"
+  gem "rails-assets-angular-bootstrap-lightbox"
+  gem "rails-assets-angular-touch" # added by dependence of lightbox
+  gem "rails-assets-angular-loading-bar" # added by dependence of lightbox
+  gem "rails-assets-bootstrap-sass", "3.3.4"
+  gem "rails-assets-bootstrap-daterangepicker"
+  gem "rails-assets-restangular"
+  gem "rails-assets-lodash", "~>3.10.1"
   gem "rails-assets-jquery-file-upload", "9.11.2"
   gem "rails-assets-blueimp-load-image", "1.14.0"
   gem "rails-assets-jquery", "~> 2.1"
   gem "rails-assets-jquery-ui"
+  gem "rails-assets-moment"
 end
 
 gem 'foursquare2'

@@ -11,8 +11,15 @@
     $stateProvider
     .state('plansNew', {
       url: '/plans/new',
-      templateUrl: '/templates/subapp/plans/new',
+      templateUrl: '/templates/subapp/plans/edit',
       controller: 'PlansNewController',
+      controllerAs: 'vm',
+      reloadOnSearch: false
+    })
+    .state('plansEdit', {
+      url: '/plans/{planId:int}/edit',
+      templateUrl: '/templates/subapp/plans/edit',
+      controller: 'PlansEditController',
       controllerAs: 'vm',
       reloadOnSearch: false
     })

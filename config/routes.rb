@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     delete "favorites/:id" => "favorites#destroy"
     post   "likes" => "likes#create"
     delete "likes/:id" => "likes#destroy"
+    get    'plans/find_or_create' => "plans#find_or_create"
+
   end
 
   resources :tripnotes

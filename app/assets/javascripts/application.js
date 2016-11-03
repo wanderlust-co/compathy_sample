@@ -14,8 +14,25 @@
 //= require jquery-ui
 //= require jquery-ui/ui/widget
 
+//
+//= require bootstrap-sass/bootstrap-sprockets
+//
+
+
 //= require angular
+//= require angular-animate
+//= require angular-bootstrap
+//= require angular-cookies
+//= require angular-google-maps
 //= require angular-resource
+//= require angular-simple-logger
+//= require angular-translate
+//= require angular-translate-loader-static-files
+//= require angular-translate-storage-cookie
+//= require angular-loading-bar
+//= require angular-bootstrap-lightbox
+//= require moment
+//= require bootstrap-daterangepicker
 
 //= require blueimp-load-image
 //= require jquery-file-upload/jquery.fileupload
@@ -23,5 +40,9 @@
 //= require jquery-file-upload/jquery.fileupload-angular
 //= require jquery-file-upload/jquery.fileupload-image
 //= require jquery-file-upload/jquery.fileupload-validate
-
-//= require_tree .
+//
+//= require lodash
+//= require restangular
+//
+//= require_tree ./angular
+//= require_tree ./angular_common
