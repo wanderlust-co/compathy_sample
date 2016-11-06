@@ -64,6 +64,7 @@ source 'https://rails-assets.org' do
   gem "rails-assets-angular-google-maps", "~> 2.2.1"
   gem "rails-assets-angular-resource"
   gem "rails-assets-angular-ui-router"
+  gem "rails-assets-angular-selectize2", "~> 1.2.3"
   gem "rails-assets-angular-translate"
   gem "rails-assets-angular-translate-loader-static-files"
   gem "rails-assets-angular-translate-storage-cookie"
