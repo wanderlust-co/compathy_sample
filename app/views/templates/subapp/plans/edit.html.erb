@@ -4,6 +4,10 @@ edit
   config="vm.selects.country.config" options="vm.selects.country.options" ng-model="vm.selects.country.model"
 ></selectize>
 
+<selectize placeholder="エリアを選んでください"
+  config="vm.selects.state.config" options="vm.selects.state.options" ng-model="vm.selects.state.model"
+></selectize>
+
 <ul>
   <li ng-repeat="sp in vm.spots">
     <p>{{ sp.name }}</p>

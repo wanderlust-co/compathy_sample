@@ -5,18 +5,24 @@
   .module('cyCommon.spots')
   .service('SpotManager', SpotManager);
 
-  SpotManager.$inject = ['$q', 'Restangular'];
+  SpotManager.$inject = ['$q', 'Restangular', 'cyUtil', 'APP_CONST'];
 
-  function SpotManager($q, Restangular) {
+  function SpotManager($q, Restangular, cyUtil, APP_CONST) {
     var __SpotManager = {
+      getAreasListBy: function(cc) {
+        var deferred = $q.defer();
+        if (cyUtil.isPresent(cc)) {
+          deferred.resolve(APP_CONST.CY_AREAS.filter(function(area) {
+            return area.cc == cc;
+          }, cc));
+        }else {
+          deferred.reject();
+        }
+        return deferred.promise;
+      },
       getFilteredList: function(cc, page, per) {
         var deferred = $q.defer();
         var params = { cc: cc, page: page, per: per };
-
-        // var spot1 = { id: 11, name: 'spot 1', fsqSpotId: 'a1', lat: 111.00, lng: 11 };
-        // var spot2 = { id: 12, name: 'spot 2', fsqSpotId: 'a2', lat: 121.00, lng: 12 };
-        // var spot3 = { id: 13, name: 'spot 3', fsqSpotId: 'a3', lat: 131.00, lng: 13 };
-        // var spot4 = { id: 14, name: 'spot 4', fsqSpotId: 'a4', lat: 141.00, lng: 14 };
 
         Restangular.one('spots').one('search').get(params).then(function(data) {
           console.log(data.spots);

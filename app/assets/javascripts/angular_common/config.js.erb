@@ -1,0 +1,8 @@
+'use strict';
+
+angular.module('config', ['bootstrapLightbox'])
+.constant('APP_ENV', '<%= Rails.env %>')
+.constant('APP_CONST', {
+  CY_AREAS: angular.fromJson(<%= CY_AREAS.to_json %>),
+});
+

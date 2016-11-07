@@ -4,7 +4,8 @@
   angular.module('cyCommon', [
   'ngCookies',
   'ui.bootstrap',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'config',
   ]);
 })();
 
