@@ -13,11 +13,11 @@ json.cache! spot, expires_in: 10.hours do
   json.currency       spot.hotel_currency
 
   json.country do
-    json.partial! "v3/countries/country", country: spot.country
+    json.partial! "/countries/country", country: spot.country
   end
 
   json.state do
-    json.partial! "v3/states/state", state: spot.state
+    json.partial! "/states/state", state: spot.state
   end if spot.state
 
   json.city spot.city.name if spot.city

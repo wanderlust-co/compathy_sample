@@ -51,6 +51,8 @@ gem "figaro"
 
 gem'exifr'
 
+gem 'kaminari', :git => 'git@github.com:amatsuda/kaminari.git', :ref => '4b2121e7507d6760d35e5bfa8d2c716c95767af4'
+
 gem "angular-rails-templates"
 
 # annotate

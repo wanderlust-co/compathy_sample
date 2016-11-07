@@ -13,6 +13,7 @@ class UserPhotosController < ApplicationController
       if user_photo.save
         if @review = UserReview.create_with_photo(@tripnote.user, @tripnote, user_photo)
           user_photo.update(user: @tripnote.user, tripnote: @tripnote, user_review: @review)
+
           unless @tripnote.user_photo_id
             @tripnote.update(user_photo_id: user_photo.id)
           end

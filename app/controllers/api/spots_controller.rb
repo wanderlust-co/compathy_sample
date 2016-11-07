@@ -66,7 +66,6 @@ module Api
           cat2_codes: params[:cat2Ids],
         )
         apply_common_treating(order_by, order_direction, page, per, excluded_ids)
-
         return
       end
 

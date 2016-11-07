@@ -2,5 +2,6 @@
 
 angular.module('compathyClone', [
   'blueimp.fileupload',
-  'tripnoteServices'
+  'tripnoteServices',
+  'cyCommon',
   ]);

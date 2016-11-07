@@ -44,5 +44,6 @@
 //= require lodash
 //= require restangular
 //
+// = require      ./angular_common/spots/spots.module.js
 //= require_tree ./angular
 //= require_tree ./angular_common

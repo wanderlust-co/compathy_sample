@@ -161,6 +161,10 @@ class Spot < ActiveRecord::Base
     nil
   end
 
+  def self.set_delay_thumb_load(delay = true)
+    @@delay_thumb_load = delay
+  end
+
   def main_episode
     episodes.order("likes_count DESC").first
   end

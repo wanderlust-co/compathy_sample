@@ -46,8 +46,9 @@
             if (cc != vm.selects.country.model) {
               vm.selects.country.model = cc;
               if (!!cc) {
-                SpotManager.getFilteredList(cc).then(function(data) {
+                SpotManager.getFilteredList(cc, vm.page, vm.per).then(function(data) {
                   $log.info(data);
+                  console.log(data);
                   vm.spots = data;
                   vm.spotIsLoading = false;
                 });
