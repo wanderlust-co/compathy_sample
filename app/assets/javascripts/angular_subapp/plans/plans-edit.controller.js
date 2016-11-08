@@ -122,6 +122,22 @@
 
     vm.spots = [];
 
+    vm.map = {
+      center: { latitude: 0, longitude: 0 },
+      zoom: 3,
+      control: {},
+      bounds: {}
+    };
+    vm.mapOptions = {
+      scaleControl: true,
+      mapTypeControl: false,
+      scrollwheel: true,
+      streetViewControl: false,
+      zoomControl: true,
+    };
+    vm.spotMarkers   = [];
+    vm.planMarkers = [];
+
     vm.addPlanItem = addPlanItem;
     vm.save        = save;
     vm.setCurrentDay = setCurrentDay;

@@ -7,7 +7,7 @@
 
   <button class="btn btn-primary" ng-click="vm.save()">save</button>
 </div>
-<div class="col-lg-6 col-md-6 col-sm-6">
+<div class="col-lg-3 col-md-3">
   <h2>{{ vm.plan.title }}</h2>
 
   <div ng-repeat="day in vm.plan.dailyPlans track by $index" ng-class="{active: $index==vm.currentDay}"
@@ -21,7 +21,7 @@
     </li>
   </ul>
 </div>
-<div class="col-lg-6 col-md-6 col-sm-6">
+<div class="col-lg-3 col-md-3">
   <h2>Spot Search</h2>
   <selectize placeholder="国を選んでください"
   config="vm.selects.country.config" options="vm.selects.country.options" ng-model="vm.selects.country.model"
@@ -39,3 +39,16 @@
     </li>
   </ul>
 </div>
+<div class="col-lg-6 col-md-6">
+  <div class="map">
+    <ui-gmap-google-map
+      center='vm.map.center'
+      zoom='vm.map.zoom'
+      options="vm.mapOptions"
+      control="vm.map.control"
+      bounds="vm.map.bounds"
+      pan="true">
+      </ui-gmap-google-map>
+  </div>
+</div>
+

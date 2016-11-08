@@ -1,0 +1,18 @@
+.map {
+  position: relative;
+  flex: 2;
+  background: gray;
+  .angular-google-map {
+    display: block;
+    .angular-google-map-container {
+      min-height: 400px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+

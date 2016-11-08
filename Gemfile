@@ -65,7 +65,7 @@ gem "angular-rails-templates"
 gem "annotate"
 
 source 'https://rails-assets.org' do
-  gem "rails-assets-angular", "~> 1.4.7"
+  gem "rails-assets-angular", "1.4.8"
   gem "rails-assets-angular-animate"
   gem "rails-assets-angular-bootstrap"
   gem "rails-assets-angular-daterangepicker"
