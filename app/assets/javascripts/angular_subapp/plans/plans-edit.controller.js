@@ -7,12 +7,12 @@
 
   PlansEditController.$inject = [
     '$scope', '$window', '$location', '$stateParams', '$uibModal', '$log', '$timeout', '$translate', '$cookies',
-    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager'
+    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'PlanManager'
   ];
 
   function PlansEditController(
     $scope, $window, $location, $stateParams, $uibModal, $log, $timeout, $translate, $cookies,
-    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager
+    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, PlanManager
   ) {
     var vm = this;
     var mapSearchRadius = 0.05; // TODO: Tweak this value
@@ -129,7 +129,10 @@
     ///////////////////////////////////////////////////////////////
 
     function activate() {
-      $log.debug('activate()');
+      PlanManager.fetchEdit(vm.planId).then(function(data) {
+        $log.debug('activate()');
+        $log.debug(data);
+      });
     }
   }
 })();
