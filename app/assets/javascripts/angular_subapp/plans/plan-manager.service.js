@@ -5,9 +5,9 @@
   .module('cySubapp.plans')
   .service('PlanManager', PlanManager);
 
-  PlanManager.$inject = ['$q', 'Restangular', 'Plan'];
+  PlanManager.$inject = ['$q', '$log', 'Restangular', 'Plan'];
 
-  function PlanManager($q, Restangular, Plan) {
+  function PlanManager($q, $log, Restangular, Plan) {
     var currentPlan = Plan.build({});
     console.log(currentPlan)
     var currentDay  = 0;
@@ -64,6 +64,7 @@
         var postData = Plan.buildPostData(currentPlan);
 
         if (!currentPlan.hasModified) {
+          $log.debug('currentPlan has not Modified');
           deferred.resolve(true);
           return deferred.promise;
         }
