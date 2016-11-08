@@ -113,6 +113,8 @@
 
     vm.spots = [];
 
+    vm.addPlanItem = addPlanItem;
+
     CountryManager.getCountries().then(function(countries) {
       vm.selects.country.options = countries;
       vm.countries                 = countries;
@@ -123,6 +125,10 @@
     ///////////////////////////////////////////////////////////////
     // public methods
     ///////////////////////////////////////////////////////////////
+
+    function addPlanItem(sp) {
+      PlanManager.addPlanItem(vm.currentDay, sp);
+    }
 
     ///////////////////////////////////////////////////////////////
     // private methods

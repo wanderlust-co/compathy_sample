@@ -1,3 +1,7 @@
+<div>
+  <p>From: {{ vm.plan.dateFrom }}</p>
+  <p>To: {{ vm.plan.dateTo }}</p>
+</div>
 <div class="col-lg-6 col-md-6 col-sm-6">
   <h2>{{ vm.plan.title }}</h2>
   <ul>
@@ -21,6 +25,7 @@
       <p>{{ sp.name }}</p>
       <p>{{ sp.lat }}</p>
       <p>{{ sp.lng }}</p>
+      <button ng-click="vm.addPlanItem(sp)">プランに追加</button>
     </li>
   </ul>
 </div>
