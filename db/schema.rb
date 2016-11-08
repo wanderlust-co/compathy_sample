@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107021753) do
+ActiveRecord::Schema.define(version: 20161108075109) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id",    null: false
@@ -271,6 +271,7 @@ ActiveRecord::Schema.define(version: 20161107021753) do
     t.string   "provider_rating",          limit: 24
     t.boolean  "is_hotel",                              default: false
     t.integer  "published_episodes_count",              default: 0,     null: false
+    t.string   "provider_photo_url",       limit: 2000
   end
 
   add_index "spots", ["user_id"], name: "index_spots_on_user_id", using: :btree

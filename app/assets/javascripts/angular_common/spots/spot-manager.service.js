@@ -20,12 +20,12 @@
         }
         return deferred.promise;
       },
-      getFilteredList: function(cc, page, per) {
+      getFilteredList: function(cc, areaId, page, per) {
         var deferred = $q.defer();
-        var params = { cc: cc, page: page, per: per };
+        var params = { cc: cc, areaId: areaId, page: page, per: per };
 
         Restangular.one('spots').one('search').get(params).then(function(data) {
-          console.log(data.spots);
+          console.log(data);
           deferred.resolve(data.spots);
         }, function(err) {
           deferred.reject(err);

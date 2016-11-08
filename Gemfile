@@ -99,3 +99,6 @@ group :test, :development do
   gem 'rspec-core'
   gem 'factory_girl_rails'
 end
+
+# bulk insert
+gem 'activerecord-import'

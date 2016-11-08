@@ -7,12 +7,12 @@
 
   PlansEditController.$inject = [
     '$scope', '$window', '$location', '$stateParams', '$uibModal', '$log', '$timeout', '$translate', '$cookies',
-    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager'
+    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'cyUtil'
   ];
 
   function PlansEditController(
     $scope, $window, $location, $stateParams, $uibModal, $log, $timeout, $translate, $cookies,
-    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager
+    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, cyUtil
   ) {
     var vm = this;
     var mapSearchRadius = 0.05; // TODO: Tweak this value
@@ -40,15 +40,13 @@
           searchField: ['name', 'cc'],
           maxItems: 1,
           selectOnTab: true,
-          onChange: function(cc) {
+          onChange: function(cc, areaId) {
             vm.spotIsLoading = true;
-
-            //選択リストに変更があったらccを元にareaの情報をオプションに追加
-            console.log(cc);
-            console.log(vm.selects.country)
+            console.log(vm.selects.country);
+            console.log(vm.selects.state);
+            //国が選択されたらccを元にareaの情報をオプションに追加
             if (!cc.nil) {
               SpotManager.getAreasListBy(cc).then(function(areas) {
-                console.log(areas)
                 vm.selects.state.options = areas;
               });
             } else if ($scope.params && $scope.params.area) {
@@ -67,13 +65,12 @@
               vm.selectize.updatePlaceholder();
             }
 
-            //選択リストに変更があったら国に紐づくスポット情報を出力
+            //国が選択されたら国に紐づくスポット情報を出力
             if (cc != vm.selects.country.model) {
               vm.selects.country.model = cc;
               if (!!cc) {
-                SpotManager.getFilteredList(cc, vm.page, vm.per).then(function(data) {
+                SpotManager.getFilteredList(cc, areaId, vm.page, vm.per).then(function(data) {
                   $log.info(data);
-                  console.log(data);
                   vm.spots = data;
                   vm.spotIsLoading = false;
                 });
@@ -96,14 +93,14 @@
           selectOnTab: true,
           //stateが選択されたらspot情報をフィルタリング
           onChange: function(stId) {
-            console.log(stId)
             if (stId != vm.selects.state.model) {
               vm.selects.state.model = stId;
-              vm.spots = vm.spots.filter(vm.getBkFilteredSpots);
-              setSpotMarkers();
-              fitMarkerBounds(vm.spotMarkers);
-              if ($window.ga) {
-                $window.ga('send', 'event', 'CreatePlan', 'Wishlist', 'SelectState');
+              if (!!stId) {
+                SpotManager.getFilteredList(null, stId, vm.page, vm.per).then(function(data) {
+                  $log.info(data);
+                  vm.spots = data;
+                  vm.spotIsLoading = false;
+                });
               }
             }
           }
@@ -127,6 +124,19 @@
     ///////////////////////////////////////////////////////////////
     // private methods
     ///////////////////////////////////////////////////////////////
+
+    vm.getBkFilteredSpots = function(spot/*, index*/) {
+      var ret = true;
+      // NOTE: Filtering is done by the client only while using the Wishlist!
+      if (!vm.isSpotSearch) {
+        if (cyUtil.isPresent(vm.selects.state.model)) {
+          ret = spot.state.id === parseInt(vm.selects.state.model);
+          console.log(vm.selects.state.model)
+          console.log(spot.state.id)
+        }
+      }
+      return ret;
+    };
 
     function activate() {
       $log.debug('activate()');

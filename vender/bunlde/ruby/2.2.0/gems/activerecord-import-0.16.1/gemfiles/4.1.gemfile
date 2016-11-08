@@ -1,0 +1,3 @@
+platforms :ruby do
+  gem 'activerecord', '~> 4.1.0'
+end

@@ -205,6 +205,16 @@ class Spot < ActiveRecord::Base
     end
   end
 
+  EARTH_RADIUS = 6378.137
+  def self.coordinate_ranges_from_radius(lat, lng, radius_km = 50)
+    lat_range_angle  = radius_km * 360 / (2 * Math::PI * EARTH_RADIUS)
+    lng_angle_per_km = 360 / (2 * Math::PI * (EARTH_RADIUS * Math.cos(lat * Math::PI / 180).abs))
+    lng_range_angle  = radius_km * lng_angle_per_km
+    lat_range        = (lat - lat_range_angle)..(lat + lat_range_angle)
+    lng_range        = (lng - lng_range_angle)..(lng + lng_range_angle)
+    return lat_range, lng_range
+  end
+
   private
   def self.get_state_city_from_google( lat, lng, cc )
     state = nil
