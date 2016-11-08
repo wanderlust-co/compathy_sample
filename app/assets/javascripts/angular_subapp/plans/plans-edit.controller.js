@@ -7,12 +7,12 @@
 
   PlansEditController.$inject = [
     '$scope', '$window', '$location', '$stateParams', '$uibModal', '$log', '$timeout', '$translate', '$cookies',
-    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'cyUtil', 'PlanManager'
+    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'cyUtil', 'cyCalendar', 'PlanManager'
   ];
 
   function PlansEditController(
     $scope, $window, $location, $stateParams, $uibModal, $log, $timeout, $translate, $cookies,
-    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, cyUtil, PlanManager
+    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, cyUtil, cyCalendar, PlanManager
   ) {
     var vm = this;
     var mapSearchRadius = 0.05; // TODO: Tweak this value
@@ -22,6 +22,18 @@
     vm.plan   = {};
     vm.currentUser = {};
     vm.tl8 = {};
+
+    vm.planDates = {
+      startDate: vm.plan.dateFrom,
+      endDate: vm.plan.dateTo
+    };
+    vm.dayRange = '';
+
+    vm.dateOptions = angular.copy(cyCalendar.getDateOptions());
+    vm.dateOptions.eventHandlers['apply.daterangepicker'] = function(ev) {
+      // TODO: Maybe we can have the start-date and end-date watched by Angular and simplify this process
+      updateDates(ev.model.startDate, ev.model.endDate);
+    };
 
     vm.spotIsLoading = false;
     vm.per = 20;
@@ -155,7 +167,13 @@
       PlanManager.fetchEdit(vm.planId).then(function(data) {
         $log.debug('activate()');
         vm.plan = data;
+        vm.dayRange = vm.plan.getDayRange();
       });
+    }
+
+    function updateDates(start, end, dontUpdateMap) {
+      vm.plan.updateDates(start, end);
+      vm.dayRange = vm.plan.getDayRange();
     }
   }
 })();

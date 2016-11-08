@@ -14,6 +14,7 @@
 //= require angular
 //= require angular-bootstrap
 //= require angular-bootstrap-lightbox
+//= require angular-daterangepicker
 //= require angular-cookies
 //= require angular-google-maps
 //= require angular-resource
