@@ -48,7 +48,22 @@
       control="vm.map.control"
       bounds="vm.map.bounds"
       pan="true">
-      </ui-gmap-google-map>
+      <ui-gmap-markers
+        models="vm.spotMarkers"
+        coords="'self'"
+        icon="'icon'"
+        click="onClick"
+        options="options"
+        >
+        <ui-gmap-windows
+          show="show"
+          templateUrl="'infoWindowTemplate'"
+          options="'infoWindowOptions'"
+          closeClick="'closeClick'"
+          >
+        </ui-gmap-windows>
+      </ui-gmap-markers>
+    </ui-gmap-google-map>
   </div>
 </div>
 

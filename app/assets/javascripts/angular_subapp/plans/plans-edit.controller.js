@@ -85,6 +85,10 @@
                   $log.info(data);
                   vm.spots = data;
                   vm.spotIsLoading = false;
+                  setSpotMarkers();
+                  if (0 < vm.spots.length) {
+                    fitMarkerBounds(vm.spotMarkers);
+                  }
                 });
               }
             }
@@ -135,8 +139,8 @@
       streetViewControl: false,
       zoomControl: true,
     };
+
     vm.spotMarkers   = [];
-    vm.planMarkers = [];
 
     vm.addPlanItem = addPlanItem;
     vm.save        = save;
@@ -190,12 +194,54 @@
         $log.debug('activate()');
         vm.plan = data;
         vm.dayRange = vm.plan.getDayRange();
+        setSpotMarkers();
       });
     }
 
     function updateDates(start, end, dontUpdateMap) {
       vm.plan.updateDates(start, end);
       vm.dayRange = vm.plan.getDayRange();
+    }
+
+    function setSpotMarkers() {
+      var targetSpots = vm.spots; // .filter(vm.getBkFilteredSpots);
+
+      vm.spotMarkers = targetSpots.map(function(spot) {
+        var marker = {
+          id:        spot.id,
+          name:      spot.name,
+          latitude:  spot.lat,
+          longitude: spot.lng
+        };
+
+        marker.onClick = function() {
+          // setActiveSpotMarker(spot, true);
+          $log.debug('marker.onClick');
+        };
+        marker.spot = spot;
+        marker.closeClick = function() {
+          $log.debug('marker.closeClick');
+        };
+        // setDefaultMarkerProps(marker);
+        return marker;
+      });
+    }
+
+    function fitMarkerBounds(markers) {
+      if (cyUtil.isBlank(markers)) {
+        vm.map.zoom = 3;
+        return;
+      }
+
+      uiGmapGoogleMapApi.then(function(maps) {
+        var bounds = new maps.LatLngBounds();
+        angular.forEach(markers, function(marker) {
+          bounds.extend(new maps.LatLng(marker.latitude, marker.longitude));
+        });
+
+        var map = vm.map.control.getGMap();
+        map.fitBounds(bounds);
+      });
     }
   }
 })();
