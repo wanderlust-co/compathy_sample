@@ -1,9 +1,9 @@
 <div>
-  <p>From: {{ vm.plan.dataFrom }}</p>
-  <p>To: {{ vm.plan.dataTo }}</p>
+  <p>From: {{ vm.plan.dateFrom }}</p>
+  <p>To: {{ vm.plan.dateTo }}</p>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6">
-  <h2>{{ vm.plan.titile }}</h2>
+  <h2>{{ vm.plan.title }}</h2>
   <ul>
     <li ng-repeat="planItem in vm.plan.dailyPlans[vm.currentDay].planItems">
       <h3>{{ planItem.spot.name }}</h3>
