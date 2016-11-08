@@ -1,17 +1,27 @@
-edit
+<div class="col-lg-6 col-md-6 col-sm-6">
+  <h2>プラン</h2>
+  <ul>
+    <li>hoge-</li>
+    <li>hoge-</li>
+    <li>hoge-</li>
+  </ul>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6">
+  <h2>スポット検索</h2>
+  <selectize placeholder="国を選んでください"
+    config="vm.selects.country.config" options="vm.selects.country.options" ng-model="vm.selects.country.model"
+  ></selectize>
 
-<selectize placeholder="国を選んでください"
-  config="vm.selects.country.config" options="vm.selects.country.options" ng-model="vm.selects.country.model"
-></selectize>
+  <selectize placeholder="エリアを選んでください"
+    config="vm.selects.state.config" options="vm.selects.state.options" ng-model="vm.selects.state.model"
+  ></selectize>
 
-<selectize placeholder="エリアを選んでください"
-  config="vm.selects.state.config" options="vm.selects.state.options" ng-model="vm.selects.state.model"
-></selectize>
+  <ul>
+    <li ng-repeat="sp in vm.spots">
+      <p>{{ sp.name }}</p>
+      <p>{{ sp.lat }}</p>
+      <p>{{ sp.lng }}</p>
+    </li>
+  </ul>
+</div>
 
-<ul>
-  <li ng-repeat="sp in vm.spots">
-    <p>{{ sp.name }}</p>
-    <p>{{ sp.lat }}</p>
-    <p>{{ sp.lng }}</p>
-  </li>
-</ul>

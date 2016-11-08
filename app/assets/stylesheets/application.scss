@@ -14,5 +14,12 @@
  *= require_self
  */
 /*@import "jquery-file-upload/css/jquery.fileupload";
+
 @import "jquery-file-upload/css/jquery.fileupload-ui";
 @import "jquery-ui";*/
+
+$icon-font-path: "bootstrap-sass/";
+
+@import "bootstrap-sass/bootstrap-sprockets";
+@import "bootstrap-sass/bootstrap";
+
