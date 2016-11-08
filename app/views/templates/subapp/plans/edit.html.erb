@@ -9,6 +9,12 @@
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6">
   <h2>{{ vm.plan.title }}</h2>
+
+  <div ng-repeat="day in vm.plan.dailyPlans track by $index" ng-class="{active: $index==vm.currentDay}"
+    ng-click="vm.setCurrentDay($index)">
+    <span>{{ $index + 1 }}日目</span>
+  </div>
+
   <ul>
     <li ng-repeat="planItem in vm.plan.dailyPlans[vm.currentDay].planItems">
       <h3>{{ planItem.spot.name }}</h3>

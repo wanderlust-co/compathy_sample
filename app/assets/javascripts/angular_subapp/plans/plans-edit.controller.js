@@ -124,6 +124,7 @@
 
     vm.addPlanItem = addPlanItem;
     vm.save        = save;
+    vm.setCurrentDay = setCurrentDay;
 
     CountryManager.getCountries().then(function(countries) {
       vm.selects.country.options = countries;
@@ -144,6 +145,11 @@
       PlanManager.saveCurrentPlan().then(function(data) {
         $log.debug(data);
       });
+    }
+
+    function setCurrentDay(index) {
+      vm.currentDay = index;
+      PlanManager.setCurrentDay(index);
     }
 
     ///////////////////////////////////////////////////////////////
