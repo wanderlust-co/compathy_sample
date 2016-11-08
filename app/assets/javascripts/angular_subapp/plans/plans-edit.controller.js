@@ -131,7 +131,7 @@
     function activate() {
       PlanManager.fetchEdit(vm.planId).then(function(data) {
         $log.debug('activate()');
-        $log.debug(data);
+        vm.plan   = data;
       });
     }
   }

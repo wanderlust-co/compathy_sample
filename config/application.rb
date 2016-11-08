@@ -21,5 +21,8 @@ module CompathyClone
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.action_mailer.preview_path = "#{Rails.root}/spec/mailer/reviews"
+
+    # NOTE: convert snake_case to camelCase for json
+    Jbuilder.key_format camelize: :lower
   end
 end

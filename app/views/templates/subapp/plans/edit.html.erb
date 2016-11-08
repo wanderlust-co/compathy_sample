@@ -1,9 +1,9 @@
 <div class="col-lg-6 col-md-6 col-sm-6">
-  <h2>プラン</h2>
+  <h2>{{ vm.plan.title }}</h2>
   <ul>
-    <li>hoge-</li>
-    <li>hoge-</li>
-    <li>hoge-</li>
+    <li ng-repeat="planItem in vm.plan.dailyPlans[vm.currentDay].planItems">
+      <h3>{{ planItem.spot.name }}</h3>
+    </li>
   </ul>
 </div>
 <div class="col-lg-6 col-md-6 col-sm-6">
