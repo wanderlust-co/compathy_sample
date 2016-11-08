@@ -1,17 +1,30 @@
-edit
-
-<selectize placeholder="国を選んでください"
+<div>
+  <p>From: {{ vm.plan.dataFrom }}</p>
+  <p>To: {{ vm.plan.dataTo }}</p>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6">
+  <h2>{{ vm.plan.titile }}</h2>
+  <ul>
+    <li ng-repeat="planItem in vm.plan.dailyPlans[vm.currentDay].planItems">
+      <h3>{{ planItem.spot.name }}</h3>
+    </li>
+  </ul>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6">
+  <h2>Spot Search</h2>
+  <selectize placeholder="国を選んでください"
   config="vm.selects.country.config" options="vm.selects.country.options" ng-model="vm.selects.country.model"
-></selectize>
+  ></selectize>
 
-<selectize placeholder="エリアを選んでください"
-  config="vm.selects.state.config" options="vm.selects.state.options" ng-model="vm.selects.state.model"
-></selectize>
-
-<ul>
-  <li ng-repeat="sp in vm.spots">
-    <p>{{ sp.name }}</p>
-    <p>{{ sp.lat }}</p>
-    <p>{{ sp.lng }}</p>
-  </li>
-</ul>
+  <selectize placeholder="エリアを選んでください"
+    config="vm.selects.state.config" options="vm.selects.state.options" ng-model="vm.selects.state.model"
+  ></selectize>
+  <ul>
+    <li ng-repeat="sp in vm.spots">
+      <p>{{ sp.name }}</p>
+      <p>{{ sp.lat }}</p>
+      <p>{{ sp.lng }}</p>
+      <button ng-click="vm.addPlanItem(sp)">プランに追加</button>
+    </li>
+  </ul>
+</div>

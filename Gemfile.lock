@@ -53,6 +53,10 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
     bcrypt (3.1.11)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -140,6 +144,8 @@ GEM
     pry-stack_explorer (0.4.9.2)
       binding_of_caller (>= 0.7)
       pry (>= 0.9.11)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -287,6 +293,7 @@ DEPENDENCIES
   angular-rails-templates
   annotate
   aws-sdk (~> 1.6)
+  better_errors
   daemons
   delayed_job_active_record
   exifr
@@ -302,6 +309,7 @@ DEPENDENCIES
   pry-doc
   pry-rails
   pry-stack_explorer
+  quiet_assets
   rails (= 4.1.9)
   rails-assets-angular (~> 1.4.7)!
   rails-assets-angular-animate!

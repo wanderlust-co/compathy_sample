@@ -33,12 +33,18 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'sorcery'
 
-#pry
-gem 'pry'
-gem 'pry-doc'
-gem 'pry-rails'
-gem 'pry-byebug'
-gem 'pry-stack_explorer'
+group :test, :development do
+  #pry
+  gem 'pry'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+
+  #replaces the standard Rails error page with a much better and more useful error page
+  gem 'better_errors'
+  gem 'quiet_assets'
+end
 
 #upload picture
 gem 'paperclip'

@@ -7,12 +7,12 @@
 
   PlansEditController.$inject = [
     '$scope', '$window', '$location', '$stateParams', '$uibModal', '$log', '$timeout', '$translate', '$cookies',
-    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'cyUtil'
+    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'cyUtil', 'PlanManager'
   ];
 
   function PlansEditController(
     $scope, $window, $location, $stateParams, $uibModal, $log, $timeout, $translate, $cookies,
-    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, cyUtil
+    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, cyUtil, PlanManager
   ) {
     var vm = this;
     var mapSearchRadius = 0.05; // TODO: Tweak this value
@@ -110,6 +110,8 @@
 
     vm.spots = [];
 
+    vm.addPlanItem = addPlanItem;
+
     CountryManager.getCountries().then(function(countries) {
       vm.selects.country.options = countries;
       vm.countries                 = countries;
@@ -120,6 +122,10 @@
     ///////////////////////////////////////////////////////////////
     // public methods
     ///////////////////////////////////////////////////////////////
+
+    function addPlanItem(sp) {
+      PlanManager.addPlanItem(vm.currentDay, sp);
+    }
 
     ///////////////////////////////////////////////////////////////
     // private methods
@@ -139,7 +145,10 @@
     };
 
     function activate() {
-      $log.debug('activate()');
+      PlanManager.fetchEdit(vm.planId).then(function(data) {
+        $log.debug('activate()');
+        vm.plan = data;
+      });
     }
   }
 })();

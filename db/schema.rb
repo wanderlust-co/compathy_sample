@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108075109) do
+ActiveRecord::Schema.define(version: 20161108082635) do
 
   create_table "authentications", force: true do |t|
     t.integer  "user_id",    null: false
@@ -191,6 +191,23 @@ ActiveRecord::Schema.define(version: 20161108075109) do
   create_table "linked_states", force: true do |t|
     t.integer  "state_id"
     t.integer  "linked_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "plan_item_mappings", force: true do |t|
+    t.integer  "plan_id"
+    t.integer  "plan_item_id"
+    t.date     "date"
+    t.integer  "order"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "plan_items", force: true do |t|
+    t.integer  "plan_id"
+    t.integer  "spot_id"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
