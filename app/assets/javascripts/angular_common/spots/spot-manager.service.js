@@ -25,7 +25,6 @@
         var params = { cc: cc, areaId: areaId, page: page, per: per };
 
         Restangular.one('spots').one('search').get(params).then(function(data) {
-          console.log(data);
           deferred.resolve(data.spots);
         }, function(err) {
           deferred.reject(err);
