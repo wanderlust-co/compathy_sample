@@ -7,12 +7,12 @@
 
   PlansEditController.$inject = [
     '$scope', '$window', '$location', '$stateParams', '$uibModal', '$log', '$timeout', '$translate', '$cookies',
-    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'cyUtil', 'PlanManager'
+    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'cyUtil', 'cyCalendar', 'PlanManager'
   ];
 
   function PlansEditController(
     $scope, $window, $location, $stateParams, $uibModal, $log, $timeout, $translate, $cookies,
-    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, cyUtil, PlanManager
+    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, cyUtil, cyCalendar, PlanManager
   ) {
     var vm = this;
     var mapSearchRadius = 0.05; // TODO: Tweak this value
@@ -22,6 +22,18 @@
     vm.plan   = {};
     vm.currentUser = {};
     vm.tl8 = {};
+
+    vm.planDates = {
+      startDate: vm.plan.dateFrom,
+      endDate: vm.plan.dateTo
+    }
+
+    vm.dayRange = '';
+
+    vm.dateOptions = angular.copy(cyCalendar.getDateOptions());
+    vm.dateOptions.eventHandlers['apply.daterangepicker'] = function(ev) {
+      updateDates(ev.model.startDate, ev.model.endDate);
+    };
 
     vm.spotIsLoading = false;
     vm.per = 20;
@@ -73,6 +85,10 @@
                   $log.info(data);
                   vm.spots = data;
                   vm.spotIsLoading = false;
+                  setSpotMarkers();
+                  if (0 < vm.spots.length) {
+                    fitMarkerBounds(vm.spotMarkers);
+                  }
                 });
               }
             }
@@ -110,7 +126,25 @@
 
     vm.spots = [];
 
+    vm.map = {
+      center: { latitude: 0, longitude: 0 },
+      zoom: 3,
+      control: {},
+      bounds: {}
+    };
+    vm.mapOptions = {
+      scaleControl: true,
+      mapTypeControl: false,
+      scrollwheel: true,
+      streetViewControl: false,
+      zoomControl: true,
+    };
+
+    vm.spotMarkers = [];
+
     vm.addPlanItem = addPlanItem;
+    vm.save = save;
+    vm.setCurrentDay = setCurrentDay;
 
     CountryManager.getCountries().then(function(countries) {
       vm.selects.country.options = countries;
@@ -125,6 +159,17 @@
 
     function addPlanItem(sp) {
       PlanManager.addPlanItem(vm.currentDay, sp);
+    }
+
+    function save() {
+      PlanManager.saveCurrentPlan().then(function(date) {
+        $log.debug(data);
+      });
+    }
+
+    function setCurrentDay(index) {
+      vm.currentDay = index;
+      PlanManager.setCurrentDay(index);
     }
 
     ///////////////////////////////////////////////////////////////
@@ -146,7 +191,70 @@
       PlanManager.fetchEdit(vm.planId).then(function(data) {
         $log.debug('activate()');
         vm.plan = data;
+        vm.dayRange = vm.plan.getDayRange();
+        setSpotMarkers();
+      });
+    }
+
+    function updateDates(start, end, dontUpdateMap) {
+      vm.plan.updateDates(start, end);
+      vm.dayRange = vm.plan.getDayRange();
+    }
+
+    function setSpotMarkers() {
+      var targetSpots = vm.spots;
+
+      vm.spotMarkers = targetSpots.map(function(spot) {
+        var marker = {
+          id: spot.id,
+          name: spot.name,
+          latitude: spot.lat,
+          longitude: spot.lng
+        };
+
+        marker.onClick = function() {
+          $log.debug('marker.onClick');
+        };
+        marker.spot = spot;
+        marker.closeClick = function() {
+          $log.debug('marker.closeClick');
+        };
+
+        return marker;
+      });
+    }
+
+    function fitMarkerBounds(markers) {
+      if (cyUtil.isBlank(markers)) {
+        vm.map.zoom = 3;
+        return;
+      }
+
+      uiGmapGoogleMapApi.then(function(maps) {
+        var bounds = new maps.LatLngBounds();
+        angular.forEach(markers, function(marker) {
+          bounds.extend(new maps.LatLng(marker.latitude, marker.longitude));
+        });
+
+        var map = vm.map.control.getGMap();
+        map.fitBounds(bounds);
       });
     }
   }
 })();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

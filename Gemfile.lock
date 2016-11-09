@@ -169,6 +169,10 @@ GEM
       rails-assets-angular-bootstrap (>= 1.3.1, < 2)
     rails-assets-angular-cookies (1.4.14)
       rails-assets-angular (= 1.4.14)
+    rails-assets-angular-daterangepicker (0.2.2)
+      rails-assets-angular (>= 1.2.17, < 2)
+      rails-assets-bootstrap (>= 3.0.0, < 4)
+      rails-assets-bootstrap-daterangepicker (>= 2.0.0, < 3)
     rails-assets-angular-google-maps (2.2.1)
       rails-assets-angular (>= 1.2, < 1.5)
       rails-assets-angular-simple-logger (~> 0.0.1)
@@ -196,6 +200,8 @@ GEM
     rails-assets-blueimp-canvas-to-blob (2.2.0)
     rails-assets-blueimp-load-image (1.14.0)
     rails-assets-blueimp-tmpl (2.5.5)
+    rails-assets-bootstrap (3.3.7)
+      rails-assets-jquery (>= 1.9.1, < 4)
     rails-assets-bootstrap-daterangepicker (2.1.24)
       rails-assets-jquery (>= 1.9.1, < 3)
       rails-assets-moment (>= 2.9.0)
@@ -311,11 +317,12 @@ DEPENDENCIES
   pry-stack_explorer
   quiet_assets
   rails (= 4.1.9)
-  rails-assets-angular (~> 1.4.7)!
+  rails-assets-angular (~> 1.4.8)!
   rails-assets-angular-animate!
   rails-assets-angular-bootstrap!
   rails-assets-angular-bootstrap-lightbox!
   rails-assets-angular-cookies!
+  rails-assets-angular-daterangepicker!
   rails-assets-angular-google-maps (~> 2.2.1)!
   rails-assets-angular-loading-bar!
   rails-assets-angular-resource!

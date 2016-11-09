@@ -21,4 +21,4 @@ development:
   S3_HOST_NAME: "s3.amazonaws.com"
   AWS_ACCESS_KEY_ID: "xxxxxxxxxxxx"      # TODO
   AWS_SECRET_ACCESS_KEY: "xxxxxxxxxxxx"  # TODO
-
+  GOOGLE_API_KEY: "xxxxxxxxxxxx"         # TODO

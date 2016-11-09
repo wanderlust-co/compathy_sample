@@ -65,9 +65,10 @@ gem "angular-rails-templates"
 gem "annotate"
 
 source 'https://rails-assets.org' do
-  gem "rails-assets-angular", "~> 1.4.7"
+  gem "rails-assets-angular", "~> 1.4.8"
   gem "rails-assets-angular-animate"
   gem "rails-assets-angular-bootstrap"
+  gem "rails-assets-angular-daterangepicker"
   gem "rails-assets-angular-cookies"
   gem "rails-assets-angular-google-maps", "~> 2.2.1"
   gem "rails-assets-angular-resource"

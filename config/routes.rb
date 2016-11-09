@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     delete "likes/:id" => "likes#destroy"
     get    "plans/find_or_create" => "plans#find_or_create"
     get    "plans/:id/edit" => "plans#edit"
+    put    "plans/:id" => "plans#update"
     get    "countries" => "countries#index"
     get    "spots/search" => "spots#search"
   end

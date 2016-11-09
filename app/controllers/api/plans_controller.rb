@@ -13,7 +13,6 @@ module Api
     #       as it allows to have only 1 plan per user for now
     def find_or_create
       @plan = current_user.plans.first
-        # binding.pry
       unless @plan
         if params[:start].present? && params[:end].present?
           d_from = Date.parse(params[:start])
@@ -46,6 +45,64 @@ module Api
 
     def edit
       render :show
+    end
+
+def update
+      pre_p_item_ids = @plan.plan_items.map(&:id)
+      cur_p_item_ids = []
+
+      ActiveRecord::Base.transaction do
+        if @plan.update(plan_params)
+          @plan.plan_item_mappings.destroy_all
+          params[:plan][:dailyPlans].each do |param_daily_plan|
+            count_order = 0
+            date = param_daily_plan[:date]
+
+            (param_daily_plan[:planItems] || []).each do |param_plan_item|
+              count_order += 1
+              cur_p_item_ids << param_plan_item[:id].to_i if param_plan_item[:id]
+
+              p_item = PlanItem.find_or_initialize_by(id: param_plan_item[:id], plan_id: @plan.id)
+
+              unless p_item
+                logger.warn "PlanItem not found. skip. : #{param_plan_item.inspect}"
+                next
+              end
+
+              param_spot = param_plan_item[:spot]
+              unless param_spot && param_spot[:id]
+                render_error(message: "param_plan_item: #{param_plan_item[:id]} should have spot param")
+                fail ActiveRecord::Rollback
+              end
+
+              p_item.plan_id = @plan.id
+              p_item.spot_id = param_spot[:id]
+              p_item.body = param_plan_item[:body].presence
+
+              if p_item.save
+                map = @plan.plan_item_mappings.new(
+                  date: date,
+                  order: count_order,
+                  plan_item: p_item
+                )
+                unless map.save
+                  render_error(message: map.errors.inspect)
+                  fail ActiveRecord::Rollback
+                end
+              else
+                render_error(message: p_item.errors.inspect)
+                fail ActiveRecord::Rollback
+              end
+            end
+          end
+          rm_p_item_ids = pre_p_item_ids - cur_p_item_ids
+          PlanItem.where(id: rm_p_item_ids).destroy_all
+          @plan.reload
+          render :show
+        else
+          render_error(message: @plan.errors.inspect)
+        end
+      end
     end
 
     private

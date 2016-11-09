@@ -6,6 +6,7 @@
   'ui.bootstrap',
   'pascalprecht.translate',
   'config',
+  'daterangepicker'
   ]);
 })();
 
