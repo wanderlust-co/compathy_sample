@@ -1,1 +1,0 @@
-//= require restangular/restangular.js

@@ -137,8 +137,6 @@
       if (!vm.isSpotSearch) {
         if (cyUtil.isPresent(vm.selects.state.model)) {
           ret = spot.state.id === parseInt(vm.selects.state.model);
-          console.log(vm.selects.state.model)
-          console.log(spot.state.id)
         }
       }
       return ret;

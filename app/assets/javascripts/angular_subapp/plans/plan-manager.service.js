@@ -9,7 +9,6 @@
 
   function PlanManager($q, Restangular, Plan) {
     var currentPlan = Plan.build({});
-    console.log(currentPlan)
     var currentDay  = 0;
     var dailyPlanDateFormat = 'YYYY-MM-DD';
     var dateAlertDisplayed = {};
