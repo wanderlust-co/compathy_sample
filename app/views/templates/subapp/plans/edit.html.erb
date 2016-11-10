@@ -15,6 +15,37 @@
   <ul>
     <li ng-repeat="planItem in vm.plan.dailyPlans[vm.currentDay].planItems">
       <h3>{{ planItem.spot.name }}</h3>
+      <div class="col-md-12" ng-show="!$last">
+        <div class="route">
+          <div ng-hide="planItem.route.isLoaded" class="directionSpinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+          <span ng-show="planItem.route.isLoaded">
+            <span ng-show="!planItem.route.hasDirection" class="noRoute">
+              <a href="https://www.compathy.net/information/web/ja/planning/plan.html#noDirection" target="_blank"
+                analytics-on="click" analytics-category="CreatePlan" analytics-event="Other" analytics-label="noDirectionButton">
+                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>&nbsp;
+          </span>
+          <span ng-show="planItem.route.hasDirection">
+            <span ng-switch="planItem.route.travelMode">
+              <span ng-switch-when="TRANSIT">
+                <img src="//maps.gstatic.com/mapfiles/transit/iw2/6/rail.png" alt="TRANSIT" style="height:16px;vertical-align:middle;">
+              </span>
+              <span ng-switch-when="DRIVING">
+                <img src="//maps.gstatic.com/mapfiles/transit/iw2/6/drive.png" alt="DRIVING" style="height:16px;vertical-align:middle;">
+              </span>
+              <span ng-switch-when="WALKING">
+                <img src="//maps.gstatic.com/mapfiles/transit/iw2/6/walk.png" alt="WALKING" style="height:16px;vertical-align:middle;">
+              </span>
+              <b>({{planItem.route.duration}} <span>{{planItem.route.durationUnit}}</span>)</b> {{
+              planItem.route.distance}} <span>{{planItem.route.distanceUnit}}</span>
+            </span>
+          </span>
+          </span>
+        </div>
+      </div>
     </li>
   </ul>
 </div>

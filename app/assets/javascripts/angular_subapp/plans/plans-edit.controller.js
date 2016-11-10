@@ -7,12 +7,12 @@
 
   PlansEditController.$inject = [
     '$scope', '$window', '$location', '$stateParams', '$uibModal', '$log', '$timeout', '$translate', '$cookies',
-    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'cyUtil', 'cyCalendar', 'PlanManager'
+    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'cyUtil', 'cyCalendar', 'PlanManager', 'PlanMapManager'
   ];
 
   function PlansEditController(
     $scope, $window, $location, $stateParams, $uibModal, $log, $timeout, $translate, $cookies,
-    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, cyUtil, cyCalendar, PlanManager
+    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, cyUtil, cyCalendar, PlanManager, PlanMapManager
   ) {
     var vm = this;
     var mapSearchRadius = 0.05; // TODO: Tweak this value
@@ -277,7 +277,7 @@
     function refreshRouteAndMarkers() {
       $log.debug('refreshRouteAndMarkers');
       setPlanMarkers();
-      //PlanMapManager.calcRoute(vm.plan.dailyPlans[vm.currentDay].planItems, vm.map.control);
+      PlanMapManager.calcRoute(vm.plan.dailyPlans[vm.currentDay].planItems, vm.map.control);
     }
 
     function setGmapEvents() {
