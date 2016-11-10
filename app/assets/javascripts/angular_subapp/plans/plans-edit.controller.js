@@ -162,7 +162,7 @@
     }
 
     function save() {
-      PlanManager.saveCurrentPlan().then(function(date) {
+      PlanManager.saveCurrentPlan().then(function(data) {
         $log.debug(data);
       });
     }
