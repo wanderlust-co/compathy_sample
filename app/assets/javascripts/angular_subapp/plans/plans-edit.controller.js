@@ -116,6 +116,10 @@
                   $log.info(data);
                   vm.spots = data;
                   vm.spotIsLoading = false;
+                  setSpotMarkers();
+                  if (0 < vm.spots.length) {
+                    fitMarkerBounds(vm.spotMarkers);
+                  }
                 });
               }
             }
@@ -175,17 +179,6 @@
     ///////////////////////////////////////////////////////////////
     // private methods
     ///////////////////////////////////////////////////////////////
-
-    vm.getBkFilteredSpots = function(spot/*, index*/) {
-      var ret = true;
-      // NOTE: Filtering is done by the client only while using the Wishlist!
-      if (!vm.isSpotSearch) {
-        if (cyUtil.isPresent(vm.selects.state.model)) {
-          ret = spot.state.id === parseInt(vm.selects.state.model);
-        }
-      }
-      return ret;
-    };
 
     function activate() {
       PlanManager.fetchEdit(vm.planId).then(function(data) {
