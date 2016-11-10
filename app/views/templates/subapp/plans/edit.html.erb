@@ -67,6 +67,21 @@
           >
         </ui-gmap-windows>
       </ui-gmap-markers>
+      <ui-gmap-markers
+        models="vm.planMarkers"
+        coords="'self'"
+        icon="'icon'"
+        click="onClick"
+        options="options"
+        >
+        <ui-gmap-windows
+          show="show"
+          templateUrl="'infoWindowTemplate'"
+          options="'infoWindowOptions'"
+          closeClick="'closeClick'"
+          >
+        </ui-gmap-windows>
+      </ui-gmap-markers>
     </ui-gmap-google-map>
   </div>
 </div>

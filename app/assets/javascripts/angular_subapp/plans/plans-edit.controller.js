@@ -198,6 +198,8 @@
         vm.plan = data;
         vm.dayRange = vm.plan.getDayRange();
         setSpotMarkers();
+        refreshRouteAndMarkers();
+
         setGmapEvents();
       });
     }
@@ -230,6 +232,31 @@
       });
     }
 
+    function setPlanMarkers() {
+      vm.planMarkers = vm.plan.dailyPlans[vm.currentDay].planItems.map(function(pItem, index) {
+        var spot = pItem.spot;
+        var marker = {
+          id: spot.id,
+          name: spot.name,
+          latitude: spot.lat,
+          longitude: spot.lng
+        };
+
+        marker.onClick = function() {
+          $log.debug('marker.onClick');
+        };
+        marker.spot = spot;
+        marker.closeClick = function() {
+          $log.debug('marker.closeClick');
+        };
+
+        return marker;
+      });
+      if (vm.planMarkers.length > 0) {
+        fitMarkerBounds(vm.planMarkers);
+      }
+    }
+
     function fitMarkerBounds(markers) {
       if (cyUtil.isBlank(markers)) {
         vm.map.zoom = 3;
@@ -247,6 +274,12 @@
       });
     }
 
+    function refreshRouteAndMarkers() {
+      $log.debug('refreshRouteAndMarkers');
+      setPlanMarkers();
+      //PlanMapManager.calcRoute(vm.plan.dailyPlans[vm.currentDay].planItems, vm.map.control);
+    }
+
     function setGmapEvents() {
       uiGmapGoogleMapApi.then(function(maps) {
         maps.event.addListener(vm.map.control.getGMap(), 'idle', function() {
@@ -261,19 +294,4 @@
     }
   }
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
