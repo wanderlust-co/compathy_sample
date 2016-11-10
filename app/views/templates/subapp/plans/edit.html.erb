@@ -47,6 +47,11 @@
       control="vm.map.control"
       bounds="vm.map.bounds"
       pan="true">
+      <ui-gmap-map-control
+        template='/templates/subapp/plans/searchBox'
+        position="LEFT_TOP"
+        controller="PlansMapSearchBoxController" index="-1">
+      </ui-gmap-map-control>
       <ui-gmap-markers
         models="vm.spotMarkers"
         coords="'self'"

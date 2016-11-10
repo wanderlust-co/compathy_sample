@@ -151,6 +151,11 @@
       vm.countries                 = countries;
     });
 
+
+    $scope.$on('rectangleSearch', function(/* event */) {
+      spotSearchByRectangle();
+    });
+
     activate();
 
     ///////////////////////////////////////////////////////////////
@@ -193,6 +198,7 @@
         vm.plan = data;
         vm.dayRange = vm.plan.getDayRange();
         setSpotMarkers();
+        setGmapEvents();
       });
     }
 
@@ -239,6 +245,19 @@
         var map = vm.map.control.getGMap();
         map.fitBounds(bounds);
       });
+    }
+
+    function setGmapEvents() {
+      uiGmapGoogleMapApi.then(function(maps) {
+        maps.event.addListener(vm.map.control.getGMap(), 'idle', function() {
+          $log.debug('idle');
+          $scope.$broadcast('showRectangleSearchButton');
+        });
+      });
+    }
+
+    function spotSearchByRectangle() {
+      $log.debug('spotSearchByRectangle');
     }
   }
 })();
