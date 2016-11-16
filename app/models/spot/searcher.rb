@@ -119,7 +119,6 @@ module Spot::Searcher
           _spots = _spots.where("spots.name LIKE ?", "%#{search_text}%")
         end
       end
-
       return _spots
     end
 

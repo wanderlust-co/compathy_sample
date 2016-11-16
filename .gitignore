@@ -16,6 +16,9 @@
 /tmp
 /vendor/bundle
 
+# Ignore static files
+public/assets/*
+
 *~
 *.swp
 .swo

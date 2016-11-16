@@ -91,7 +91,6 @@ module Spot::FsqHandler
         venues = fsq_venue_result.venues
       end
       logger.info "- Found #{venues.length} match(es)"
-
       return venues
     end
 

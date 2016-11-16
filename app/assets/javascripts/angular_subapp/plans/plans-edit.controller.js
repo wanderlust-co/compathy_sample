@@ -7,12 +7,12 @@
 
   PlansEditController.$inject = [
     '$scope', '$window', '$location', '$stateParams', '$uibModal', '$log', '$timeout', '$translate', '$cookies',
-    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'cyUtil', 'cyCalendar', 'PlanManager'
+    '$anchorScroll', 'uiGmapGoogleMapApi', 'SpotManager', 'CountryManager', 'cyUtil', 'cyCalendar', 'PlanManager', 'PlanMapManager'
   ];
 
   function PlansEditController(
     $scope, $window, $location, $stateParams, $uibModal, $log, $timeout, $translate, $cookies,
-    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, cyUtil, cyCalendar, PlanManager
+    $anchorScroll, uiGmapGoogleMapApi, SpotManager, CountryManager, cyUtil, cyCalendar, PlanManager, PlanMapManager
   ) {
     var vm = this;
     var mapSearchRadius = 0.05; // TODO: Tweak this value
@@ -126,9 +126,55 @@
           }
         }
       },
+      cat2: {
+        model: null,
+        options: [],
+        config: {
+          create: false,
+          sortField: 'parentId',
+          valueField: 'id',
+          labelField: vm.locale,
+          searchField: ['urlName', vm.locale],
+          maxItems: 1,
+          selectOnTab: true,
+          onChange: function(id) {
+            if (id != vm.selects.cat2.model) {
+              vm.selects.cat2.model = id;
+              vm.spotSearchPanelParams = {
+                sw: vm.map.bounds.southwest, ne: vm.map.bounds.northeast
+              };
+
+              vm.searchSpot(
+                /* cc             */null,
+                /* areaId         */null,
+                /* sw             */vm.map.bounds.southwest,
+                /* ne             */vm.map.bounds.northeast,
+                /* searchText     */vm.spotSearchPanelParams.searchText,
+                /* zoom           */null,
+                /* page           */1
+                );
+
+              if ($window.ga) {
+                $window.ga('send', 'event', 'CreatePlan', 'Search', 'SelectCategory2');
+              }
+            }
+          }
+        }
+      },
     };
 
     vm.spots = [];
+
+    vm.spotSearchPanelParams = {
+      country: null,
+      area:    null,
+      searchText: '',
+      cat0Ids: [],
+      cat2Ids: [],
+      sw: null,
+      ne: null,
+      zoom: 0
+    };
 
     vm.map = {
       center: { latitude: 0, longitude: 0 },
@@ -145,14 +191,78 @@
     };
 
     vm.spotMarkers = [];
+    vm.planMarkers = [];
 
     vm.addPlanItem = addPlanItem;
+    vm.delPlanItem = delPlanItem;
     vm.save = save;
     vm.setCurrentDay = setCurrentDay;
+
+    vm.spotSearchByRectangle = function() {
+      vm.spotSearchPanelParams = {
+        searchText: vm.spotSearchPanelParams.searchText,
+        sw: vm.map.bounds.southwest, ne: vm.map.bounds.northeast
+      };
+
+      vm.searchSpot(
+        /* cc             */null,
+        /* areaId         */null,
+        /* sw             */vm.map.bounds.southwest,
+        /* ne             */vm.map.bounds.northeast,
+        /* searchText     */vm.spotSearchPanelParams.searchText,
+        /* zoom           */null,
+        /* page           */1
+        );
+    };
 
     CountryManager.getCountries().then(function(countries) {
       vm.selects.country.options = countries;
       vm.countries                 = countries;
+    });
+
+    vm.searchSpot = function(cc, areaId, sw, ne, searchText, zoom, page) {
+      vm.spotIsLoading = true;
+      vm.spotThumbCheckTimer = null;
+      vm.per = 20;
+      page = page || 1;
+
+      $scope.$broadcast('hideRectangleSearchButton');
+
+      SpotManager.getFilteredList(
+        /* cc             */cc,
+        /* areaId         */areaId,
+        /* sw             */sw,
+        /* ne             */ne,
+        /* searchText     */searchText,
+        /* zoom           */zoom,
+        /* cat0Ids        */cyUtil.isNullOrEmpty(vm.cat1Name) ? [] : APP_CONST.CY_CAT0_IDS[vm.cat1Name],
+        /* cat2Ids        */cyUtil.isNullOrEmpty(vm.selects.cat2.model) ? [] : [vm.selects.cat2.model],
+        /* page           */page,
+        /* per            */vm.per,
+        /* orderBy        */vm.orderBy,
+        /* orderDirection */vm.orderDirection,
+        /* excludeIds     */[]).then(function(spots) {
+          vm.hasMoreData = spots.length == vm.per;
+          if (1 < page) {
+            cyUtil.mergeArrays(vm.spots, spots);
+          } else {
+            vm.spots = spots;
+          }
+          // loadSpotThumbnails();
+          setSpotMarkers();
+          if (0 < vm.spots.length) {
+            fitMarkerBounds(vm.spotMarkers);
+          }
+        }, function(err) {
+          $log.debug(err);
+          $window.alert(vm.tl8.error_sorry);
+        }).finally(function() {
+          vm.spotIsLoading = false;
+        });
+    };
+
+    $scope.$on('rectangleSearch', function() {
+      vm.spotSearchByRectangle();
     });
 
     activate();
@@ -162,7 +272,26 @@
     ///////////////////////////////////////////////////////////////
 
     function addPlanItem(sp) {
+      function hidePreviousCalcResult() {
+        angular.forEach(vm.plan.dailyPlans[vm.currentDay].planItems, function(pItem, idx) {
+          if (idx !== vm.plan.dailyPlans[vm.currentDay].planItems.length - 2) { return; }
+          if (pItem.route) {
+            pItem.route.isLoaded = false;
+          }
+        });
+      }
+
       PlanManager.addPlanItem(vm.currentDay, sp);
+      hidePreviousCalcResult();
+      refreshRouteAndMarkers();
+      // closeSpotView();
+      setSpotMarkers();
+    }
+
+    function delPlanItem(idx) {
+      PlanManager.delPlanItem(vm.currentDay, idx);
+      refreshRouteAndMarkers();
+      setSpotMarkers();
     }
 
     function save() {
@@ -176,6 +305,11 @@
       PlanManager.setCurrentDay(index);
     }
 
+    function closeSpotView() {
+      vm.spotView.isOpened = false;
+      vm.spotView.spot = null;
+    }
+
     ///////////////////////////////////////////////////////////////
     // private methods
     ///////////////////////////////////////////////////////////////
@@ -186,6 +320,9 @@
         vm.plan = data;
         vm.dayRange = vm.plan.getDayRange();
         setSpotMarkers();
+        refreshRouteAndMarkers();
+
+        setGmapEvents();
       });
     }
 
@@ -217,6 +354,31 @@
       });
     }
 
+    function setPlanMarkers() {
+      vm.planMarkers = vm.plan.dailyPlans[vm.currentDay].planItems.map(function(pItem, index) {
+        var spot = pItem.spot;
+        var marker = {
+          id: spot.id,
+          name: spot.name,
+          latitude: spot.lat,
+          longitude: spot.lng
+        };
+
+        marker.onClick = function() {
+          $log.debug('marker.onClick');
+        };
+        marker.spot = spot;
+        marker.closeClick = function() {
+          $log.debug('marker.closeClick');
+        };
+
+        return marker;
+      });
+      if (vm.planMarkers.length > 0) {
+        fitMarkerBounds(vm.planMarkers);
+      }
+    }
+
     function fitMarkerBounds(markers) {
       if (cyUtil.isBlank(markers)) {
         vm.map.zoom = 3;
@@ -233,21 +395,22 @@
         map.fitBounds(bounds);
       });
     }
+
+    function refreshRouteAndMarkers() {
+      $log.debug('refreshRouteAndMarkers');
+      setPlanMarkers();
+      PlanMapManager.calcRoute(vm.plan.dailyPlans[vm.currentDay].planItems, vm.map.control);
+
+    }
+
+    function setGmapEvents() {
+      uiGmapGoogleMapApi.then(function(maps) {
+        maps.event.addListener(vm.map.control.getGMap(), 'idle', function() {
+          $log.debug('idle');
+          $scope.$broadcast('showRectangleSearchButton');
+        });
+      });
+    }
   }
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

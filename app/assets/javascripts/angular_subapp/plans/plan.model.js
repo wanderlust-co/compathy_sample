@@ -12,6 +12,8 @@
      * Constructor, with class name
      *//////////////////////////////////////////////////////////////////////////////////////
     function __Plan(id, userId, title, description, dateFrom, dateTo, dailyPlans, coverPhotoUrl, publicLinkUrl) {
+      console.log('function __Plan')
+      console.log(id);
       // Public properties, assigned to the instance ('this')
       this.id          = id;
       this.userId      = userId;
@@ -99,6 +101,8 @@
      * Instance ('this') is not available in static context
      *//////////////////////////////////////////////////////////////////////////////////////
     __Plan.build = function(data) {
+      console.log('__Plan.build')
+      console.log(data)
       return new __Plan(
         data.id,
         data.userId,

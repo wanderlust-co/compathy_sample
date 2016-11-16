@@ -215,6 +215,21 @@ class Spot < ActiveRecord::Base
     return lat_range, lng_range
   end
 
+  LAT_LNG_KM = 111.47657
+  def self.radius_from_coordinate_ranges(sw, ne)
+    sw = sw.with_indifferent_access
+    ne = ne.with_indifferent_access
+    ne_lat = ne[:latitude].to_f
+    sw_lat = sw[:latitude].to_f
+    ne_lng = ne[:longitude].to_f
+    sw_lng = sw[:longitude].to_f
+
+    lat_range_km = (ne_lat - sw_lat) * LAT_LNG_KM
+    lng_range_km = (ne_lng - sw_lng) * LAT_LNG_KM
+    radius_km = Math.hypot(lat_range_km, lng_range_km) / 2
+    return radius_km * 1000 # We use meters for FSQ
+  end
+
   private
   def self.get_state_city_from_google( lat, lng, cc )
     state = nil

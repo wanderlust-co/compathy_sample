@@ -70,6 +70,141 @@ module Api
 
         return
       end
+
+      south_west = JSON.parse(params[:sw])
+      north_east = JSON.parse(params[:ne])
+
+      if Spot.need_expand_search?(params)
+        @spots = Spot.search_by_rectangle(
+          sw: south_west,
+          ne: north_east,
+          search_text: params[:searchText],
+        )
+
+        if @spots.size < expected_num
+          expanded_rectangle = Spot.expand_sw_ne_for_fsq(zoom: params[:zoom], sw: south_west, ne: north_east)
+
+          logger.debug "!!! expanded_rectangle:"
+          logger.debug "!!!    before: #{south_west.inspect}, #{north_east.inspect}"
+          logger.debug "!!!    after: #{expanded_rectangle.inspect}"
+
+        # TODO: need a tuning to find "proper" spots
+        #       - sometime the user might want more spots within area using Fsq
+        #       - sometime the user might want more spots in expanded area using Compathy
+          @spots = Spot.search_by_rectangle(
+            sw: expanded_rectangle[:sw],
+            ne: expanded_rectangle[:ne],
+            search_text: params[:searchText],
+          )
+        end
+        apply_common_treating(order_by, order_direction, page, per, excluded_ids)
+
+        if @spots.size < expected_num
+          # NOTE: We have to turn the spot active records into an array to be able to "inject" our own Foursquare results
+          @spots = @spots.to_a
+
+          needed_spots = expected_num - @spots.size
+
+          begin
+            venues = Spot.search_fsq_venues(
+              sw: expanded_rectangle[:sw],
+              ne: expanded_rectangle[:ne],
+              level0_cats: params[:cat0Ids],
+              level2_cats: params[:cat2Ids],
+              search_text: params[:searchText]
+            )
+          rescue => ex
+            render_error(message: ex.message)
+            return
+          end
+
+
+          logger.debug "!!!"
+          logger.debug "!!! expanded_rectangle for Fsq: #{expanded_rectangle.inspect}"
+          logger.debug "!!! venues: #{venues.size}"
+
+          if 0 < venues.size
+            new_spots = Spot.create_spots_from_fsq(venues: venues, amount: needed_spots, include_minor_spot: true)
+
+            if 0 < new_spots.size
+              @spots = @spots + new_spots.order("spots.name").includes(:categories, :country, :state, :city).to_a
+            end
+          end
+        end
+
+        # NOTE: global search
+        if params[:zoom].to_i < 9 && @spots.size < expected_num
+          @spots = Spot.search_by_global(
+            search_text: params[:searchText]
+          )
+          apply_common_treating(order_by, order_direction, page, per, excluded_ids)
+        end
+
+        if @spots.size < expected_num
+          needed_spots = expected_num - @spots.size
+          begin
+            venues = Spot.search_fsq_venues(
+              level0_cats: params[:cat0Ids],
+              level2_cats: params[:cat2Ids],
+              search_text: params[:searchText]
+            )
+          rescue => ex
+            render_error(message: ex.message)
+            return
+          end
+
+          logger.debug "!!!"
+          logger.debug "!!! global search"
+          logger.debug "!!! venues: #{venues.size}"
+
+          if 0 < venues.size
+            new_spots = Spot.create_spots_from_fsq(venues: venues, amount: needed_spots, include_minor_spot: true)
+
+            if 0 < new_spots.size
+              @spots = @spots + new_spots.order("spots.name").includes(:categories, :country, :state, :city).to_a
+            end
+          end
+        end
+
+        return
+      end
+
+      @spots = Spot.search_by_rectangle(
+        sw: south_west,
+        ne: north_east,
+        search_text: params[:searchText],
+        cat0_codes: params[:cat0Ids],
+        cat2_codes: params[:cat2Ids],
+      )
+      apply_common_treating(order_by, order_direction, page, per, excluded_ids)
+
+      if @spots.size < expected_num
+        # NOTE: We have to turn the spot active records into an array to be able to "inject" our own Foursquare results
+        @spots = @spots.to_a
+
+        needed_spots = expected_num - @spots.size
+        # NOTE: 4travel uses kilometers for the radius, but FSQ uses meters so we multiply by 1000
+        begin
+          venues = Spot.search_fsq_venues(
+            sw: south_west,
+            ne: north_east,
+            search_radius: radius_km * 1000,
+            level0_cats: params[:cat0Ids],
+            level2_cats: params[:cat2Ids],
+            search_text: params[:searchText]
+          )
+        rescue => ex
+          render_error(message: ex.message)
+          return
+        end
+
+        if 0 < venues.size
+          new_spots = Spot.create_spots_from_fsq(venues: venues, amount: needed_spots, include_minor_spot: params[:searchText].present?)
+          if new_spots.length > 0
+            @spots = @spots + new_spots.order("spots.name").includes(:categories, :country, :state, :city).to_a
+          end
+        end
+      end
     end
 
     def fsq_categories

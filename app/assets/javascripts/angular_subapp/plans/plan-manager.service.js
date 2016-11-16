@@ -61,7 +61,7 @@
       saveCurrentPlan: function() {
         var deferred = $q.defer();
         var postData = Plan.buildPostData(currentPlan);
-
+        console.log(currentPlan);
         if (!currentPlan.hasModified) {
           $log.debug('currentPlan has not Modified')
           deferred.resolve(true);
