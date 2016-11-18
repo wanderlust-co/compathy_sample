@@ -23,12 +23,6 @@ gem 'spring',        group: :development
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'sorcery'
@@ -44,6 +38,15 @@ group :test, :development do
   #replaces the standard Rails error page with a much better and more useful error page
   gem 'better_errors'
   gem 'quiet_assets'
+
+  gem 'capistrano', '~> 3.4.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-unicorn'
+end
+
+group :staging, :production do
+  gem 'unicorn', '~> 4.9.0'
 end
 
 #upload picture

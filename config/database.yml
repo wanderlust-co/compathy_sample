@@ -50,6 +50,12 @@ test:
 staging:
   <<: *default
   database: compathy-clone_staging
+  socket: /var/run/mysqld/mysqld.sock  
+  encoding: utf8
+  reconnect: false
+  database: db_staging
+  username: user_staging
+  password: pass_staging
 
 production:
   <<: *default
