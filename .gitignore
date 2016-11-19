@@ -30,5 +30,6 @@ public/assets/*
 modules
 node_modules/*
 
-# Ignore application configuration
+# Ignore configuration
 /config/application.yml
+/config/database.yml

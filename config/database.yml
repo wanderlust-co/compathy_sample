@@ -50,6 +50,7 @@ test:
 staging:
   <<: *default
   database: compathy-clone_staging
+  socket: /var/run/mysqld/mysqld.sock
 
 production:
   <<: *default
