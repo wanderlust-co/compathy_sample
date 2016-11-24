@@ -49,8 +49,11 @@ test:
 #
 staging:
   <<: *default
-  database: compathy-clone_staging
-  socket: /var/run/mysqld/mysqld.sock
+  reconnect: false
+  socket:   /var/run/mysqld/mysqld.sock
+  database: db_staging
+  username: user_staging
+  password: <%= ENV['DB_PASSWORD'] %>
 
 production:
   <<: *default
